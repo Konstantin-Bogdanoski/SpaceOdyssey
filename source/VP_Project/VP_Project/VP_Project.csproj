@@ -81,6 +81,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip41.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\EnemyShip1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HeroShip4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\giphy.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
