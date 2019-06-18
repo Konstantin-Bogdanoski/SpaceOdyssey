@@ -1,2 +1,4 @@
 # Visual Programming Project 2019
-Project for VIsual Programming, 2019. Colab with Bojan Jovanoski and Vladimir Blazeski
+Проект по предметот Визуелно Програмирање, 2019 година, ФИНКИ.
+
+За детални информации, проверете го [wiki](https://github.com/Konstantin-Bogdanoski/VP_Project_2019/wiki)-то
