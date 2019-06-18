@@ -145,4 +145,19 @@
   <data name="HeroShip4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeroShip4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EnemyBoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyBoss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Meteor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Meteor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Meteor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Meteor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Meteor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Meteor3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Meteor4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Meteor4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

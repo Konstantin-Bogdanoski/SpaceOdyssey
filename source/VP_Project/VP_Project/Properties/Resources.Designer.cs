@@ -63,6 +63,16 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EnemyBoss {
+            get {
+                object obj = ResourceManager.GetObject("EnemyBoss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EnemyShip1 {
             get {
                 object obj = ResourceManager.GetObject("EnemyShip1", resourceCulture);
@@ -146,6 +156,46 @@ namespace VP_Project.Properties {
         internal static System.Drawing.Bitmap HeroShip4 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Meteor1 {
+            get {
+                object obj = ResourceManager.GetObject("Meteor1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Meteor2 {
+            get {
+                object obj = ResourceManager.GetObject("Meteor2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Meteor3 {
+            get {
+                object obj = ResourceManager.GetObject("Meteor3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Meteor4 {
+            get {
+                object obj = ResourceManager.GetObject("Meteor4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
