@@ -54,11 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sounds.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -133,6 +134,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Meteor4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kitty-toft-backgroundgui.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Futuristic_Background_Music_-_The_Middle_of_Nowhere-at-uxGf3XVw.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-19.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

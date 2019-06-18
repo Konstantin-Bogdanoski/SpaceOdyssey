@@ -22,7 +22,7 @@ namespace VP_Project.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace VP_Project.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VP_Project.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace VP_Project.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,37 @@ namespace VP_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream BackgroundMusic {
+            get {
+                return ResourceManager.GetStream("BackgroundMusic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnemyBoss {
+        public static System.Drawing.Bitmap BackgroundPic {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream buttonclicksound {
+            get {
+                return ResourceManager.GetStream("buttonclicksound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap EnemyBoss {
             get {
                 object obj = ResourceManager.GetObject("EnemyBoss", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +101,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnemyShip1 {
+        public static System.Drawing.Bitmap EnemyShip1 {
             get {
                 object obj = ResourceManager.GetObject("EnemyShip1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +111,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnemyShip2 {
+        public static System.Drawing.Bitmap EnemyShip2 {
             get {
                 object obj = ResourceManager.GetObject("EnemyShip2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +121,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnemyShip3 {
+        public static System.Drawing.Bitmap EnemyShip3 {
             get {
                 object obj = ResourceManager.GetObject("EnemyShip3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +131,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnemyShip4 {
+        public static System.Drawing.Bitmap EnemyShip4 {
             get {
                 object obj = ResourceManager.GetObject("EnemyShip4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +141,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap giphy {
+        public static System.Drawing.Bitmap giphy {
             get {
                 object obj = ResourceManager.GetObject("giphy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +151,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeroShip1 {
+        public static System.Drawing.Bitmap HeroShip1 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +161,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeroShip2 {
+        public static System.Drawing.Bitmap HeroShip2 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +171,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeroShip3 {
+        public static System.Drawing.Bitmap HeroShip3 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +181,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeroShip4 {
+        public static System.Drawing.Bitmap HeroShip4 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +191,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Meteor1 {
+        public static System.Drawing.Bitmap Meteor1 {
             get {
                 object obj = ResourceManager.GetObject("Meteor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +201,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Meteor2 {
+        public static System.Drawing.Bitmap Meteor2 {
             get {
                 object obj = ResourceManager.GetObject("Meteor2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +211,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Meteor3 {
+        public static System.Drawing.Bitmap Meteor3 {
             get {
                 object obj = ResourceManager.GetObject("Meteor3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +221,7 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Meteor4 {
+        public static System.Drawing.Bitmap Meteor4 {
             get {
                 object obj = ResourceManager.GetObject("Meteor4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
