@@ -1,6 +1,6 @@
 ﻿namespace VP_Project
 {
-    partial class SpaceOddysey
+    partial class SpaceOdyssey
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // SpaceOddysey
+            // SpaceOdyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "SpaceOddysey";
-            this.Text = "SpaceOddysey";
+            this.Name = "SpaceOdyssey";
+            this.Text = "SpaceOdyssey";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

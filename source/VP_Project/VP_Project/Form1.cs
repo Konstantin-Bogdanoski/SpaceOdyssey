@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VP_Project
 {
-    public partial class SpaceOddysey : Form
+    public partial class SpaceOdyssey : Form
     {
-        public SpaceOddysey()
+        public SpaceOdyssey()
         {
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
