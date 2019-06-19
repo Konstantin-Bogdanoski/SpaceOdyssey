@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.StartNewGame = new System.Windows.Forms.Button();
             this.InstructionButton = new System.Windows.Forms.Button();
             this.QuitGame = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -133,6 +135,12 @@
             this.BackButton.MouseEnter += new System.EventHandler(this.BackButton_MouseEnter);
             this.BackButton.MouseLeave += new System.EventHandler(this.BackButton_MouseLeave);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 16;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // SpaceOdyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -147,6 +155,7 @@
             this.Name = "SpaceOdyssey";
             this.Text = "SpaceOdyssey";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SpaceOdyssey_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SpaceOdyssey_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,6 +169,7 @@
         private System.Windows.Forms.Button InstructionButton;
         private System.Windows.Forms.Button QuitGame;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

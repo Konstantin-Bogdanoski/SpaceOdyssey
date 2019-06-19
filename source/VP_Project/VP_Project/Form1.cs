@@ -14,6 +14,9 @@ namespace VP_Project
     public partial class SpaceOdyssey : Form
     {
         public Sounds sounds;
+        private List<Enemy> enemies;
+        private int counter = 0;
+
         public void buttonclicked()
         {
             label1.Visible = false;
@@ -53,7 +56,6 @@ namespace VP_Project
             StartNewGame.Width = this.Width / 4;
             StartNewGame.Top = this.Top + (int)(label1.Height*1.8);
 
-
             //setting up the positioning of the  Instructions button
             InstructionButton.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             InstructionButton.Width = this.Width / 4;
@@ -67,11 +69,7 @@ namespace VP_Project
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
 
-
             SoundPlayer player = new SoundPlayer();
-
-
-
             sounds = new Sounds();
         }
 
@@ -132,7 +130,6 @@ namespace VP_Project
             {
                 WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.FixedDialog;
-
             }
         }
 
@@ -142,12 +139,13 @@ namespace VP_Project
             sounds.playButtonClick();
         }
 
-        private void StartNewGame_Click(object sender, EventArgs e)
+        private void StartNewGame_Click(object sender, EventArgs e) // STARTED NEW GAME
         {
             buttonclicked();
             sounds.playButtonClick();
             sounds.playMainMusic();
 
+            this.enemies = new List<Enemy>();
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)
@@ -193,6 +191,30 @@ namespace VP_Project
             BackButton.Width -= 40;
             BackButton.Height -= 40;
             BackButton.FlatAppearance.BorderSize = 0;
+        }
+
+        private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
+        {
+            if (!(enemies is null))
+                foreach (Enemy en in enemies)
+                    en.Draw(e.Graphics);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (!(enemies is null))
+            {
+                foreach (Enemy en in enemies)
+                    en.Move(this.Width, this.Height);
+                counter++;
+                if (counter == 32)
+                {
+                    if (enemies.Count < 20)
+                        enemies.Add(new Enemy());
+                    counter = 0;
+                }
+                Invalidate(true);
+            }
         }
     }
 }
