@@ -25,8 +25,11 @@ namespace VP_Project
 
         public void UpdatePosition()
         {
-            if(Location.Y > 0) 
+            if (Location.Y > -10)
                 this.Location = new Point(this.Location.X, this.Location.Y - Speed);
+            else
+                this.Hit = true;
+            
         }
 
         public void Draw(Graphics g)
