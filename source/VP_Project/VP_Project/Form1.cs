@@ -201,9 +201,6 @@ namespace VP_Project
 
                 SaveGame.Visible = true;
                 SaveGame.Enabled = true;
-                
-                WindowState = FormWindowState.Normal;
-                FormBorderStyle = FormBorderStyle.FixedDialog;
             }
         }
 
@@ -358,9 +355,6 @@ namespace VP_Project
             SaveGame.Width -= 40;
             SaveGame.Height -= 40;
             SaveGame.FlatAppearance.BorderSize = 0;
-            if (!(enemies is null))
-                foreach (Enemy en in enemies)
-                    en.Draw(e.Graphics);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
