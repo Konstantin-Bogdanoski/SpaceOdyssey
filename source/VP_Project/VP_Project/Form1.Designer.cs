@@ -35,11 +35,13 @@
             this.QuitGame = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+
             this.ResumeButton = new System.Windows.Forms.Button();
             this.NewGame = new System.Windows.Forms.Button();
             this.QtMainMenu = new System.Windows.Forms.Button();
             this.LoadGame = new System.Windows.Forms.Button();
             this.SaveGame = new System.Windows.Forms.Button();
+          
             this.SuspendLayout();
             // 
             // label1
@@ -144,6 +146,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 16;
+
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // ResumeButton
@@ -254,6 +257,9 @@
             this.SaveGame.Visible = false;
             this.SaveGame.MouseEnter += new System.EventHandler(this.SaveGame_MouseEnter);
             this.SaveGame.MouseLeave += new System.EventHandler(this.SaveGame_MouseLeave);
+
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
             // 
             // SpaceOdyssey
             // 
@@ -290,11 +296,13 @@
         
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Timer timer1;
+
         private System.Windows.Forms.Button ResumeButton;
         private System.Windows.Forms.Button NewGame;
         private System.Windows.Forms.Button QtMainMenu;
         private System.Windows.Forms.Button LoadGame;
         private System.Windows.Forms.Button SaveGame;
+
     }
 }
 

@@ -16,6 +16,9 @@ namespace VP_Project
         public Sounds sounds;
         public Meteor meteor;
         public bool NewGameFlag;
+        private List<Enemy> enemies;
+        private int counter = 0;
+
         public void buttonclicked()
         {
             label1.Visible = false;
@@ -89,6 +92,7 @@ namespace VP_Project
             StartNewGame.Width = this.Width / 4;
             StartNewGame.Top = this.Top + (int)(label1.Height * 1.3);
 
+
             LoadGame.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             LoadGame.Width = this.Width / 4;
             LoadGame.Top = StartNewGame.Top + (int)(label1.Height * 1.3);
@@ -103,13 +107,10 @@ namespace VP_Project
             QuitGame.Width = this.Width / 4;
             QuitGame.Top = InstructionButton.Top + (int)(label1.Height * 1.3);
 
-            
-
             // Pause Menu Resume Button
             ResumeButton.Left = (this.Width / 2) - ResumeButton.Width;
             ResumeButton.Width = this.Width / 4;
             ResumeButton.Top = this.Top + (label1.Height);
-
 
             //pause menu new game button
             NewGame.Left = (this.Width / 2) - ResumeButton.Width;
@@ -125,10 +126,6 @@ namespace VP_Project
             QtMainMenu.Left = (this.Width / 2) - ResumeButton.Width;
             QtMainMenu.Width = this.Width / 4;
             QtMainMenu.Top = SaveGame.Top +(label1.Height);
-
-            
-
-
 
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
@@ -204,7 +201,9 @@ namespace VP_Project
 
                 SaveGame.Visible = true;
                 SaveGame.Enabled = true;
-
+                
+                WindowState = FormWindowState.Normal;
+                FormBorderStyle = FormBorderStyle.FixedDialog;
             }
         }
 
@@ -214,7 +213,7 @@ namespace VP_Project
             sounds.playButtonClick();
         }
 
-        private void StartNewGame_Click(object sender, EventArgs e)
+        private void StartNewGame_Click(object sender, EventArgs e) // STARTED NEW GAME
         {
             buttonclicked();
             sounds.playButtonClick();
@@ -222,6 +221,7 @@ namespace VP_Project
             meteor = new Meteor(this.Width);
             NewGameFlag = true;
 
+            this.enemies = new List<Enemy>();
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)
@@ -358,6 +358,26 @@ namespace VP_Project
             SaveGame.Width -= 40;
             SaveGame.Height -= 40;
             SaveGame.FlatAppearance.BorderSize = 0;
+            if (!(enemies is null))
+                foreach (Enemy en in enemies)
+                    en.Draw(e.Graphics);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (!(enemies is null))
+            {
+                foreach (Enemy en in enemies)
+                    en.Move(this.Width, this.Height);
+                counter++;
+                if (counter == 32)
+                {
+                    if (enemies.Count < 20)
+                        enemies.Add(new Enemy());
+                    counter = 0;
+                }
+                Invalidate(true);
+            }
         }
     }
 }
