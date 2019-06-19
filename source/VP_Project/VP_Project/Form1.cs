@@ -261,14 +261,14 @@ namespace VP_Project
 
         private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
         {
-           /* if(!(meteor is null))
-            meteor.Draw(e.Graphics); */
+            /*if(!(meteor is null))
+            meteor.Draw(e.Graphics);*/
             
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-           /* if (!(meteor is null))
+            /*if (!(meteor is null))
                 meteor.Move(this.Height);
             Invalidate(true); */
         }

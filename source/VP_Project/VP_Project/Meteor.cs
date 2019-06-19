@@ -22,7 +22,7 @@ namespace VP_Project
             int ypos = random.Next(0, width);
             this.Location = new Point(ypos,10); // TO BE CHANGED
             this.Health = 40;
-            this.Speed = 25;
+            this.Speed = 12;
             this.Damage = 100;
             if (choice == 1) // Randomize image selection
                 Image = VP_Project.Properties.Resources.Meteor1;
