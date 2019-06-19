@@ -4,10 +4,11 @@ namespace VP_Project
 {
     public class Bullet
     {
-        private Bitmap Image { get; set; }
-        private int Damage { get; set; }
-        private int Speed { get; set; }
-        private Point Location { get; set; }
+        public Bitmap Image { get; set; }
+        public int Damage { get; set; }
+        public int Speed { get; set; }
+        public Point Location { get; set; }
+        public bool ToBeRemoved { get; set; }
         public Bullet(Point Location)
         {
             this.Image = VP_Project.Properties.Resources.Bullet;
@@ -15,6 +16,7 @@ namespace VP_Project
             this.Speed = 20;
             this.Location = Location;
             this.Damage = 20;
+            this.ToBeRemoved = false;
         }
 
         public void Draw(Graphics g)
@@ -29,6 +31,15 @@ namespace VP_Project
             this.Location = temp;
         }
 
-        //IMPLEMENT COLLIDE
+        // Remove the bullet from the screen when it hits the HeroShip or leaves screen
+        public void HitOrOutOfMap(int height) // Add Hero Location
+        {
+            if (this.Location.Y > height)
+                ToBeRemoved = true;
+            else // Hero Location
+            {
+
+            }
+        }
     }
 }

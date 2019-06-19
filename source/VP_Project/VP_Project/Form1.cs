@@ -14,6 +14,8 @@ namespace VP_Project
     public partial class SpaceOdyssey : Form
     {
         public Sounds sounds;
+        private List<Enemy> enemies;
+        private int counter = 0;
 
         public void buttonclicked()
         {
@@ -142,6 +144,8 @@ namespace VP_Project
             buttonclicked();
             sounds.playButtonClick();
             sounds.playMainMusic();
+
+            this.enemies = new List<Enemy>();
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)
@@ -191,12 +195,26 @@ namespace VP_Project
 
         private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
         {
-
+            if (!(enemies is null))
+                foreach (Enemy en in enemies)
+                    en.Draw(e.Graphics);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            if (!(enemies is null))
+            {
+                foreach (Enemy en in enemies)
+                    en.Move(this.Width, this.Height);
+                counter++;
+                if (counter == 32)
+                {
+                    if (enemies.Count < 20)
+                        enemies.Add(new Enemy());
+                    counter = 0;
+                }
+                Invalidate(true);
+            }
         }
     }
 }
