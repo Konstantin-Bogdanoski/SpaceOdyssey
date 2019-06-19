@@ -74,7 +74,7 @@ namespace VP_Project
             SoundPlayer player = new SoundPlayer();
 
 
-            hero = new Hero(new Point((int)this.Width/2 - 50, this.Height - 170));
+            hero = new Hero(new Point((int)this.Width/2 - 50, this.Height - 100));
             sounds = new Sounds();
         }
 
@@ -147,7 +147,7 @@ namespace VP_Project
 
             if(e.KeyCode == Keys.X)
             {
-                HeroBullet bullet = new HeroBullet(new Point(hero.Location.X + hero.HeroShipImg.Width/2,hero.Location.Y));
+                HeroBullet bullet = new HeroBullet(new Point(hero.Location.X + hero.HeroShipImg.Width/2 - 101,hero.Location.Y));
                 hero.AddHeroBullet(bullet);
             }
 
@@ -234,6 +234,9 @@ namespace VP_Project
             {
                 bullet.UpdatePosition();
             }
+
+            hero.CheckHeroBulletCollison();
+
             Invalidate(true);
         }
     }
