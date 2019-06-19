@@ -30,6 +30,18 @@ namespace VP_Project
             this.bullets.Add(bullet);
         }
 
+        public void CheckHeroBulletCollison()
+        {
+            for(int i=0;i< bullets.Count; i++)
+            {
+                if (bullets[i].Hit)
+                {
+                    bullets.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
         public void Move(Keys keys,int width)
         {
             if(keys == Keys.Left)
@@ -46,7 +58,7 @@ namespace VP_Project
             {
                 Point newLocation = new Point(this.Location.X + Speed, this.Location.Y);
 
-                if (newLocation.X >= width - HeroShipImg.Size.Width)
+                if (newLocation.X >= width - HeroShipImg.Size.Width + 171)
                 {
                     newLocation = new Point(this.Location.X, this.Location.Y);
                 }
