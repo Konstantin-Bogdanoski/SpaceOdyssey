@@ -97,6 +97,18 @@
     <None Include="Resources\HeroShip41.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\EnemyShip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip4.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\HeroShip1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HeroShip4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyBoss.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Meteor1.png" />
@@ -128,21 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button-19.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyBoss.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
