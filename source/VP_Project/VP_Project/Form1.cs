@@ -29,6 +29,9 @@ namespace VP_Project
 
             QuitGame.Visible = false;
             QuitGame.Enabled = false;
+
+            LoadGame.Visible = false;
+            LoadGame.Enabled = false;
         }
 
         public void showMainMenu()
@@ -44,13 +47,24 @@ namespace VP_Project
 
             QuitGame.Visible = true;
             QuitGame.Enabled = true;
-        }
 
-        public void ShowPauseMenu()
+            LoadGame.Visible = true;
+            LoadGame.Enabled = true;
+        }
+        public void HidePauseMenu()
         {
+            NewGame.Visible = false;
+            NewGame.Enabled = false;
 
+            ResumeButton.Visible = false;
+            ResumeButton.Enabled = false;
+
+            QtMainMenu.Visible = false;
+            QtMainMenu.Enabled = false;
+
+            SaveGame.Visible = false;
+            SaveGame.Enabled = false;
         }
-        
         public SpaceOdyssey()
         {
             InitializeComponent();
@@ -73,18 +87,23 @@ namespace VP_Project
             //Setting up the positioning of the New Game button
             StartNewGame.Left = (this.Width / 2) - (StartNewGame.Width/2);
             StartNewGame.Width = this.Width / 4;
-            StartNewGame.Top = this.Top + (int)(label1.Height*1.8);
+            StartNewGame.Top = this.Top + (int)(label1.Height * 1.3);
 
+            LoadGame.Left = (this.Width / 2) - (StartNewGame.Width / 2);
+            LoadGame.Width = this.Width / 4;
+            LoadGame.Top = StartNewGame.Top + (int)(label1.Height * 1.3);
 
             //setting up the positioning of the  Instructions button
             InstructionButton.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             InstructionButton.Width = this.Width / 4;
-            InstructionButton.Top = StartNewGame.Top + (int)(label1.Height * 1.8);
+            InstructionButton.Top = LoadGame.Top + (int)(label1.Height * 1.3);
 
             //setting up the positioning of the Quit Game button
             QuitGame.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             QuitGame.Width = this.Width / 4;
-            QuitGame.Top = InstructionButton.Top + (int)(label1.Height * 1.8);
+            QuitGame.Top = InstructionButton.Top + (int)(label1.Height * 1.3);
+
+            
 
             // Pause Menu Resume Button
             ResumeButton.Left = (this.Width / 2) - ResumeButton.Width;
@@ -95,12 +114,21 @@ namespace VP_Project
             //pause menu new game button
             NewGame.Left = (this.Width / 2) - ResumeButton.Width;
             NewGame.Width = this.Width / 4;
-            NewGame.Top = StartNewGame.Top + (label1.Height);
+            NewGame.Top = ResumeButton.Top + (label1.Height);
+
+            //save menu game button position
+            SaveGame.Left = (this.Width / 2) - ResumeButton.Width;
+            SaveGame.Width = this.Width / 4;
+            SaveGame.Top = NewGame.Top + (label1.Height);
 
             //pause menu quit button
             QtMainMenu.Left = (this.Width / 2) - ResumeButton.Width;
             QtMainMenu.Width = this.Width / 4;
-            QtMainMenu.Top = InstructionButton.Top +(label1.Height);
+            QtMainMenu.Top = SaveGame.Top +(label1.Height);
+
+            
+
+
 
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
@@ -173,6 +201,10 @@ namespace VP_Project
 
                 QtMainMenu.Visible = true;
                 QtMainMenu.Enabled = true;
+
+                SaveGame.Visible = true;
+                SaveGame.Enabled = true;
+
             }
         }
 
@@ -289,30 +321,43 @@ namespace VP_Project
         private void ResumeButton_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            NewGame.Visible = false;
-            NewGame.Enabled = false;
-
-            ResumeButton.Visible = false;
-            ResumeButton.Enabled = false;
-
-            QtMainMenu.Visible = false;
-            QtMainMenu.Enabled = false;
-
+            HidePauseMenu();
         }
 
         private void QtMainMenu_Click(object sender, EventArgs e)
         {
-            NewGame.Visible = false;
-            NewGame.Enabled = false;
+            HidePauseMenu();
+            showMainMenu();  
+        }
 
-            ResumeButton.Visible = false;
-            ResumeButton.Enabled = false;
+        private void LoadGame_MouseEnter(object sender, EventArgs e)
+        {
+            LoadGame.Width += 40;
+            LoadGame.Height += 40;
+            LoadGame.FlatAppearance.BorderSize = 4;
+            LoadGame.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
 
-            QtMainMenu.Visible = false;
-            QtMainMenu.Enabled = false;
+        private void LoadGame_MouseLeave(object sender, EventArgs e)
+        {
+            LoadGame.Width -= 40;
+            LoadGame.Height -= 40;
+            LoadGame.FlatAppearance.BorderSize = 0;
+        }
 
-            showMainMenu();
-            
+        private void SaveGame_MouseEnter(object sender, EventArgs e)
+        {
+            SaveGame.Width += 40;
+            SaveGame.Height += 40;
+            SaveGame.FlatAppearance.BorderSize = 4;
+            SaveGame.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
+
+        private void SaveGame_MouseLeave(object sender, EventArgs e)
+        {
+            SaveGame.Width -= 40;
+            SaveGame.Height -= 40;
+            SaveGame.FlatAppearance.BorderSize = 0;
         }
     }
 }
