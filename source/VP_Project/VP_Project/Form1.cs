@@ -128,7 +128,6 @@ namespace VP_Project
             {
                 WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.FixedDialog;
-
             }
         }
 
@@ -143,7 +142,6 @@ namespace VP_Project
             buttonclicked();
             sounds.playButtonClick();
             sounds.playMainMusic();
-
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)

@@ -43,6 +43,8 @@ namespace VP_Project
         public void Draw(Graphics g)
         {
             g.DrawImage(this.Image, this.Location);
+            foreach (Bullet b in Bullets)
+                b.Draw(g);
         }
 
         public void Shoot()
