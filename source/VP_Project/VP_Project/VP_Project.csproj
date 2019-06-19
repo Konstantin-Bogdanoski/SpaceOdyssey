@@ -52,6 +52,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hero.cs" />
+    <Compile Include="HeroBullet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sounds.cs" />
@@ -143,6 +145,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button-19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroBullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroBullet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip1_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
