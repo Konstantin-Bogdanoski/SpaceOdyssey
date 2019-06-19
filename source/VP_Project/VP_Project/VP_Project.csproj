@@ -55,6 +55,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meteor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sounds.cs" />
@@ -133,6 +134,19 @@
     <None Include="Resources\button-19.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\EnemyBoss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
