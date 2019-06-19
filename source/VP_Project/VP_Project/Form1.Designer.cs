@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.StartNewGame = new System.Windows.Forms.Button();
             this.InstructionButton = new System.Windows.Forms.Button();
             this.QuitGame = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.HeroBulletTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -42,9 +44,9 @@
             this.label1.Font = new System.Drawing.Font("OCR A Extended", 85.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(22, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(835, 146);
+            this.label1.Size = new System.Drawing.Size(626, 119);
             this.label1.TabIndex = 0;
             this.label1.Text = "SpaceOdyssey";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,9 +62,10 @@
             this.StartNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartNewGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartNewGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.StartNewGame.Location = new System.Drawing.Point(44, 182);
+            this.StartNewGame.Location = new System.Drawing.Point(33, 148);
+            this.StartNewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartNewGame.Name = "StartNewGame";
-            this.StartNewGame.Size = new System.Drawing.Size(747, 96);
+            this.StartNewGame.Size = new System.Drawing.Size(600, 79);
             this.StartNewGame.TabIndex = 1;
             this.StartNewGame.Text = "Start New Game";
             this.StartNewGame.UseVisualStyleBackColor = false;
@@ -80,9 +83,10 @@
             this.InstructionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InstructionButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InstructionButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.InstructionButton.Location = new System.Drawing.Point(44, 297);
+            this.InstructionButton.Location = new System.Drawing.Point(33, 241);
+            this.InstructionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.InstructionButton.Name = "InstructionButton";
-            this.InstructionButton.Size = new System.Drawing.Size(662, 100);
+            this.InstructionButton.Size = new System.Drawing.Size(520, 81);
             this.InstructionButton.TabIndex = 2;
             this.InstructionButton.Text = "Instructions";
             this.InstructionButton.UseVisualStyleBackColor = false;
@@ -100,9 +104,10 @@
             this.QuitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuitGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuitGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.QuitGame.Location = new System.Drawing.Point(44, 420);
+            this.QuitGame.Location = new System.Drawing.Point(33, 341);
+            this.QuitGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.QuitGame.Name = "QuitGame";
-            this.QuitGame.Size = new System.Drawing.Size(507, 98);
+            this.QuitGame.Size = new System.Drawing.Size(400, 80);
             this.QuitGame.TabIndex = 3;
             this.QuitGame.Text = "Quit Game";
             this.QuitGame.UseVisualStyleBackColor = false;
@@ -122,9 +127,10 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BackButton.Location = new System.Drawing.Point(0, 146);
+            this.BackButton.Location = new System.Drawing.Point(0, 119);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(835, 96);
+            this.BackButton.Size = new System.Drawing.Size(626, 79);
             this.BackButton.TabIndex = 4;
             this.BackButton.Text = "Back to Main Menu";
             this.BackButton.UseVisualStyleBackColor = false;
@@ -133,20 +139,27 @@
             this.BackButton.MouseEnter += new System.EventHandler(this.BackButton_MouseEnter);
             this.BackButton.MouseLeave += new System.EventHandler(this.BackButton_MouseLeave);
             // 
+            // HeroBulletTimer
+            // 
+            this.HeroBulletTimer.Enabled = true;
+            this.HeroBulletTimer.Tick += new System.EventHandler(this.HeroBulletTimer_Tick);
+            // 
             // SpaceOdyssey
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
-            this.ClientSize = new System.Drawing.Size(835, 553);
+            this.ClientSize = new System.Drawing.Size(626, 449);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.QuitGame);
             this.Controls.Add(this.InstructionButton);
             this.Controls.Add(this.StartNewGame);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SpaceOdyssey";
             this.Text = "SpaceOdyssey";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SpaceOdyssey_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SpaceOdyssey_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,6 +173,7 @@
         private System.Windows.Forms.Button InstructionButton;
         private System.Windows.Forms.Button QuitGame;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Timer HeroBulletTimer;
     }
 }
 
