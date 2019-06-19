@@ -13,6 +13,9 @@ namespace VP_Project
 {
     public partial class SpaceOdyssey : Form
     {
+        //Vlad Hero
+        public Hero hero { get; set; }
+
         public Sounds sounds;
         public void buttonclicked()
         {
@@ -71,7 +74,7 @@ namespace VP_Project
             SoundPlayer player = new SoundPlayer();
 
 
-
+            hero = new Hero(new Point((int)this.Width/2 - 50, this.Height - 170));
             sounds = new Sounds();
         }
 
@@ -132,8 +135,23 @@ namespace VP_Project
             {
                 WindowState = FormWindowState.Normal;
                 FormBorderStyle = FormBorderStyle.FixedDialog;
-
             }
+            if(e.KeyCode == Keys.Left)
+            {
+                hero.Move(Keys.Left,this.Width);
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                hero.Move(Keys.Right, this.Width);
+            }
+
+            if(e.KeyCode == Keys.X)
+            {
+                HeroBullet bullet = new HeroBullet(new Point(hero.Location.X + hero.HeroShipImg.Width/2,hero.Location.Y));
+                hero.AddHeroBullet(bullet);
+            }
+
+            Invalidate(true);
         }
 
         private void QuitGame_Click(object sender, EventArgs e)
@@ -147,7 +165,11 @@ namespace VP_Project
             buttonclicked();
             sounds.playButtonClick();
             sounds.playMainMusic();
+            
+            //Vlad Hero Ship is displayed
+            hero.ShowHeroShip = true;
 
+            Invalidate(true);
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)
@@ -193,6 +215,26 @@ namespace VP_Project
             BackButton.Width -= 40;
             BackButton.Height -= 40;
             BackButton.FlatAppearance.BorderSize = 0;
+        }
+
+        //Vlad Paint Implementation for hero ship
+
+        private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
+        {
+            if (hero.ShowHeroShip)
+            {
+                hero.Draw(e.Graphics);
+            }
+        }
+
+        //Vlad Timer Tick for Hero Bullet
+        private void HeroBulletTimer_Tick(object sender, EventArgs e)
+        {
+            foreach(HeroBullet bullet in hero.bullets)
+            {
+                bullet.UpdatePosition();
+            }
+            Invalidate(true);
         }
     }
 }
