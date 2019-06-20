@@ -9,10 +9,10 @@ namespace VP_Project
 {
     public class Meteor
     {
-        private Bitmap Image { get; set; }
+        public Bitmap Image { get; set; }
         private int Speed { get; set; }
         private int Health { get; set; }
-        private Point Location { get; set; }
+        public Point Location { get; set; }
         private int Damage { get; set; }
 
         public Meteor(int width)

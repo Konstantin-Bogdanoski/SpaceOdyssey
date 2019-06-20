@@ -35,13 +35,11 @@
             this.QuitGame = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-
             this.ResumeButton = new System.Windows.Forms.Button();
             this.NewGame = new System.Windows.Forms.Button();
             this.QtMainMenu = new System.Windows.Forms.Button();
             this.LoadGame = new System.Windows.Forms.Button();
             this.SaveGame = new System.Windows.Forms.Button();
-          
             this.SuspendLayout();
             // 
             // label1
@@ -146,8 +144,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 16;
-
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ResumeButton
             // 
@@ -257,15 +254,13 @@
             this.SaveGame.Visible = false;
             this.SaveGame.MouseEnter += new System.EventHandler(this.SaveGame_MouseEnter);
             this.SaveGame.MouseLeave += new System.EventHandler(this.SaveGame_MouseLeave);
-
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-
             // 
             // SpaceOdyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1432, 719);
             this.Controls.Add(this.SaveGame);
             this.Controls.Add(this.LoadGame);

@@ -18,6 +18,7 @@ namespace VP_Project
         public bool NewGameFlag;
         private List<Enemy> enemies;
         private int counter = 0;
+        private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
 
         public void buttonclicked()
         {
@@ -85,8 +86,8 @@ namespace VP_Project
             label1.Left = this.Width/2;
 
             //setting background image
-            this.BackgroundImage = Properties.Resources.BackgroundPic;
-
+            Background.SetResolution(1200, Height);
+            this.BackgroundImage = Background;
             //Setting up the positioning of the New Game button
             StartNewGame.Left = (this.Width / 2) - (StartNewGame.Width/2);
             StartNewGame.Width = this.Width / 4;
@@ -130,6 +131,7 @@ namespace VP_Project
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
 
+            meteor = new Meteor(this.Width / 2);
             SoundPlayer player = new SoundPlayer();
             sounds = new Sounds();
         }
@@ -258,9 +260,12 @@ namespace VP_Project
 
         private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
         {
-            /*if(!(meteor is null))
-            meteor.Draw(e.Graphics);*/
-            
+            /*Pen redPen = new Pen(Color.Red, 1);
+            float x1 = meteor.Location.X, y1 = meteor.Location.Y;
+            float x2 = meteor.Location.X + meteor.Image.Width / 6, y2 = meteor.Location.Y;
+            e.Graphics.DrawLine(redPen, x1, y1, x2, y2);
+            meteor.Draw(e.Graphics);
+            redPen.Dispose();*/
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
