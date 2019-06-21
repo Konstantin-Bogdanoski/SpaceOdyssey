@@ -13,11 +13,9 @@ namespace VP_Project
 {
     public partial class SpaceOdyssey : Form
     {
-        public Sounds sounds;
-        public Meteor meteor;
+        private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
+
         public bool NewGameFlag;
-        private List<Enemy> enemies;
-        private int counter = 0;
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
 
         public void buttonclicked()
@@ -78,6 +76,9 @@ namespace VP_Project
             this.Width = SystemInformation.VirtualScreen.Width;
             this.Height = SystemInformation.VirtualScreen.Height;
 
+            Background.SetResolution(this.Width, this.Height);
+            this.BackgroundImage = Background;
+
             // make the form fullscreen
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
@@ -128,10 +129,10 @@ namespace VP_Project
             QtMainMenu.Width = this.Width / 4;
             QtMainMenu.Top = SaveGame.Top +(label1.Height);
 
+
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
 
-            meteor = new Meteor(this.Width / 2);
             SoundPlayer player = new SoundPlayer();
             sounds = new Sounds();
         }
@@ -204,6 +205,8 @@ namespace VP_Project
                 SaveGame.Visible = true;
                 SaveGame.Enabled = true;
             }
+
+            Invalidate(true);
         }
 
         private void QuitGame_Click(object sender, EventArgs e)
@@ -217,10 +220,7 @@ namespace VP_Project
             buttonclicked();
             sounds.playButtonClick();
             sounds.playMainMusic();
-            meteor = new Meteor(this.Width);
             NewGameFlag = true;
-
-            this.enemies = new List<Enemy>();
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)
@@ -260,19 +260,12 @@ namespace VP_Project
 
         private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
         {
-            /*Pen redPen = new Pen(Color.Red, 1);
-            float x1 = meteor.Location.X, y1 = meteor.Location.Y;
-            float x2 = meteor.Location.X + meteor.Image.Width / 6, y2 = meteor.Location.Y;
-            e.Graphics.DrawLine(redPen, x1, y1, x2, y2);
-            meteor.Draw(e.Graphics);
-            redPen.Dispose();*/
+
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            /*if (!(meteor is null))
-                meteor.Move(this.Height);
-            Invalidate(true); */
+
         }
 
         private void ResumeButton_MouseEnter(object sender, EventArgs e)
@@ -364,19 +357,7 @@ namespace VP_Project
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!(enemies is null))
-            {
-                foreach (Enemy en in enemies)
-                    en.Move(this.Width, this.Height);
-                counter++;
-                if (counter == 32)
-                {
-                    if (enemies.Count < 20)
-                        enemies.Add(new Enemy());
-                    counter = 0;
-                }
-                Invalidate(true);
-            }
+            
         }
     }
 }

@@ -169,7 +169,19 @@
   <data name="buttonclicksound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button-19.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Bullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bullet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HeroBullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroBullet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeroBullet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroBullet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeroShip1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroShip1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeroShip31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroShip31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeroShip41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroShip41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
