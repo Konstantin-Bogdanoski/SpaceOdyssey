@@ -46,12 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boss.cs" />
+    <Compile Include="Bullet.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meteor.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="HeroBullet.cs" />
     <Compile Include="Program.cs" />
@@ -99,18 +103,6 @@
     <None Include="Resources\HeroShip41.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EnemyShip1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyShip4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\HeroShip1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -121,9 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HeroShip4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\EnemyBoss.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Meteor1.png" />
@@ -147,6 +136,19 @@
     <None Include="Resources\button-19.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\EnemyBoss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnemyShip4.png" />
     <None Include="Resources\HeroBullet.png" />
   </ItemGroup>
   <ItemGroup>
