@@ -16,6 +16,8 @@ namespace VP_Project
         //Vlad Hero
         public Hero hero { get; set; }
 
+        private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
+
         public Sounds sounds;
         public void buttonclicked()
         {
@@ -40,6 +42,9 @@ namespace VP_Project
             // set width and height to resolution width and height
             this.Width = SystemInformation.VirtualScreen.Width;
             this.Height = SystemInformation.VirtualScreen.Height;
+
+            Background.SetResolution(this.Width, this.Height);
+            this.BackgroundImage = Background;
 
             // make the form fullscreen
             FormBorderStyle = FormBorderStyle.None;

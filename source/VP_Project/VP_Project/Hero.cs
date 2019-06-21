@@ -15,6 +15,8 @@ namespace VP_Project
         public bool ShowHeroShip { get; set; }
         public int Speed { get; set; }
         public List<HeroBullet> bullets { get; set; }
+        public int Health { get; set; }
+        public bool isHit { get; set; }
 
         public Hero(Point Location)
         {
@@ -23,6 +25,7 @@ namespace VP_Project
             this.ShowHeroShip = false;
             this.Speed = 10;
             this.bullets = new List<HeroBullet>();
+            this.Health = 100;
         }
 
         public void AddHeroBullet(HeroBullet bullet)

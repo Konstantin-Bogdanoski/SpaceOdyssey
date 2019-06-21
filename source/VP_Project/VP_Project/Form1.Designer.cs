@@ -63,7 +63,7 @@
             this.StartNewGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartNewGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.StartNewGame.Location = new System.Drawing.Point(33, 148);
-            this.StartNewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.StartNewGame.Name = "StartNewGame";
             this.StartNewGame.Size = new System.Drawing.Size(600, 79);
             this.StartNewGame.TabIndex = 1;
@@ -84,7 +84,7 @@
             this.InstructionButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InstructionButton.ForeColor = System.Drawing.Color.SeaGreen;
             this.InstructionButton.Location = new System.Drawing.Point(33, 241);
-            this.InstructionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InstructionButton.Margin = new System.Windows.Forms.Padding(2);
             this.InstructionButton.Name = "InstructionButton";
             this.InstructionButton.Size = new System.Drawing.Size(520, 81);
             this.InstructionButton.TabIndex = 2;
@@ -105,7 +105,7 @@
             this.QuitGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuitGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.QuitGame.Location = new System.Drawing.Point(33, 341);
-            this.QuitGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.QuitGame.Margin = new System.Windows.Forms.Padding(2);
             this.QuitGame.Name = "QuitGame";
             this.QuitGame.Size = new System.Drawing.Size(400, 80);
             this.QuitGame.TabIndex = 3;
@@ -128,7 +128,7 @@
             this.BackButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.ForeColor = System.Drawing.Color.SeaGreen;
             this.BackButton.Location = new System.Drawing.Point(0, 119);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(626, 79);
             this.BackButton.TabIndex = 4;
@@ -149,13 +149,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(626, 449);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.QuitGame);
             this.Controls.Add(this.InstructionButton);
             this.Controls.Add(this.StartNewGame);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SpaceOdyssey";
             this.Text = "SpaceOdyssey";
             this.Load += new System.EventHandler(this.Form1_Load);
