@@ -16,7 +16,7 @@ namespace VP_Project
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
         private Sounds sounds;
 
-        public bool NewGameFlag;
+        public bool PickedHeroFlag;
 
         public void buttonclicked()
         {
@@ -35,7 +35,6 @@ namespace VP_Project
             LoadGame.Visible = false;
             LoadGame.Enabled = false;
         }
-
         public void showMainMenu()
         {
             label1.Visible = true;
@@ -66,6 +65,27 @@ namespace VP_Project
 
             SaveGame.Visible = false;
             SaveGame.Enabled = false;
+        }
+        public void HidePickHeroUI()
+        {
+            PickedHeroFlag = true;
+            PickHero1.Visible = false;
+            PickHero1.Enabled = false;
+
+            PickHero2.Visible = false;
+            PickHero2.Enabled = false;
+
+            PickHero3.Visible = false;
+            PickHero3.Enabled = false;
+
+            PickHero4.Visible = false;
+            PickHero4.Enabled = false;
+
+            Heropicklabel.Visible = false;
+            Heropicklabel.Enabled = false;
+
+            BacktoMM.Visible = false;
+            BacktoMM.Enabled = false;
         }
         public SpaceOdyssey()
         {
@@ -133,6 +153,23 @@ namespace VP_Project
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
 
+            //pick hero1 button placement
+            PickHero1.Left = (this.Width / 3) - PickHero1.Width;
+            PickHero1.Top = this.Top + Heropicklabel.Height;
+
+            //pick hero2 button placement
+            PickHero2.Left = (this.Width) - PickHero1.Width*2;
+            PickHero2.Top = this.Top + Heropicklabel.Height;
+
+            //pick hero3 button placement
+            PickHero3.Left = (this.Width / 3) - PickHero1.Width;
+            PickHero3.Top = PickHero1.Height + (int)(Heropicklabel.Height*1.2);
+
+            //pick hero4 button placement
+            PickHero4.Left = (this.Width) - PickHero1.Width * 2;
+            PickHero4.Top = PickHero2.Height + (int)(Heropicklabel.Height * 1.2);
+
+
             SoundPlayer player = new SoundPlayer();
             sounds = new Sounds();
         }
@@ -190,7 +227,7 @@ namespace VP_Project
 
         private void SpaceOdyssey_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape && NewGameFlag)
+            if (e.KeyCode == Keys.Escape && PickedHeroFlag)
             {
                 timer1.Stop();
                 NewGame.Visible = true;
@@ -220,7 +257,24 @@ namespace VP_Project
             buttonclicked();
             sounds.playButtonClick();
             sounds.playMainMusic();
-            NewGameFlag = true;
+
+            Heropicklabel.Visible = true;
+            Heropicklabel.Enabled = true;
+            PickHero1.Visible = true;
+            PickHero1.Enabled = true;
+
+            PickHero2.Visible = true;
+            PickHero2.Enabled = true;
+
+            PickHero3.Visible = true;
+            PickHero3.Enabled = true;
+
+            PickHero4.Visible = true;
+            PickHero4.Enabled = true;
+
+            BacktoMM.Visible = true;
+            BacktoMM.Enabled = true;
+
         }
 
         private void InstructionButton_Click(object sender, EventArgs e)
@@ -262,12 +316,6 @@ namespace VP_Project
         {
 
         }
-
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
         private void ResumeButton_MouseEnter(object sender, EventArgs e)
         {
             ResumeButton.Width += 40;
@@ -358,6 +406,87 @@ namespace VP_Project
         private void timer1_Tick(object sender, EventArgs e)
         {
             
+        }
+
+        private void BacktoMM_MouseEnter(object sender, EventArgs e)
+        {
+            BacktoMM.FlatAppearance.BorderSize = 4;
+            BacktoMM.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
+
+        private void BacktoMM_MouseLeave(object sender, EventArgs e)
+        {
+            BacktoMM.FlatAppearance.BorderSize = 0;
+        }
+
+        private void PickHero1_MouseClick(object sender, MouseEventArgs e)
+        {
+            HidePickHeroUI();
+        }
+
+        private void PickHero1_MouseEnter(object sender, EventArgs e)
+        {
+            PickHero1.FlatAppearance.BorderSize = 4;
+            PickHero1.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
+
+        private void PickHero1_MouseLeave(object sender, EventArgs e)
+        {
+            PickHero1.FlatAppearance.BorderSize = 0;
+        }
+
+        private void PickHero2_MouseClick(object sender, MouseEventArgs e)
+        {
+            HidePickHeroUI();
+        }
+
+        private void PickHero2_MouseEnter(object sender, EventArgs e)
+        {
+            PickHero2.FlatAppearance.BorderSize = 4;
+            PickHero2.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
+
+        private void PickHero2_MouseLeave(object sender, EventArgs e)
+        {
+            PickHero2.FlatAppearance.BorderSize = 0;
+        }
+
+        private void PickHero3_MouseClick(object sender, MouseEventArgs e)
+        {
+            HidePickHeroUI();
+        }
+
+        private void PickHero3_MouseEnter(object sender, EventArgs e)
+        {
+            PickHero3.FlatAppearance.BorderSize = 4;
+            PickHero3.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
+
+        private void PickHero3_MouseLeave(object sender, EventArgs e)
+        {
+            PickHero3.FlatAppearance.BorderSize = 0;
+        }
+
+        private void PickHero4_MouseClick(object sender, MouseEventArgs e)
+        {
+            HidePickHeroUI();
+        }
+
+        private void PickHero4_MouseEnter(object sender, EventArgs e)
+        {
+            PickHero4.FlatAppearance.BorderSize = 4;
+            PickHero4.FlatAppearance.BorderColor = Color.SeaGreen;
+        }
+
+        private void PickHero4_MouseLeave(object sender, EventArgs e)
+        {
+            PickHero4.FlatAppearance.BorderSize = 0;
+        }
+
+        private void BacktoMM_MouseClick(object sender, MouseEventArgs e)
+        {
+            HidePickHeroUI();
+            showMainMenu();
         }
     }
 }

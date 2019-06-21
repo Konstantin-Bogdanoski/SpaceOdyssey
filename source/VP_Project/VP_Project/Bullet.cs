@@ -11,7 +11,7 @@ namespace VP_Project
         public bool ToBeRemoved { get; set; }
         public Bullet(Point Location)
         {
-            this.Image = VP_Project.Properties.Resources.Bullet;
+            this.Image = VP_Project.Properties.Resources.HeroBullet;
             Image.RotateFlip(RotateFlipType.Rotate90FlipNone); // Should be OK, need to check ROTATION
             this.Speed = 20;
             this.Location = Location;

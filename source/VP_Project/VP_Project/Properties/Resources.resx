@@ -133,18 +133,6 @@
   <data name="giphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HeroShip1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeroShip1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HeroShip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeroShip2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HeroShip3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeroShip3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HeroShip4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeroShip4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="EnemyBoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EnemyBoss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,10 +166,13 @@
   <data name="HeroShip1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeroShip1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HeroShip31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeroShip31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HeroShip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroShip2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HeroShip41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeroShip41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HeroShip3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroShip3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeroShip4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeroShip4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

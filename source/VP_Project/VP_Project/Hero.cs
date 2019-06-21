@@ -21,7 +21,6 @@ namespace VP_Project
         public Hero(Point Location)
         {
             this.Location = Location;
-            this.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
             this.ShowHeroShip = false;
             this.Speed = 10;
             this.bullets = new List<HeroBullet>();

@@ -19,7 +19,7 @@ namespace VP_Project.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -75,16 +75,6 @@ namespace VP_Project.Properties {
         public static System.Drawing.Bitmap BackgroundPic {
             get {
                 object obj = ResourceManager.GetObject("BackgroundPic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Bullet {
-            get {
-                object obj = ResourceManager.GetObject("Bullet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -181,16 +171,6 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap HeroShip1 {
-            get {
-                object obj = ResourceManager.GetObject("HeroShip1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap HeroShip1_1 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip1_1", resourceCulture);
@@ -221,29 +201,9 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap HeroShip31 {
-            get {
-                object obj = ResourceManager.GetObject("HeroShip31", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap HeroShip4 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap HeroShip41 {
-            get {
-                object obj = ResourceManager.GetObject("HeroShip41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
