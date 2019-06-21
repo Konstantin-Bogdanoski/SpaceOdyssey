@@ -14,9 +14,9 @@ namespace VP_Project
     public partial class SpaceOdyssey : Form
     {
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
+        private Sounds sounds;
 
         public bool NewGameFlag;
-        private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
 
         public void buttonclicked()
         {
