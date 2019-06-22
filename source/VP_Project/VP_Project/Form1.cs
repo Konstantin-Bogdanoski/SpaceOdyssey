@@ -17,6 +17,8 @@ namespace VP_Project
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
         private Sounds sounds;
 
+
+
         public bool PickedHeroFlag;
 
         public void buttonclicked()
@@ -94,8 +96,8 @@ namespace VP_Project
             DoubleBuffered = true;
             this.KeyPreview = true;
             // set width and height to resolution width and height
-            this.Width = SystemInformation.VirtualScreen.Width;
-            this.Height = SystemInformation.VirtualScreen.Height;
+            this.Width = SystemInformation.PrimaryMonitorSize.Width;
+            this.Height = SystemInformation.PrimaryMonitorSize.Height;
 
             Background.SetResolution(this.Width, this.Height);
             this.BackgroundImage = Background;
@@ -155,19 +157,19 @@ namespace VP_Project
             BackButton.Width = this.Width / 4;
 
             //pick hero1 button placement
-            PickHero1.Left = (this.Width / 3) - PickHero1.Width;
+            PickHero1.Left = (SystemInformation.VirtualScreen.Width / 3) - PickHero1.Width;
             PickHero1.Top = this.Top + Heropicklabel.Height;
 
             //pick hero2 button placement
-            PickHero2.Left = (this.Width) - PickHero1.Width*2;
+            PickHero2.Left = (SystemInformation.VirtualScreen.Width) - PickHero1.Width*2;
             PickHero2.Top = this.Top + Heropicklabel.Height;
 
             //pick hero3 button placement
-            PickHero3.Left = (this.Width / 3) - PickHero1.Width;
+            PickHero3.Left = (SystemInformation.VirtualScreen.Width / 3) - PickHero1.Width;
             PickHero3.Top = PickHero1.Height + (int)(Heropicklabel.Height*1.2);
 
             //pick hero4 button placement
-            PickHero4.Left = (this.Width) - PickHero1.Width * 2;
+            PickHero4.Left = (SystemInformation.VirtualScreen.Width) - PickHero1.Width * 2;
             PickHero4.Top = PickHero2.Height + (int)(Heropicklabel.Height * 1.2);
 
             Game = new Game(this.Width, this.Height);
