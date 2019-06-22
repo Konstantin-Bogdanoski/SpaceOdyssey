@@ -72,11 +72,11 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
-            g.DrawImage(this.HeroShipImg, this.Location);
             foreach(HeroBullet bullet in bullets)
             {
                 bullet.Draw(g);
             }
+            g.DrawImage(this.HeroShipImg, this.Location);
         }
     }
 }

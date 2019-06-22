@@ -94,6 +94,8 @@ namespace VP_Project
         {
             InitializeComponent();
             DoubleBuffered = true;
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
             this.KeyPreview = true;
             // set width and height to resolution width and height
             this.Width = SystemInformation.PrimaryMonitorSize.Width;
@@ -268,6 +270,7 @@ namespace VP_Project
 
             if (e.KeyCode == Keys.X)
             {
+                e.SuppressKeyPress = true;
                 HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
                 Game.Hero.AddHeroBullet(bullet);
             }
@@ -456,6 +459,7 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
             Game.Hero.ShowHeroShip = true;
+            HeroBulletTimer.Start();
         }
 
         private void PickHero1_MouseEnter(object sender, EventArgs e)
@@ -474,6 +478,7 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip2;
             Game.Hero.ShowHeroShip = true;
+            HeroBulletTimer.Start();
         }
 
         private void PickHero2_MouseEnter(object sender, EventArgs e)
@@ -492,6 +497,7 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip3;
             Game.Hero.ShowHeroShip = true;
+            HeroBulletTimer.Start();
         }
 
         private void PickHero3_MouseEnter(object sender, EventArgs e)
@@ -510,6 +516,7 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip4;
             Game.Hero.ShowHeroShip = true;
+            HeroBulletTimer.Start();
         }
 
         private void PickHero4_MouseEnter(object sender, EventArgs e)
@@ -540,5 +547,6 @@ namespace VP_Project
 
             Invalidate(true);
         }
+
     }
 }
