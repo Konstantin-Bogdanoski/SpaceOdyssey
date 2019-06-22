@@ -25,6 +25,7 @@ namespace VP_Project
             this.Speed = 10;
             this.bullets = new List<HeroBullet>();
             this.Health = 100;
+            this.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
         }
 
         public void AddHeroBullet(HeroBullet bullet)

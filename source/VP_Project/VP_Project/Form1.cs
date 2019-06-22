@@ -13,6 +13,7 @@ namespace VP_Project
 {
     public partial class SpaceOdyssey : Form
     {
+        public Game Game { get; set; }
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
         private Sounds sounds;
 
@@ -169,7 +170,7 @@ namespace VP_Project
             PickHero4.Left = (this.Width) - PickHero1.Width * 2;
             PickHero4.Top = PickHero2.Height + (int)(Heropicklabel.Height * 1.2);
 
-
+            Game = new Game(this.Width, this.Height);
             SoundPlayer player = new SoundPlayer();
             sounds = new Sounds();
         }
@@ -230,6 +231,9 @@ namespace VP_Project
             if (e.KeyCode == Keys.Escape && PickedHeroFlag)
             {
                 timer1.Stop();
+                HeroBulletTimer.Stop();
+                Game.Hero.ShowHeroShip = false;
+
                 NewGame.Visible = true;
                 NewGame.Enabled = true;
 
@@ -241,6 +245,22 @@ namespace VP_Project
 
                 SaveGame.Visible = true;
                 SaveGame.Enabled = true;
+
+            }
+
+            if (e.KeyCode == Keys.Left)
+            {
+                Game.Hero.Move(Keys.Left, this.Width);
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                Game.Hero.Move(Keys.Right, this.Width);
+            }
+
+            if (e.KeyCode == Keys.X)
+            {
+                HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
+                Game.Hero.AddHeroBullet(bullet);
             }
 
             Invalidate(true);
@@ -314,7 +334,7 @@ namespace VP_Project
 
         private void SpaceOdyssey_Paint(object sender, PaintEventArgs e)
         {
-
+            Game.Draw(e.Graphics);
         }
         private void ResumeButton_MouseEnter(object sender, EventArgs e)
         {
@@ -363,6 +383,8 @@ namespace VP_Project
 
         private void ResumeButton_Click(object sender, EventArgs e)
         {
+            Game.Hero.ShowHeroShip = true;
+            HeroBulletTimer.Start();
             timer1.Start();
             HidePauseMenu();
         }
@@ -422,6 +444,8 @@ namespace VP_Project
         private void PickHero1_MouseClick(object sender, MouseEventArgs e)
         {
             HidePickHeroUI();
+            Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
+            Game.Hero.ShowHeroShip = true;
         }
 
         private void PickHero1_MouseEnter(object sender, EventArgs e)
@@ -438,6 +462,8 @@ namespace VP_Project
         private void PickHero2_MouseClick(object sender, MouseEventArgs e)
         {
             HidePickHeroUI();
+            Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip2;
+            Game.Hero.ShowHeroShip = true;
         }
 
         private void PickHero2_MouseEnter(object sender, EventArgs e)
@@ -454,6 +480,8 @@ namespace VP_Project
         private void PickHero3_MouseClick(object sender, MouseEventArgs e)
         {
             HidePickHeroUI();
+            Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip3;
+            Game.Hero.ShowHeroShip = true;
         }
 
         private void PickHero3_MouseEnter(object sender, EventArgs e)
@@ -470,6 +498,8 @@ namespace VP_Project
         private void PickHero4_MouseClick(object sender, MouseEventArgs e)
         {
             HidePickHeroUI();
+            Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip4;
+            Game.Hero.ShowHeroShip = true;
         }
 
         private void PickHero4_MouseEnter(object sender, EventArgs e)
@@ -487,6 +517,18 @@ namespace VP_Project
         {
             HidePickHeroUI();
             showMainMenu();
+        }
+
+        private void HeroBulletTimer_Tick(object sender, EventArgs e)
+        {
+            foreach (HeroBullet bullet in Game.Hero.bullets)
+            {
+                bullet.UpdatePosition();
+            }
+
+            Game.Hero.CheckHeroBulletCollison();
+
+            Invalidate(true);
         }
     }
 }
