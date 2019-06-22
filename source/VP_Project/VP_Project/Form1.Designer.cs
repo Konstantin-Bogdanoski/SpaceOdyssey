@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpaceOdyssey));
             this.label1 = new System.Windows.Forms.Label();
             this.StartNewGame = new System.Windows.Forms.Button();
             this.InstructionButton = new System.Windows.Forms.Button();
@@ -274,8 +273,9 @@
             // 
             // PickHero1
             // 
-            this.PickHero1.AutoSize = true;
+            this.PickHero1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PickHero1.BackColor = System.Drawing.Color.Transparent;
+            this.PickHero1.BackgroundImage = global::VP_Project.Properties.Resources.HeroShip1_1;
             this.PickHero1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PickHero1.Enabled = false;
             this.PickHero1.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
@@ -283,7 +283,6 @@
             this.PickHero1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero1.Image = ((System.Drawing.Image)(resources.GetObject("PickHero1.Image")));
             this.PickHero1.Location = new System.Drawing.Point(12, 21);
             this.PickHero1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PickHero1.Name = "PickHero1";
@@ -297,8 +296,9 @@
             // 
             // PickHero2
             // 
-            this.PickHero2.AutoSize = true;
+            this.PickHero2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PickHero2.BackColor = System.Drawing.Color.Transparent;
+            this.PickHero2.BackgroundImage = global::VP_Project.Properties.Resources.HeroShip2;
             this.PickHero2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PickHero2.Enabled = false;
             this.PickHero2.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
@@ -306,7 +306,6 @@
             this.PickHero2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero2.Image = ((System.Drawing.Image)(resources.GetObject("PickHero2.Image")));
             this.PickHero2.Location = new System.Drawing.Point(273, 39);
             this.PickHero2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PickHero2.Name = "PickHero2";
@@ -320,8 +319,9 @@
             // 
             // PickHero3
             // 
-            this.PickHero3.AutoSize = true;
+            this.PickHero3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PickHero3.BackColor = System.Drawing.Color.Transparent;
+            this.PickHero3.BackgroundImage = global::VP_Project.Properties.Resources.HeroShip3;
             this.PickHero3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PickHero3.Enabled = false;
             this.PickHero3.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
@@ -329,7 +329,6 @@
             this.PickHero3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero3.Image = ((System.Drawing.Image)(resources.GetObject("PickHero3.Image")));
             this.PickHero3.Location = new System.Drawing.Point(15, 303);
             this.PickHero3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PickHero3.Name = "PickHero3";
@@ -343,8 +342,9 @@
             // 
             // PickHero4
             // 
-            this.PickHero4.AutoSize = true;
+            this.PickHero4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PickHero4.BackColor = System.Drawing.Color.Transparent;
+            this.PickHero4.BackgroundImage = global::VP_Project.Properties.Resources.HeroShip4;
             this.PickHero4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PickHero4.Enabled = false;
             this.PickHero4.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
@@ -352,7 +352,6 @@
             this.PickHero4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero4.Image = ((System.Drawing.Image)(resources.GetObject("PickHero4.Image")));
             this.PickHero4.Location = new System.Drawing.Point(283, 303);
             this.PickHero4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PickHero4.Name = "PickHero4";

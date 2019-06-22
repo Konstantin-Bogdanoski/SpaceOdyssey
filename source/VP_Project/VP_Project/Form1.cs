@@ -115,62 +115,69 @@ namespace VP_Project
             //Setting up the positioning of the New Game button
             StartNewGame.Left = (this.Width / 2) - (StartNewGame.Width/2);
             StartNewGame.Width = this.Width / 4;
-            StartNewGame.Top = this.Top + (int)(label1.Height * 1.3);
+            StartNewGame.Top = this.Top + this.Height/5;
 
 
             LoadGame.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             LoadGame.Width = this.Width / 4;
-            LoadGame.Top = StartNewGame.Top + (int)(label1.Height * 1.3);
+            LoadGame.Top = StartNewGame.Top + this.Height / 5;
 
             //setting up the positioning of the  Instructions button
             InstructionButton.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             InstructionButton.Width = this.Width / 4;
-            InstructionButton.Top = LoadGame.Top + (int)(label1.Height * 1.3);
+            InstructionButton.Top = LoadGame.Top + this.Height / 5;
 
             //setting up the positioning of the Quit Game button
             QuitGame.Left = (this.Width / 2) - (StartNewGame.Width / 2);
             QuitGame.Width = this.Width / 4;
-            QuitGame.Top = InstructionButton.Top + (int)(label1.Height * 1.3);
+            QuitGame.Top = InstructionButton.Top + this.Height / 5;
 
             // Pause Menu Resume Button
             ResumeButton.Left = (this.Width / 2) - ResumeButton.Width;
             ResumeButton.Width = this.Width / 4;
-            ResumeButton.Top = this.Top + (label1.Height);
+            ResumeButton.Top = this.Top + this.Height / 5;
 
             //pause menu new game button
             NewGame.Left = (this.Width / 2) - ResumeButton.Width;
             NewGame.Width = this.Width / 4;
-            NewGame.Top = ResumeButton.Top + (label1.Height);
+            NewGame.Top = ResumeButton.Top + this.Height / 5;
 
             //save menu game button position
             SaveGame.Left = (this.Width / 2) - ResumeButton.Width;
             SaveGame.Width = this.Width / 4;
-            SaveGame.Top = NewGame.Top + (label1.Height);
+            SaveGame.Top = NewGame.Top + this.Height / 5;
 
             //pause menu quit button
             QtMainMenu.Left = (this.Width / 2) - ResumeButton.Width;
             QtMainMenu.Width = this.Width / 4;
-            QtMainMenu.Top = SaveGame.Top +(label1.Height);
+            QtMainMenu.Top = SaveGame.Top + this.Height / 5;
 
 
             //setting up the positioning of the back game button
             BackButton.Width = this.Width / 4;
 
             //pick hero1 button placement
-            PickHero1.Left = (SystemInformation.VirtualScreen.Width / 3) - PickHero1.Width;
-            PickHero1.Top = this.Top + Heropicklabel.Height;
-
+            PickHero1.Left = (this.Width / 3) - PickHero1.Width;
+            PickHero1.Top = this.Height / 5;
+            PickHero1.Width = this.Height / 4;
+            PickHero1.Height = this.Height / 4;
             //pick hero2 button placement
-            PickHero2.Left = (SystemInformation.VirtualScreen.Width) - PickHero1.Width*2;
-            PickHero2.Top = this.Top + Heropicklabel.Height;
+            PickHero2.Left = (this.Width) - PickHero1.Width*2;
+            PickHero2.Top = this.Height / 5;
+            PickHero2.Width = this.Height / 4;
+            PickHero2.Height = this.Height / 4;
 
             //pick hero3 button placement
-            PickHero3.Left = (SystemInformation.VirtualScreen.Width / 3) - PickHero1.Width;
-            PickHero3.Top = PickHero1.Height + (int)(Heropicklabel.Height*1.2);
+            PickHero3.Left = (this.Width/3) - PickHero3.Width;
+            PickHero3.Top = PickHero2.Height + this.Height / 5 + PickHero3.Height / 2;
+            PickHero3.Width = this.Height / 4;
+            PickHero3.Height = this.Height / 4;
 
             //pick hero4 button placement
-            PickHero4.Left = (SystemInformation.VirtualScreen.Width) - PickHero1.Width * 2;
-            PickHero4.Top = PickHero2.Height + (int)(Heropicklabel.Height * 1.2);
+            PickHero4.Left = (this.Width) - PickHero1.Width * 2;
+            PickHero4.Top = PickHero2.Height + this.Height / 5 + PickHero4.Height/2;
+            PickHero4.Width = this.Height / 4;
+            PickHero4.Height = this.Height / 4;
 
             Game = new Game(this.Width, this.Height);
             SoundPlayer player = new SoundPlayer();
