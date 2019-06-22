@@ -277,6 +277,7 @@ namespace VP_Project
         private void StartNewGame_Click(object sender, EventArgs e) // STARTED NEW GAME
         {
             buttonclicked();
+            Game = new Game(this.Width, this.Height);
             sounds.playButtonClick();
             sounds.playMainMusic();
 
