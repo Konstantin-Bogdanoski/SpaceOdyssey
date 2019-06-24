@@ -75,7 +75,7 @@
             this.StartNewGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartNewGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.StartNewGame.Location = new System.Drawing.Point(33, 148);
-            this.StartNewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.StartNewGame.Name = "StartNewGame";
             this.StartNewGame.Size = new System.Drawing.Size(600, 79);
             this.StartNewGame.TabIndex = 1;
@@ -96,7 +96,7 @@
             this.InstructionButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InstructionButton.ForeColor = System.Drawing.Color.SeaGreen;
             this.InstructionButton.Location = new System.Drawing.Point(33, 241);
-            this.InstructionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InstructionButton.Margin = new System.Windows.Forms.Padding(2);
             this.InstructionButton.Name = "InstructionButton";
             this.InstructionButton.Size = new System.Drawing.Size(520, 81);
             this.InstructionButton.TabIndex = 2;
@@ -117,7 +117,7 @@
             this.QuitGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuitGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.QuitGame.Location = new System.Drawing.Point(33, 341);
-            this.QuitGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.QuitGame.Margin = new System.Windows.Forms.Padding(2);
             this.QuitGame.Name = "QuitGame";
             this.QuitGame.Size = new System.Drawing.Size(400, 80);
             this.QuitGame.TabIndex = 3;
@@ -140,7 +140,7 @@
             this.BackButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.ForeColor = System.Drawing.Color.SeaGreen;
             this.BackButton.Location = new System.Drawing.Point(0, 146);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(1028, 96);
             this.BackButton.TabIndex = 4;
@@ -279,7 +279,7 @@
             this.PickHero1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PickHero1.Location = new System.Drawing.Point(9, 17);
-            this.PickHero1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PickHero1.Margin = new System.Windows.Forms.Padding(2);
             this.PickHero1.Name = "PickHero1";
             this.PickHero1.Size = new System.Drawing.Size(263, 305);
             this.PickHero1.TabIndex = 10;
@@ -302,7 +302,7 @@
             this.PickHero2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PickHero2.Location = new System.Drawing.Point(205, 32);
-            this.PickHero2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PickHero2.Margin = new System.Windows.Forms.Padding(2);
             this.PickHero2.Name = "PickHero2";
             this.PickHero2.Size = new System.Drawing.Size(266, 286);
             this.PickHero2.TabIndex = 11;
@@ -325,7 +325,7 @@
             this.PickHero3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PickHero3.Location = new System.Drawing.Point(11, 246);
-            this.PickHero3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PickHero3.Margin = new System.Windows.Forms.Padding(2);
             this.PickHero3.Name = "PickHero3";
             this.PickHero3.Size = new System.Drawing.Size(264, 285);
             this.PickHero3.TabIndex = 12;
@@ -348,7 +348,7 @@
             this.PickHero4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PickHero4.Location = new System.Drawing.Point(212, 246);
-            this.PickHero4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PickHero4.Margin = new System.Windows.Forms.Padding(2);
             this.PickHero4.Name = "PickHero4";
             this.PickHero4.Size = new System.Drawing.Size(264, 285);
             this.PickHero4.TabIndex = 13;
@@ -387,7 +387,7 @@
             this.BacktoMM.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BacktoMM.ForeColor = System.Drawing.Color.SeaGreen;
             this.BacktoMM.Location = new System.Drawing.Point(0, 513);
-            this.BacktoMM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BacktoMM.Margin = new System.Windows.Forms.Padding(2);
             this.BacktoMM.Name = "BacktoMM";
             this.BacktoMM.Size = new System.Drawing.Size(1028, 96);
             this.BacktoMM.TabIndex = 15;
@@ -427,13 +427,14 @@
             this.Controls.Add(this.StartNewGame);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SpaceOdyssey";
             this.Text = "SpaceOdyssey";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.SpaceOdyssey_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SpaceOdyssey_KeyDown);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SpaceOdyssey_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

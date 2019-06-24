@@ -259,20 +259,21 @@ namespace VP_Project
 
             }
 
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A)
             {
                 Game.Hero.Move(Keys.Left, this.Width);
+                foreach (HeroBullet bullet in Game.Hero.bullets)
+                {
+                    bullet.UpdatePosition();
+                }
             }
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
             {
                 Game.Hero.Move(Keys.Right, this.Width);
-            }
-
-            if (e.KeyCode == Keys.X)
-            {
-                e.SuppressKeyPress = true;
-                HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
-                Game.Hero.AddHeroBullet(bullet);
+                foreach (HeroBullet bullet in Game.Hero.bullets)
+                {
+                    bullet.UpdatePosition();
+                }
             }
 
             Invalidate(true);
@@ -548,5 +549,15 @@ namespace VP_Project
             Invalidate(true);
         }
 
+        private void SpaceOdyssey_MouseClick(object sender, MouseEventArgs e)
+        {
+            HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
+            Game.Hero.AddHeroBullet(bullet);
+
+            foreach (HeroBullet bullet1 in Game.Hero.bullets)
+            {
+                bullet1.UpdatePosition();
+            }
+        }
     }
 }
