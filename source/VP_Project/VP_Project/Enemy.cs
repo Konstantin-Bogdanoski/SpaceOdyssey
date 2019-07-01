@@ -7,6 +7,7 @@ using System.Timers;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Enemy
     {
         public enum DIRECTION

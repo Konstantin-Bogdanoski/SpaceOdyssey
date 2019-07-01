@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Game
     {
         public List<Enemy> Enemies { get; set; }

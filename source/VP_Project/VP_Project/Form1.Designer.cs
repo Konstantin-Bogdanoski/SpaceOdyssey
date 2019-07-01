@@ -58,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(22, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1028, 146);
+            this.label1.Size = new System.Drawing.Size(1165, 146);
             this.label1.TabIndex = 0;
             this.label1.Text = "SpaceOdyssey";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,7 +74,7 @@
             this.StartNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartNewGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartNewGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.StartNewGame.Location = new System.Drawing.Point(33, 148);
+            this.StartNewGame.Location = new System.Drawing.Point(101, 148);
             this.StartNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.StartNewGame.Name = "StartNewGame";
             this.StartNewGame.Size = new System.Drawing.Size(600, 79);
@@ -142,7 +142,7 @@
             this.BackButton.Location = new System.Drawing.Point(0, 146);
             this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(1028, 96);
+            this.BackButton.Size = new System.Drawing.Size(1165, 96);
             this.BackButton.TabIndex = 4;
             this.BackButton.Text = "Back to Main Menu";
             this.BackButton.UseVisualStyleBackColor = false;
@@ -241,6 +241,7 @@
             this.LoadGame.TabIndex = 8;
             this.LoadGame.Text = "Load Game";
             this.LoadGame.UseVisualStyleBackColor = false;
+            this.LoadGame.Click += new System.EventHandler(this.LoadGame_Click);
             this.LoadGame.MouseEnter += new System.EventHandler(this.LoadGame_MouseEnter);
             this.LoadGame.MouseLeave += new System.EventHandler(this.LoadGame_MouseLeave);
             // 
@@ -263,6 +264,7 @@
             this.SaveGame.Text = "Save Game";
             this.SaveGame.UseVisualStyleBackColor = false;
             this.SaveGame.Visible = false;
+            this.SaveGame.Click += new System.EventHandler(this.SaveGame_Click);
             this.SaveGame.MouseEnter += new System.EventHandler(this.SaveGame_MouseEnter);
             this.SaveGame.MouseLeave += new System.EventHandler(this.SaveGame_MouseLeave);
             // 
@@ -368,7 +370,7 @@
             this.Heropicklabel.Location = new System.Drawing.Point(0, 242);
             this.Heropicklabel.Margin = new System.Windows.Forms.Padding(22, 0, 2, 0);
             this.Heropicklabel.Name = "Heropicklabel";
-            this.Heropicklabel.Size = new System.Drawing.Size(1028, 146);
+            this.Heropicklabel.Size = new System.Drawing.Size(1165, 146);
             this.Heropicklabel.TabIndex = 14;
             this.Heropicklabel.Text = "Pick your ship";
             this.Heropicklabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,7 +391,7 @@
             this.BacktoMM.Location = new System.Drawing.Point(0, 513);
             this.BacktoMM.Margin = new System.Windows.Forms.Padding(2);
             this.BacktoMM.Name = "BacktoMM";
-            this.BacktoMM.Size = new System.Drawing.Size(1028, 96);
+            this.BacktoMM.Size = new System.Drawing.Size(1165, 96);
             this.BacktoMM.TabIndex = 15;
             this.BacktoMM.Text = "Back to Main Menu";
             this.BacktoMM.UseVisualStyleBackColor = false;
@@ -409,7 +411,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1165, 609);
             this.Controls.Add(this.PickHero4);
             this.Controls.Add(this.PickHero3);
             this.Controls.Add(this.BacktoMM);

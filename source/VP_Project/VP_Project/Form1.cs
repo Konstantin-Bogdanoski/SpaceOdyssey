@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace VP_Project
 {
@@ -16,8 +18,7 @@ namespace VP_Project
         public Game Game { get; set; }
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
         private Sounds sounds;
-
-
+        public string FileName { get; set; }
 
         public bool PickedHeroFlag;
 
@@ -180,6 +181,9 @@ namespace VP_Project
             PickHero4.Top = PickHero2.Height + this.Height / 5 + PickHero4.Height/2;
             PickHero4.Width = this.Height / 4;
             PickHero4.Height = this.Height / 4;
+
+            //FileName property initializing
+            FileName = null;
 
             Game = new Game(this.Width, this.Height);
             SoundPlayer player = new SoundPlayer();
@@ -437,6 +441,46 @@ namespace VP_Project
             SaveGame.Width -= 40;
             SaveGame.Height -= 40;
             SaveGame.FlatAppearance.BorderSize = 0;
+        }
+
+        private void SaveGame_Click(object sender, EventArgs e)
+        {
+            if (FileName is null)
+            {
+                SaveFileDialog sv = new SaveFileDialog();
+                sv.Filter = "SpaceOdyssey(*.so)|*.so";
+                sv.Title = "Save a SpaceOdyssey Game";
+                if (sv.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = sv.FileName;
+                }
+            }
+            if (!(FileName is null))
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                FileStream stream = new FileStream(FileName, FileMode.Create, FileAccess.Write, FileShare.None);
+                binaryFormatter.Serialize(stream, Game);
+                stream.Close();
+            }
+            this.Text = FileName;
+            Invalidate(true);
+
+        }
+
+        private void LoadGame_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "SpaceOdyssey(*.so)|*.so";
+            ofd.Title = "Load a SpaceOdyssey Game";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                FileName = ofd.FileName;
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                FileStream stream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.None);
+                Game = (Game)binaryFormatter.Deserialize(stream);
+                stream.Close();
+            }
+            //this.Text = FileName;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

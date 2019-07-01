@@ -1,7 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Bullet
     {
         public Bitmap Image { get; set; }

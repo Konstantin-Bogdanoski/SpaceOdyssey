@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Sounds
     {
         private SoundPlayer MainMusic;

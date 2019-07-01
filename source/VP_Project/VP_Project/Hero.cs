@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Hero
     {
         public Point Location { get; set; }
