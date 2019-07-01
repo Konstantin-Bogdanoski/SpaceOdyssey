@@ -481,6 +481,11 @@ namespace VP_Project
                 stream.Close();
             }
             //this.Text = FileName;
+            PickedHeroFlag = true;
+            buttonclicked();
+            Game.Hero.ShowHeroShip = true;
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
