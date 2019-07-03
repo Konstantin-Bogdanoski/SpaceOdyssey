@@ -419,6 +419,7 @@
             // HeroBulletTimer
             // 
             this.HeroBulletTimer.Enabled = true;
+            this.HeroBulletTimer.Interval = 1;
             this.HeroBulletTimer.Tick += new System.EventHandler(this.HeroBulletTimer_Tick);
             // 
             // HeroHealth

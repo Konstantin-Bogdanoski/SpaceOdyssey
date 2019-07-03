@@ -324,14 +324,15 @@ namespace VP_Project
                     bullet.UpdatePosition();
                 }
             }
-            //for testing
-            if(e.KeyCode == Keys.S)
+            //Testing GameOver
+            /*if(e.KeyCode == Keys.S)
             {
                 Game.Hero.Health -= 25;
-                if(Game.Hero.Health>=0)
-                HeroHealth.Value = Game.Hero.Health;
-
-            }
+                if (Game.Hero.Health >= 0)
+                    HeroHealth.Value = Game.Hero.Health;
+                else
+                    GameOverTimer_Tick(sender, e);
+            }*/
 
             Invalidate(true);
         }

@@ -161,16 +161,6 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap HeroBullet {
-            get {
-                object obj = ResourceManager.GetObject("HeroBullet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap HeroBullet1 {
             get {
                 object obj = ResourceManager.GetObject("HeroBullet1", resourceCulture);
