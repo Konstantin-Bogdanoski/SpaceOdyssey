@@ -99,9 +99,13 @@ namespace VP_Project
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.KeyPreview = true;
+            MissionDebriefTB.Multiline = true;
             // set width and height to resolution width and height
             this.Width = SystemInformation.PrimaryMonitorSize.Width;
             this.Height = SystemInformation.PrimaryMonitorSize.Height;
+
+            GameOverLabel.Visible = false;
+            GameOverLabel.Enabled = false;
 
             enemyTimerCounter = 0;
 
@@ -185,8 +189,41 @@ namespace VP_Project
             PickHero4.Width = this.Height / 4;
             PickHero4.Height = this.Height / 4;
 
+            //End Game Labels
+            ShipStateLabel.Left = 1;
+            ShipStateLabel.Top = GameOverLabel.Height + ShipStateLabel.Height;
+            ShipStateTB.Left = ShipStateLabel.Width;
+            ShipStateTB.Top = GameOverLabel.Height + ShipStateLabel.Height;
+            ShipStateTB.Width = this.Width / 6;
+
+            PilotStateLabel.Left = 1;
+            PilotStateLabel.Top = ShipStateLabel.Top + PilotStateLabel.Height;
+            PilotStateTB.Left = PilotStateLabel.Width;
+            PilotStateTB.Top = ShipStateLabel.Top + PilotStateLabel.Height;
+            PilotStateTB.Width = this.Width / 6;
+
+            MissionDebriefLabel.Left = 1;
+            MissionDebriefLabel.Top = PilotStateLabel.Top + MissionDebriefLabel.Height;
+            MissionDebriefTB.Left =1;
+            MissionDebriefTB.Top = MissionDebriefLabel.Top + MissionDebriefLabel.Height;
+            MissionDebriefTB.Width = this.Width/2;
+            MissionDebriefTB.Height = this.Height / 2;
+            
+
+            MissionLabel.Left = 1;
+            MissionLabel.Top = MissionDebriefTB.Top + MissionDebriefTB.Height;
+            MissionTB.Left = MissionLabel.Width;
+            MissionTB.Top = MissionDebriefTB.Top +  MissionDebriefTB.Height;
+            MissionTB.Width = this.Width / 6;
+
+
             //FileName property initializing
             FileName = null;
+
+            //positioning hero health
+            HeroHealth.Width = this.Width / 6;
+            HeroHealth.Left = this.Width - HeroHealth.Width;
+            HeroHealth.Top = this.Height;
 
             Game = new Game(this.Width, this.Height);
             SoundPlayer player = new SoundPlayer();
@@ -195,7 +232,7 @@ namespace VP_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void StartNewGame_MouseEnter(object sender, EventArgs e)
@@ -264,6 +301,9 @@ namespace VP_Project
                 SaveGame.Visible = true;
                 SaveGame.Enabled = true;
 
+                HeroHealth.Visible = false;
+                HeroHealth.Enabled = false;
+
             }
 
             Game.MoveEnemies();
@@ -283,6 +323,14 @@ namespace VP_Project
                 {
                     bullet.UpdatePosition();
                 }
+            }
+            //for testing
+            if(e.KeyCode == Keys.S)
+            {
+                Game.Hero.Health -= 25;
+                if(Game.Hero.Health>=0)
+                HeroHealth.Value = Game.Hero.Health;
+
             }
 
             Invalidate(true);
@@ -410,12 +458,16 @@ namespace VP_Project
             HeroBulletTimer.Start();
             timer1.Start();
             HidePauseMenu();
+            HeroHealth.Visible = true;
+            HeroHealth.Enabled = true;
         }
 
         private void QtMainMenu_Click(object sender, EventArgs e)
         {
             HidePauseMenu();
             showMainMenu();
+            HeroHealth.Visible = false;
+            HeroHealth.Enabled = false;
             PickedHeroFlag = false;
         }
 
@@ -507,6 +559,17 @@ namespace VP_Project
                 Game.addEnemy();
             }
             Game.MoveEnemies();
+
+            if (Game.Hero.Health == 0)
+            {
+                Game.GameOver();
+                HeroHealth.Visible = false;
+                HeroHealth.Enabled = false;
+                GameOverTimer.Start();
+                GameOverLabel.Visible = true;
+                GameOverLabel.Enabled = true;
+
+            }
         }
 
         private void BacktoMM_MouseEnter(object sender, EventArgs e)
@@ -526,6 +589,9 @@ namespace VP_Project
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
             Game.Hero.ShowHeroShip = true;
             HeroBulletTimer.Start();
+            HeroHealth.Enabled=true;
+            HeroHealth.Visible=true;
+            HeroHealth.Value = Game.Hero.Health;
         }
 
         private void PickHero1_MouseEnter(object sender, EventArgs e)
@@ -623,6 +689,70 @@ namespace VP_Project
             {
                 bullet1.UpdatePosition();
             }
+        }
+
+        private void GameOverTimer_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            string Shipstate = "DESTROYED";
+            string Pilotstate = "KIA";
+            string Missiondebrief = "Due to the sheer number of enemies and unforseen space debries, the mission to intercept and deflect the incoming invasion has ended in failure" +
+                "\n Your valiant effort and sacrifice will not be forgotten";
+            string Missionend = "Failed";
+
+            ShipStateLabel.Visible = true;
+            ShipStateLabel.Enabled = true;
+
+            PilotStateLabel.Visible = true;
+            PilotStateLabel.Enabled = true;
+
+            MissionDebriefLabel.Visible = true;
+            MissionDebriefLabel.Enabled = true;
+
+            MissionLabel.Visible = true;
+            MissionLabel.Enabled = true;
+
+
+            ShipStateTB.Visible = true;
+            ShipStateTB.Enabled = true;
+
+            PilotStateTB.Visible = true;
+            PilotStateTB.Enabled = true;
+
+            MissionDebriefTB.Visible = true;
+            MissionDebriefTB.Enabled = true;
+
+            MissionTB.Visible = true;
+            MissionTB.Enabled = true;
+
+            for(int i = 0;i < Shipstate.Length; i++)
+            {
+                Invoke(new MethodInvoker(delegate { ShipStateTB.AppendText(Shipstate[i].ToString()); }));
+                System.Threading.Thread.Sleep(150);
+                if(i == Shipstate.Length-1)break;
+            }
+
+            for (int i = 0; i < Pilotstate.Length; i++)
+            {
+                Invoke(new MethodInvoker(delegate { PilotStateTB.AppendText(Pilotstate[i].ToString()); }));
+                System.Threading.Thread.Sleep(150);
+                if (i == Pilotstate.Length - 1) break;
+            }
+
+            for (int i = 0; i < Missiondebrief.Length; i++)
+            {
+                Invoke(new MethodInvoker(delegate { MissionDebriefTB.AppendText(Missiondebrief[i].ToString()); }));
+                System.Threading.Thread.Sleep(10);
+                if (i == Missiondebrief.Length - 1) break;
+            }
+
+            for (int i = 0; i < Missionend.Length; i++)
+            {
+                Invoke(new MethodInvoker(delegate { MissionTB.AppendText(Missionend[i].ToString()); }));
+                System.Threading.Thread.Sleep(150);
+                if (i == Missionend.Length - 1) GameOverTimer.Stop();
+            }
+            GameOverTimer.Stop();
         }
     }
 }

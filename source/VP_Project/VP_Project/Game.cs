@@ -18,6 +18,16 @@ namespace VP_Project
         public int Width { get; set; }
         public int Height { get; set; }
         private int Level { get; set; }
+        public void GameOver()
+        {
+            if (Hero.Health==0)
+            {
+                Hero.ShowHeroShip = false;
+                for (int i = 0; i < Enemies.Count; i++)
+                    if (Enemies.ElementAt(i).Health <= 0)
+                        Enemies.RemoveAt(i);
+            }
+        }
         public Game(int width, int height)
         {
             this.Hero = new Hero(new Point((int)width / 2 - 50, height - 100));

@@ -47,6 +47,17 @@
             this.Heropicklabel = new System.Windows.Forms.Label();
             this.BacktoMM = new System.Windows.Forms.Button();
             this.HeroBulletTimer = new System.Windows.Forms.Timer(this.components);
+            this.HeroHealth = new System.Windows.Forms.ProgressBar();
+            this.GameOverLabel = new System.Windows.Forms.Label();
+            this.GameOverTimer = new System.Windows.Forms.Timer(this.components);
+            this.ShipStateLabel = new System.Windows.Forms.Label();
+            this.PilotStateLabel = new System.Windows.Forms.Label();
+            this.MissionDebriefLabel = new System.Windows.Forms.Label();
+            this.MissionLabel = new System.Windows.Forms.Label();
+            this.ShipStateTB = new System.Windows.Forms.TextBox();
+            this.PilotStateTB = new System.Windows.Forms.TextBox();
+            this.MissionDebriefTB = new System.Windows.Forms.TextBox();
+            this.MissionTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -170,7 +181,7 @@
             this.ResumeButton.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResumeButton.ForeColor = System.Drawing.Color.SeaGreen;
             this.ResumeButton.Location = new System.Drawing.Point(1248, 329);
-            this.ResumeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ResumeButton.Margin = new System.Windows.Forms.Padding(4);
             this.ResumeButton.Name = "ResumeButton";
             this.ResumeButton.Size = new System.Drawing.Size(245, 70);
             this.ResumeButton.TabIndex = 5;
@@ -194,7 +205,7 @@
             this.NewGame.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.NewGame.Location = new System.Drawing.Point(1248, 437);
-            this.NewGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NewGame.Margin = new System.Windows.Forms.Padding(4);
             this.NewGame.Name = "NewGame";
             this.NewGame.Size = new System.Drawing.Size(315, 70);
             this.NewGame.TabIndex = 6;
@@ -217,7 +228,7 @@
             this.QtMainMenu.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtMainMenu.ForeColor = System.Drawing.Color.SeaGreen;
             this.QtMainMenu.Location = new System.Drawing.Point(1004, 682);
-            this.QtMainMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.QtMainMenu.Margin = new System.Windows.Forms.Padding(4);
             this.QtMainMenu.Name = "QtMainMenu";
             this.QtMainMenu.Size = new System.Drawing.Size(630, 70);
             this.QtMainMenu.TabIndex = 7;
@@ -239,7 +250,7 @@
             this.LoadGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.LoadGame.Location = new System.Drawing.Point(-121, 517);
-            this.LoadGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LoadGame.Margin = new System.Windows.Forms.Padding(4);
             this.LoadGame.Name = "LoadGame";
             this.LoadGame.Size = new System.Drawing.Size(883, 123);
             this.LoadGame.TabIndex = 8;
@@ -262,7 +273,7 @@
             this.SaveGame.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveGame.ForeColor = System.Drawing.Color.SeaGreen;
             this.SaveGame.Location = new System.Drawing.Point(1248, 570);
-            this.SaveGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveGame.Margin = new System.Windows.Forms.Padding(4);
             this.SaveGame.Name = "SaveGame";
             this.SaveGame.Size = new System.Drawing.Size(350, 70);
             this.SaveGame.TabIndex = 9;
@@ -410,6 +421,140 @@
             this.HeroBulletTimer.Enabled = true;
             this.HeroBulletTimer.Tick += new System.EventHandler(this.HeroBulletTimer_Tick);
             // 
+            // HeroHealth
+            // 
+            this.HeroHealth.BackColor = System.Drawing.Color.Black;
+            this.HeroHealth.Enabled = false;
+            this.HeroHealth.Location = new System.Drawing.Point(834, 468);
+            this.HeroHealth.Name = "HeroHealth";
+            this.HeroHealth.Size = new System.Drawing.Size(100, 23);
+            this.HeroHealth.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.HeroHealth.TabIndex = 16;
+            this.HeroHealth.Visible = false;
+            // 
+            // GameOverLabel
+            // 
+            this.GameOverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GameOverLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GameOverLabel.Font = new System.Drawing.Font("OCR A Extended", 85.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameOverLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.GameOverLabel.Location = new System.Drawing.Point(0, 478);
+            this.GameOverLabel.Margin = new System.Windows.Forms.Padding(29, 0, 3, 0);
+            this.GameOverLabel.Name = "GameOverLabel";
+            this.GameOverLabel.Size = new System.Drawing.Size(1553, 180);
+            this.GameOverLabel.TabIndex = 17;
+            this.GameOverLabel.Text = "Mission Status";
+            this.GameOverLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GameOverTimer
+            // 
+            this.GameOverTimer.Interval = 1000;
+            this.GameOverTimer.Tick += new System.EventHandler(this.GameOverTimer_Tick);
+            // 
+            // ShipStateLabel
+            // 
+            this.ShipStateLabel.AutoSize = true;
+            this.ShipStateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ShipStateLabel.Enabled = false;
+            this.ShipStateLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShipStateLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.ShipStateLabel.Location = new System.Drawing.Point(0, 0);
+            this.ShipStateLabel.Name = "ShipStateLabel";
+            this.ShipStateLabel.Size = new System.Drawing.Size(410, 60);
+            this.ShipStateLabel.TabIndex = 18;
+            this.ShipStateLabel.Text = "Ship State:";
+            this.ShipStateLabel.Visible = false;
+            // 
+            // PilotStateLabel
+            // 
+            this.PilotStateLabel.AutoSize = true;
+            this.PilotStateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PilotStateLabel.Enabled = false;
+            this.PilotStateLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PilotStateLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.PilotStateLabel.Location = new System.Drawing.Point(-10, 60);
+            this.PilotStateLabel.Name = "PilotStateLabel";
+            this.PilotStateLabel.Size = new System.Drawing.Size(445, 60);
+            this.PilotStateLabel.TabIndex = 19;
+            this.PilotStateLabel.Text = "Pilot State:";
+            this.PilotStateLabel.Visible = false;
+            // 
+            // MissionDebriefLabel
+            // 
+            this.MissionDebriefLabel.AutoSize = true;
+            this.MissionDebriefLabel.BackColor = System.Drawing.Color.Transparent;
+            this.MissionDebriefLabel.Enabled = false;
+            this.MissionDebriefLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MissionDebriefLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.MissionDebriefLabel.Location = new System.Drawing.Point(0, 120);
+            this.MissionDebriefLabel.Name = "MissionDebriefLabel";
+            this.MissionDebriefLabel.Size = new System.Drawing.Size(585, 60);
+            this.MissionDebriefLabel.TabIndex = 20;
+            this.MissionDebriefLabel.Text = "Mission Debrief:";
+            this.MissionDebriefLabel.Visible = false;
+            // 
+            // MissionLabel
+            // 
+            this.MissionLabel.AutoSize = true;
+            this.MissionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.MissionLabel.Enabled = false;
+            this.MissionLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MissionLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.MissionLabel.Location = new System.Drawing.Point(0, 180);
+            this.MissionLabel.Name = "MissionLabel";
+            this.MissionLabel.Size = new System.Drawing.Size(515, 60);
+            this.MissionLabel.TabIndex = 21;
+            this.MissionLabel.Text = "Mission State:";
+            this.MissionLabel.Visible = false;
+            // 
+            // ShipStateTB
+            // 
+            this.ShipStateTB.BackColor = System.Drawing.Color.White;
+            this.ShipStateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ShipStateTB.Enabled = false;
+            this.ShipStateTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
+            this.ShipStateTB.Location = new System.Drawing.Point(403, 12);
+            this.ShipStateTB.Name = "ShipStateTB";
+            this.ShipStateTB.Size = new System.Drawing.Size(100, 54);
+            this.ShipStateTB.TabIndex = 22;
+            this.ShipStateTB.Visible = false;
+            // 
+            // PilotStateTB
+            // 
+            this.PilotStateTB.BackColor = System.Drawing.Color.White;
+            this.PilotStateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PilotStateTB.Enabled = false;
+            this.PilotStateTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
+            this.PilotStateTB.Location = new System.Drawing.Point(519, 12);
+            this.PilotStateTB.Name = "PilotStateTB";
+            this.PilotStateTB.Size = new System.Drawing.Size(100, 54);
+            this.PilotStateTB.TabIndex = 23;
+            this.PilotStateTB.Visible = false;
+            // 
+            // MissionDebriefTB
+            // 
+            this.MissionDebriefTB.BackColor = System.Drawing.Color.White;
+            this.MissionDebriefTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MissionDebriefTB.Enabled = false;
+            this.MissionDebriefTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
+            this.MissionDebriefTB.Location = new System.Drawing.Point(637, 12);
+            this.MissionDebriefTB.Name = "MissionDebriefTB";
+            this.MissionDebriefTB.Size = new System.Drawing.Size(100, 54);
+            this.MissionDebriefTB.TabIndex = 24;
+            this.MissionDebriefTB.Visible = false;
+            // 
+            // MissionTB
+            // 
+            this.MissionTB.BackColor = System.Drawing.Color.White;
+            this.MissionTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MissionTB.Enabled = false;
+            this.MissionTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
+            this.MissionTB.Location = new System.Drawing.Point(753, 12);
+            this.MissionTB.Name = "MissionTB";
+            this.MissionTB.Size = new System.Drawing.Size(100, 54);
+            this.MissionTB.TabIndex = 25;
+            this.MissionTB.Visible = false;
+            // 
             // SpaceOdyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -417,6 +562,16 @@
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1553, 750);
+            this.Controls.Add(this.MissionTB);
+            this.Controls.Add(this.MissionDebriefTB);
+            this.Controls.Add(this.PilotStateTB);
+            this.Controls.Add(this.ShipStateTB);
+            this.Controls.Add(this.MissionLabel);
+            this.Controls.Add(this.MissionDebriefLabel);
+            this.Controls.Add(this.PilotStateLabel);
+            this.Controls.Add(this.ShipStateLabel);
+            this.Controls.Add(this.GameOverLabel);
+            this.Controls.Add(this.HeroHealth);
             this.Controls.Add(this.PickHero4);
             this.Controls.Add(this.PickHero3);
             this.Controls.Add(this.BacktoMM);
@@ -469,6 +624,17 @@
         private System.Windows.Forms.Label Heropicklabel;
         private System.Windows.Forms.Button BacktoMM;
         private System.Windows.Forms.Timer HeroBulletTimer;
+        private System.Windows.Forms.ProgressBar HeroHealth;
+        private System.Windows.Forms.Label GameOverLabel;
+        private System.Windows.Forms.Timer GameOverTimer;
+        private System.Windows.Forms.Label ShipStateLabel;
+        private System.Windows.Forms.Label PilotStateLabel;
+        private System.Windows.Forms.Label MissionDebriefLabel;
+        private System.Windows.Forms.Label MissionLabel;
+        private System.Windows.Forms.TextBox ShipStateTB;
+        private System.Windows.Forms.TextBox PilotStateTB;
+        private System.Windows.Forms.TextBox MissionDebriefTB;
+        private System.Windows.Forms.TextBox MissionTB;
     }
 }
 
