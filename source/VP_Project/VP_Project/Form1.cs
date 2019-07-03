@@ -333,7 +333,11 @@ namespace VP_Project
                 else
                     GameOverTimer_Tick(sender, e);
             }*/
+
+            Game.CheckBulletsImpact();
+            Game.CheckMeteorImpact();
             Game.MoveEnemies();
+            HeroHealth.Value = Game.Hero.Health;
             Invalidate(true);
         }
 
@@ -548,13 +552,8 @@ namespace VP_Project
         private void timer1_Tick(object sender, EventArgs e)
         {
             enemyTimerCounter++;
-            if(enemyTimerCounter % 50 == 0)
-            {
-                foreach (Enemy enemy in Game.Enemies)
-                    enemy.Shoot();
-            }
 
-            if(enemyTimerCounter == 100)
+            if(enemyTimerCounter == 50)
             {
                 enemyTimerCounter = 0;
                 Game.addEnemy();
@@ -571,6 +570,9 @@ namespace VP_Project
                 GameOverLabel.Enabled = true;
 
             }
+
+            Game.CheckBulletsImpact();
+            Game.CheckMeteorImpact();
         }
 
         private void BacktoMM_MouseEnter(object sender, EventArgs e)

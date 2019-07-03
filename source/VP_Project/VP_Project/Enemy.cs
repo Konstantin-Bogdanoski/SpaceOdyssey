@@ -21,6 +21,7 @@ namespace VP_Project
         public Point Location { get; set; }
         public List<Bullet> Bullets { get; set; }
         public DIRECTION Direction { get; set; }
+
         public int Width { get; set; }
         public int Height { get; set; }
         private static System.Timers.Timer aTimer;
@@ -33,12 +34,12 @@ namespace VP_Project
 
             this.Width = width;
             this.Height = height;
-            this.Direction = DIRECTION.RIGHT;
+            this.Direction = DIRECTION.DOWN;
             this.Health = 100;
             this.Speed = 25;
             this.Bullets = new List<Bullet>();
             Enemy.Random = new Random();
-            this.Location = new Point(10, Enemy.Random.Next(10, 500)); // TO BE CHANGED
+            this.Location = new Point(Enemy.Random.Next(10, 500), 10); // TO BE CHANGED
             int choice = Enemy.Random.Next(1, 4);
             if (choice == 1) // Randomize image selection
                 Image = VP_Project.Properties.Resources.EnemyShip1;
@@ -77,28 +78,28 @@ namespace VP_Project
                 if (temp.X <= 0)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else 
-                    temp.X-=1;
+                    temp.X-=3;
             }
             else if (Direction == DIRECTION.RIGHT)
             {
                 if (temp.X >= width - this.Image.Width)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else 
-                    temp.X+=1;
+                    temp.X+=3;
             }
             else if (Direction == DIRECTION.UP)
             {
                 if (temp.Y <= 0)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
-                    temp.Y-=1;
+                    temp.Y-=3;
             }
             else if (Direction == DIRECTION.DOWN)
             {
                 if (temp.Y >= height/2)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
-                    temp.Y+=1;
+                    temp.Y+=3;
             }
             else if (Direction == DIRECTION.UP_LEFT)
             {

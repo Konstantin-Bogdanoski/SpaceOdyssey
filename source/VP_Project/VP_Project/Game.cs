@@ -32,9 +32,10 @@ namespace VP_Project
         {
             this.Hero = new Hero(new Point((int)width / 2 - 50, height - 100));
             this.Height = height;
-            this.Width = Width;
+            this.Width = width;
             this.Level = 1;
             this.Enemies = new List<Enemy>();
+            this.Meteors = new List<Meteor>();
             this.Boss = new Boss();
         }
         public void Draw(Graphics g)
@@ -71,7 +72,10 @@ namespace VP_Project
                 foreach(HeroBullet bullet in Hero.bullets)
                 {
                     foreach(Enemy enemy in Enemies)
-                        if(bullet.Location.Y - 1 <= enemy.Location.Y)
+                        if((bullet.Location.Y - 10 <= enemy.Location.Y && 
+                            bullet.Location.Y + 10 >= enemy.Location.Y) &&
+                            (bullet.Location.X - 5 <= enemy.Location.X 
+                            && bullet.Location.X + 5 >= enemy.Location.X))
                         {
                             bullet.Hit = true;
                             enemy.Health -= 20;
@@ -101,7 +105,11 @@ namespace VP_Project
                 foreach (Enemy enemy in Enemies)
                 {
                     foreach (Bullet bullet in enemy.Bullets)
-                        if (bullet.Location.Y + 1 <= Hero.Location.Y)
+                        if ((bullet.Location.Y - 20 <= Hero.Location.Y && 
+                            bullet.Location.Y + 20 >= Hero.Location.Y)
+                            &&
+                            (bullet.Location.X - 10 <= Hero.Location.X
+                            && bullet.Location.X + 10 >= Hero.Location.X))
                         {
                             bullet.ToBeRemoved = true;
                             Hero.Health -= 20;
@@ -137,27 +145,41 @@ namespace VP_Project
                 //Boss to Hero
 
             }
+
+            for (int i = 0; i < Hero.bullets.Count; i++)
+                if (Hero.bullets.ElementAt(i).Hit)
+                    Hero.bullets.RemoveAt(i);
+
+            foreach (Enemy enemy in Enemies)
+                for (int i = 0; i < enemy.Bullets.Count; i++)
+                    if (enemy.Bullets.ElementAt(i).ToBeRemoved)
+                        enemy.Bullets.RemoveAt(i);
+
+
         }
         public void CheckMeteorImpact()
         {
-            foreach(Meteor meteor in Meteors)
+            if (!(Meteors is null))
             {
-                if (meteor.Location.Equals(Hero.Location))
-                    Hero.Health = 0;
-
-                foreach (Enemy enemy in Enemies)
+                foreach (Meteor meteor in Meteors)
                 {
-                    if (meteor.Location.Equals(enemy.Location))
-                        enemy.Health = 0;
+                    if (meteor.Location.Equals(Hero.Location))
+                        Hero.Health = 0;
+
+                    foreach (Enemy enemy in Enemies)
+                    {
+                        if (meteor.Location.Equals(enemy.Location))
+                            enemy.Health = 0;
+                    }
                 }
+
+                for (int i = 0; i < Enemies.Count; i++)
+                    if (Enemies.ElementAt(i).Health == 0)
+                        Enemies.RemoveAt(i);
+
+                //if(Hero.Health == 0)
+                //  GAME OVER
             }
-
-            for (int i = 0; i < Enemies.Count; i++)
-                if (Enemies.ElementAt(i).Health == 0)
-                    Enemies.RemoveAt(i);
-
-            //if(Hero.Health == 0)
-            //  GAME OVER
         }
 
         public void addEnemy()
