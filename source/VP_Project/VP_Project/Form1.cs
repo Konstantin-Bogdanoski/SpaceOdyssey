@@ -551,6 +551,7 @@ namespace VP_Project
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            HeroHealth.Value = Game.Hero.Health;
             enemyTimerCounter++;
 
             if(enemyTimerCounter == 50)

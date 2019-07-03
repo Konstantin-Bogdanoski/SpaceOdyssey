@@ -21,7 +21,6 @@ namespace VP_Project
         public Point Location { get; set; }
         public List<Bullet> Bullets { get; set; }
         public DIRECTION Direction { get; set; }
-
         public int Width { get; set; }
         public int Height { get; set; }
         private static System.Timers.Timer aTimer;

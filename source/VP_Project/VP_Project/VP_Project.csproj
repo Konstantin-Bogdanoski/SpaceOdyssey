@@ -164,5 +164,11 @@
   <ItemGroup>
     <None Include="Resources\bullet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shootingSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass-tap-02.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

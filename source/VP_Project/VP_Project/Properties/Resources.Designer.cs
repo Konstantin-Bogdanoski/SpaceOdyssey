@@ -247,5 +247,14 @@ namespace VP_Project.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream shootingSound {
+            get {
+                return ResourceManager.GetStream("shootingSound", resourceCulture);
+            }
+        }
     }
 }
