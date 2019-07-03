@@ -415,7 +415,8 @@ namespace VP_Project
         private void QtMainMenu_Click(object sender, EventArgs e)
         {
             HidePauseMenu();
-            showMainMenu();  
+            showMainMenu();
+            PickedHeroFlag = false;
         }
 
         private void LoadGame_MouseEnter(object sender, EventArgs e)
