@@ -82,9 +82,9 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Bullet {
+        public static System.Drawing.Bitmap bullet {
             get {
-                object obj = ResourceManager.GetObject("Bullet", resourceCulture);
+                object obj = ResourceManager.GetObject("bullet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

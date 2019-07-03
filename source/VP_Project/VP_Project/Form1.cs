@@ -19,6 +19,7 @@ namespace VP_Project
         private Bitmap Background = new Bitmap(Properties.Resources.BackgroundPic);
         private Sounds sounds;
         public string FileName { get; set; }
+        private int enemyTimerCounter;
 
         public bool PickedHeroFlag;
 
@@ -101,6 +102,8 @@ namespace VP_Project
             // set width and height to resolution width and height
             this.Width = SystemInformation.PrimaryMonitorSize.Width;
             this.Height = SystemInformation.PrimaryMonitorSize.Height;
+
+            enemyTimerCounter = 0;
 
             Background.SetResolution(this.Width, this.Height);
             this.BackgroundImage = Background;
@@ -262,6 +265,8 @@ namespace VP_Project
                 SaveGame.Enabled = true;
 
             }
+
+            Game.MoveEnemies();
 
             if (e.KeyCode == Keys.A)
             {
@@ -484,13 +489,23 @@ namespace VP_Project
             PickedHeroFlag = true;
             buttonclicked();
             Game.Hero.ShowHeroShip = true;
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            enemyTimerCounter++;
+            if(enemyTimerCounter % 50 == 0)
+            {
+                foreach (Enemy enemy in Game.Enemies)
+                    enemy.Shoot();
+            }
+
+            if(enemyTimerCounter == 100)
+            {
+                enemyTimerCounter = 0;
+                Game.addEnemy();
+            }
+            Game.MoveEnemies();
         }
 
         private void BacktoMM_MouseEnter(object sender, EventArgs e)

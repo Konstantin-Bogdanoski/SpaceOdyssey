@@ -12,9 +12,10 @@ namespace VP_Project
     {
         public Bitmap Image { get; set; }
         private int Speed { get; set; }
-        private int Health { get; set; }
+        public int Health { get; set; }
         public Point Location { get; set; }
         private int Damage { get; set; }
+        
 
         public Meteor(int width)
         {

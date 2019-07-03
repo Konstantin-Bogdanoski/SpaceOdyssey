@@ -13,8 +13,7 @@ namespace VP_Project
         public bool ToBeRemoved { get; set; }
         public Bullet(Point Location)
         {
-            this.Image = VP_Project.Properties.Resources.HeroBullet;
-            Image.RotateFlip(RotateFlipType.Rotate90FlipNone); // Should be OK, need to check ROTATION
+            this.Image = VP_Project.Properties.Resources.bullet;
             this.Speed = 20;
             this.Location = Location;
             this.Damage = 20;
@@ -29,7 +28,7 @@ namespace VP_Project
         public void Move()
         {
             Point temp = this.Location;
-            temp.Y += 1; // Update if needed; Check with timer
+            temp.Y += Speed; // Update if needed; Check with timer
             this.Location = temp;
         }
 
@@ -38,10 +37,6 @@ namespace VP_Project
         {
             if (this.Location.Y > height)
                 ToBeRemoved = true;
-            else // Hero Location
-            {
-
-            }
         }
     }
 }

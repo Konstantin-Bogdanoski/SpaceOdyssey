@@ -22,11 +22,15 @@ namespace VP_Project
         public List<Bullet> Bullets { get; set; }
         public DIRECTION Direction { get; set; }
         public int timerCount { get; set; }
-        public Enemy()
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public Enemy(int width, int height)
         {
+            this.Width = width;
+            this.Height = height;
             this.timerCount = 0;
             this.Direction = DIRECTION.RIGHT;
-            this.Health = 20;
+            this.Health = 100;
             this.Speed = 25;
             this.Bullets = new List<Bullet>();
             Enemy.Random = new Random();
@@ -56,35 +60,37 @@ namespace VP_Project
             this.Bullets.Add(new Bullet(this.Location));
         }
 
-        public void Move(int width, int height)
+        public void Move()
         {
+            int width = this.Width;
+            int height = this.Height;
             Point temp = Location;
             if (Direction == DIRECTION.LEFT) {
                 if (temp.X <= 0)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else 
-                    temp.X-=10;
+                    temp.X-=1;
             }
             else if (Direction == DIRECTION.RIGHT)
             {
                 if (temp.X >= width - this.Image.Width)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else 
-                    temp.X+=10;
+                    temp.X+=1;
             }
             else if (Direction == DIRECTION.UP)
             {
                 if (temp.Y <= 0)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
-                    temp.Y-=10;
+                    temp.Y-=1;
             }
             else if (Direction == DIRECTION.DOWN)
             {
                 if (temp.Y >= height/2)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
-                    temp.Y+=10;
+                    temp.Y+=1;
             }
             else if (Direction == DIRECTION.UP_LEFT)
             {
@@ -92,8 +98,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y -= 5;
-                    temp.X -= 5;
+                    temp.Y -= 2;
+                    temp.X -= 2;
                 }
             }
             else if (Direction == DIRECTION.DOWN_LEFT)
@@ -102,8 +108,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y += 5;
-                    temp.X -= 5;
+                    temp.Y += 2;
+                    temp.X -= 2;
                 }
             }
             else if (Direction == DIRECTION.UP_RIGHT)
@@ -112,8 +118,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y -= 5;
-                    temp.X += 5;
+                    temp.Y -= 2;
+                    temp.X += 2;
                 }
             }
             else if (Direction == DIRECTION.DOWN_RIGHT)
@@ -122,8 +128,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y += 5;
-                    temp.X += 5;
+                    temp.Y += 2;
+                    temp.X += 2;
                 }
             }
 
