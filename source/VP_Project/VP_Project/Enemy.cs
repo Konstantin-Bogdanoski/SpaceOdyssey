@@ -21,14 +21,18 @@ namespace VP_Project
         public Point Location { get; set; }
         public List<Bullet> Bullets { get; set; }
         public DIRECTION Direction { get; set; }
-        public int timerCount { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+        private static System.Timers.Timer aTimer;
         public Enemy(int width, int height)
         {
+            aTimer = new System.Timers.Timer(2000); 
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+
             this.Width = width;
             this.Height = height;
-            this.timerCount = 0;
             this.Direction = DIRECTION.RIGHT;
             this.Health = 100;
             this.Speed = 25;
@@ -55,6 +59,10 @@ namespace VP_Project
                 b.Draw(g);
         }
 
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            this.Shoot();
+        }
         public void Shoot()
         {
             this.Bullets.Add(new Bullet(this.Location));

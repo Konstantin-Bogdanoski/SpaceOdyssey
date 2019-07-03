@@ -283,6 +283,7 @@ namespace VP_Project
 
         private void SpaceOdyssey_KeyDown(object sender, KeyEventArgs e)
         {
+            e.SuppressKeyPress = true;
             if (e.KeyCode == Keys.Escape && PickedHeroFlag)
             {
                 timer1.Stop();
@@ -306,9 +307,7 @@ namespace VP_Project
 
             }
 
-            Game.MoveEnemies();
-
-            if (e.KeyCode == Keys.A)
+            else if (e.KeyCode == Keys.A)
             {
                 Game.Hero.Move(Keys.Left, this.Width);
                 foreach (HeroBullet bullet in Game.Hero.bullets)
@@ -316,7 +315,8 @@ namespace VP_Project
                     bullet.UpdatePosition();
                 }
             }
-            if (e.KeyCode == Keys.D)
+
+            else if (e.KeyCode == Keys.D)
             {
                 Game.Hero.Move(Keys.Right, this.Width);
                 foreach (HeroBullet bullet in Game.Hero.bullets)
@@ -333,7 +333,7 @@ namespace VP_Project
                 else
                     GameOverTimer_Tick(sender, e);
             }*/
-
+            Game.MoveEnemies();
             Invalidate(true);
         }
 
