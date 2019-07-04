@@ -22,7 +22,7 @@ namespace VP_Project
             Random random = new Random();
             int choice = random.Next(1, 4);
             int ypos = random.Next(0, width);
-            this.Location = new Point(ypos,10); // TO BE CHANGED
+            this.Location = new Point(ypos,0);
             this.Health = 40;
             this.Speed = 12;
             this.Damage = 100;
@@ -48,13 +48,16 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
+            //Pen p = new Pen(Color.Red);
+            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y, 50, 50);
+            //g.DrawRectangle(p, h);
             g.DrawImage(this.Image, this.Location);
         }
 
         
         public void checkCollision()
         {
-        //IMPLEMENT COLLISION DETECTION
+            //IMPLEMENTED IN Game.cs
         }
     }
 }

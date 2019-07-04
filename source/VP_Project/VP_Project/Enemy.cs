@@ -54,6 +54,9 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
+            //Pen p = new Pen(Color.Red);
+            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y, 37, 35);
+            //g.DrawRectangle(p, h);
             g.DrawImage(this.Image, this.Location);
             foreach (Bullet b in Bullets)
                 b.Draw(g);

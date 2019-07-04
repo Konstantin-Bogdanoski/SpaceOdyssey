@@ -324,20 +324,17 @@ namespace VP_Project
                     bullet.UpdatePosition();
                 }
             }
-            //Testing GameOver
-            /*if(e.KeyCode == Keys.S)
-            {
-                Game.Hero.Health -= 25;
-                if (Game.Hero.Health >= 0)
-                    HeroHealth.Value = Game.Hero.Health;
-                else
-                    GameOverTimer_Tick(sender, e);
-            }*/
 
             Game.CheckBulletsImpact();
             Game.CheckMeteorImpact();
             Game.MoveEnemies();
-            HeroHealth.Value = Game.Hero.Health;
+            Game.MoveMeteors();
+
+            if (Game.Hero.Health >= 0)
+                HeroHealth.Value = Game.Hero.Health;
+            else
+                GameOverTimer_Tick(sender, e);
+
             Invalidate(true);
         }
 
@@ -551,15 +548,30 @@ namespace VP_Project
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            HeroHealth.Value = Game.Hero.Health;
+            if(Game.Hero.Health >= 0)
+                HeroHealth.Value = Game.Hero.Health;
             enemyTimerCounter++;
 
-            if(enemyTimerCounter == 50)
+            if (Game.Level == 2)
+                Game.TimeCounter--;
+
+            if (Game.TimeCounter == 0)
+                Game.TimeCounter = 5;
+            if (enemyTimerCounter % 2 == 0 && Game.Level == 2 && Game.Enemies.Count == 0)
+            {
+                Game.TimeCounter--;
+                enemyTimerCounter = 0;
+                Game.addMeteor();
+            }
+
+            if(enemyTimerCounter == 50 && Game.Level == 1)
             {
                 enemyTimerCounter = 0;
                 Game.addEnemy();
+                Game.addMeteor();
             }
             Game.MoveEnemies();
+            Game.MoveMeteors();
 
             if (Game.Hero.Health == 0)
             {

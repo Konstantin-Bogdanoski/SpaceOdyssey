@@ -73,7 +73,10 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
-            foreach(HeroBullet bullet in bullets)
+            //Pen b = new Pen(Color.Red);
+            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y+30, 80, 80);
+            //g.DrawRectangle(b, h);
+            foreach (HeroBullet bullet in bullets)
             {
                 bullet.Draw(g);
             }
