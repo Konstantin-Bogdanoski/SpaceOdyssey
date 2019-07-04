@@ -22,7 +22,7 @@ namespace VP_Project
             Random random = new Random();
             int choice = random.Next(1, 4);
             int ypos = random.Next(0, width);
-            this.Location = new Point(ypos,0);
+            this.Location = new Point(ypos, -50);
             this.Health = 40;
             this.Speed = 12;
             this.Damage = 100;

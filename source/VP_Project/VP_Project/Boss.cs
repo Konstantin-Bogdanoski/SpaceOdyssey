@@ -11,7 +11,7 @@ namespace VP_Project
     [Serializable]
     public class Boss
     {
-        public enum DIRECTION { LEFT, RIGHT };
+        public enum DIRECTION { LEFT, RIGHT, DOWN };
         public Point Location { get; set; }
         public int Speed { get; set; }
         public int Health { get; set; }
@@ -21,16 +21,16 @@ namespace VP_Project
         private static System.Timers.Timer aTimer;
         public Boss(int width)
         {
-            aTimer = new System.Timers.Timer(1000);
+            aTimer = new System.Timers.Timer(1500);
             aTimer.Elapsed += OnTimedEvent;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
 
-            this.Location = new Point(width/2, 50);
+            this.Location = new Point(width/2-50, -150);
             this.Speed = 35;
             this.Health = 150;
             this.Bullets = new List<Bullet>();
-            this.Direction = DIRECTION.LEFT;
+            this.Direction = DIRECTION.DOWN;
             this.Image = VP_Project.Properties.Resources.EnemyBoss;
             Image.RotateFlip(RotateFlipType.Rotate180FlipNone);
         }
@@ -42,8 +42,17 @@ namespace VP_Project
 
         public void Move(int width)
         {
+            foreach (Bullet bullet in Bullets)
+                bullet.Move();
             Point temp = Location;
-            if (Direction == DIRECTION.LEFT)
+            if(Direction == DIRECTION.DOWN)
+            {
+                if (temp.Y >= 10)
+                    Direction = DIRECTION.RIGHT;
+                else
+                    temp.Y++;
+            }
+            else if (Direction == DIRECTION.LEFT)
             {
                 if (temp.X <= 0)
                     Direction = DIRECTION.RIGHT;
@@ -61,16 +70,21 @@ namespace VP_Project
         }
         public void Draw(Graphics g)
         {
-            Pen p = new Pen(Color.Red);
-            Rectangle h = new Rectangle(this.Location.X, this.Location.Y, 50, 50);
-            g.DrawRectangle(p, h);
+            //CHECKING HITBOX
+            //Pen p = new Pen(Color.Red);
+            //Rectangle h1 = new Rectangle(this.Location.X, this.Location.Y+20, 150, 50);
+            //Rectangle h2 = new Rectangle(this.Location.X+55, this.Location.Y, 50, 150);
+            //g.DrawRectangle(p, h1);
+            //g.DrawRectangle(p, h2);
+            for (int i = 0; i < Bullets.Count; i++)
+                Bullets.ElementAt(i).Draw(g);
             g.DrawImage(Image, Location);
         }
         public void Shoot()
         {
-            this.Bullets.Add(new Bullet(Location));
-            this.Bullets.Add(new Bullet(new Point(Location.X - 20, Location.Y)));
-            this.Bullets.Add(new Bullet(new Point(Location.X + 20, Location.Y)));
+            this.Bullets.Add(new Bullet(new Point(Location.X, Location.Y + 10)));
+            this.Bullets.Add(new Bullet(new Point(Location.X + 57, Location.Y+70)));
+            this.Bullets.Add(new Bullet(new Point(Location.X + 120, Location.Y+10)));
         }
     }
 }

@@ -38,7 +38,7 @@ namespace VP_Project
             this.Speed = 25;
             this.Bullets = new List<Bullet>();
             Enemy.Random = new Random();
-            this.Location = new Point(Enemy.Random.Next(10, 500), 10); // TO BE CHANGED
+            this.Location = new Point(Enemy.Random.Next(10, this.Width), -50); // TO BE CHANGED
             int choice = Enemy.Random.Next(1, 4);
             if (choice == 1) // Randomize image selection
                 Image = VP_Project.Properties.Resources.EnemyShip1;

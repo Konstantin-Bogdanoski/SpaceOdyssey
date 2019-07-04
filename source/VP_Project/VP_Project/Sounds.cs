@@ -32,6 +32,11 @@ namespace VP_Project
         {
             shootingSound.Play();
         }
+
+        public void stopShootingSound()
+        {
+            shootingSound.Stop();
+        }
     }
     
 }

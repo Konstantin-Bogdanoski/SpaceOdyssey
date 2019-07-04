@@ -335,6 +335,7 @@ namespace VP_Project
             Game.CheckMeteorImpact();
             Game.MoveEnemies();
             Game.MoveMeteors();
+            Game.MoveBoss();
 
             if (Game.Hero.Health >= 0)
                 HeroHealth.Value = Game.Hero.Health;
@@ -565,16 +566,15 @@ namespace VP_Project
             if (Game.Level == 2)
                 Game.TimeCounter--;
 
-            if (Game.TimeCounter == 0)
-                Game.TimeCounter = 5;
             if (enemyTimerCounter % 2 == 0 && Game.Level == 2 && Game.Enemies.Count == 0)
             {
                 Game.TimeCounter--;
                 enemyTimerCounter = 0;
                 Game.addMeteor();
+                Game.NextLevel();
             }
 
-            if(enemyTimerCounter == 50 && Game.Level == 1)
+            if(enemyTimerCounter == 20 && Game.Level == 1)
             {
                 enemyTimerCounter = 0;
                 Game.addEnemy();
@@ -582,6 +582,7 @@ namespace VP_Project
             }
             Game.MoveEnemies();
             Game.MoveMeteors();
+            Game.MoveBoss();
 
             if (Game.Hero.Health == 0)
             {

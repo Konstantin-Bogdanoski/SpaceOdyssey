@@ -36,7 +36,7 @@ namespace VP_Project
             this.Height = height;
             this.Width = width;
             this.Level = 1;
-            this.TimeCounter = 1000;
+            this.TimeCounter = 300;
             this.Enemies = new List<Enemy>();
             this.Meteors = new List<Meteor>();
             this.Boss = new Boss(this.Width);
@@ -51,6 +51,8 @@ namespace VP_Project
                     enemy.Draw(g);
                 foreach (Meteor meteor in Meteors)
                     meteor.Draw(g);
+                if (Level == 3 && Meteors.Count<=0)
+                    Boss.Draw(g);
             }
 
         }
@@ -67,7 +69,7 @@ namespace VP_Project
         }
         public void MoveBoss()
         {
-            if(!(Boss is null)) // Move only on the 3rd level (Boss level)
+            if(Level == 3) // Move only on the 3rd level (Boss level)
                 Boss.Move(this.Width);
         }
 
@@ -214,23 +216,73 @@ namespace VP_Project
             }
             else if(Level == 3)
             {
-                //Hero to Boss
+                Rectangle b1 = new Rectangle(Boss.Location.X, Boss.Location.Y+20, 150, 50);
+                Rectangle b2 = new Rectangle(Boss.Location.X+55, Boss.Location.Y, 50, 150);
+                Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
 
+                //Hero to Boss
+                foreach(HeroBullet bullet in Hero.bullets)
+                {
+                    Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                    if (b.IntersectsWith(b1) || b.IntersectsWith(b2))
+                    {
+                        Boss.Health -= 5;
+                        bullet.Hit = true;
+                    }
+                }
 
                 //Boss to Hero
+                foreach(Bullet bullet in Boss.Bullets)
+                {
+                    Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.Image.Width, bullet.Image.Height);
+                    if (b.IntersectsWith(h))
+                    {
+                        Hero.Health -= 35;
+                        bullet.ToBeRemoved = true;
+                    }
+                }
 
+                foreach (HeroBullet bullet in Hero.bullets)
+                {
+                    foreach (Meteor meteor in Meteors)
+                    {
+                        Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                        Rectangle m = new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
+                        Rectangle h1 = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                        if (b.IntersectsWith(m))
+                        {
+                            bullet.Hit = true;
+                            meteor.Health -= 40;
+                        }
+                        if (h.IntersectsWith(m))
+                        {
+                            Hero.Health = 0;
+                        }
+                    }
+                }
+
+                    for (int i = 0; i < Meteors.Count; i++)
+                        if (Meteors.ElementAt(i).Health <= 0)
+                            Meteors.RemoveAt(i);
+                    if (Boss.Health <= 0)
+                {
+                    //GAME OVER - WIN
+                }
             }
 
             for (int i = 0; i < Hero.bullets.Count; i++)
                 if (Hero.bullets.ElementAt(i).Hit)
                     Hero.bullets.RemoveAt(i);
 
+            for (int i = 0; i < Boss.Bullets.Count; i++)
+                if (Boss.Bullets.ElementAt(i).ToBeRemoved)
+                    Boss.Bullets.RemoveAt(i);
+
             foreach (Enemy enemy in Enemies)
                 for (int i = 0; i < enemy.Bullets.Count; i++)
                     if (enemy.Bullets.ElementAt(i).ToBeRemoved)
                         enemy.Bullets.RemoveAt(i);
-
-
+            
         }
         public void CheckMeteorImpact()
         {
@@ -271,7 +323,7 @@ namespace VP_Project
         public void addEnemy()
         {
             addMeteor();
-            if (NumOfEnemies < 10)
+            if (NumOfEnemies < 20)
             {
                 Enemies.Add(new Enemy(this.Width, this.Height));
                 NumOfEnemies++;
@@ -280,13 +332,10 @@ namespace VP_Project
         }
         public void NextLevel()
         {
-            if (Enemies.Count == 0 && NumOfEnemies == 10)
+            if (Enemies.Count == 0 && NumOfEnemies == 20 && Level == 1)
                 Level++;
-            if (TimeCounter == 0 && Level == 2)
-            {
+            else if (TimeCounter <= 0 && Level == 2)
                 Level++;
-                Boss = new Boss(this.Width);
-            }
         }
     }
 }

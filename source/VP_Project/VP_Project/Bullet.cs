@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
+using System.Threading;
 
 namespace VP_Project
 {
@@ -11,7 +13,6 @@ namespace VP_Project
         public int Speed { get; set; }
         public Point Location { get; set; }
         public bool ToBeRemoved { get; set; }
-        public Sounds shooting { get; set; }
         public Bullet(Point Location)
         {
             this.Image = VP_Project.Properties.Resources.bullet;
@@ -19,8 +20,6 @@ namespace VP_Project
             this.Location = Location;
             this.Damage = 20;
             this.ToBeRemoved = false;
-            shooting = new Sounds();
-            shooting.playShootingSound();
         }
 
         public void Draw(Graphics g)
