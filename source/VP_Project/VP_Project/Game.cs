@@ -22,12 +22,19 @@ namespace VP_Project
         private int NumOfEnemies { get; set; }
         public void GameOver()
         {
-            if (Hero.Health==0)
+            if (Hero.Health==0 || Boss.Health==0)
             {
                 Hero.ShowHeroShip = false;
+                
                 for (int i = 0; i < Enemies.Count; i++)
+                {
                     if (Enemies.ElementAt(i).Health <= 0)
                         Enemies.RemoveAt(i);
+
+                    if (Meteors.ElementAt(i).Health <= 0)
+                        Meteors.RemoveAt(i);
+                }
+         
             }
         }
         public Game(int width, int height)
@@ -51,7 +58,7 @@ namespace VP_Project
                     enemy.Draw(g);
                 foreach (Meteor meteor in Meteors)
                     meteor.Draw(g);
-                if (Level == 3 && Meteors.Count<=0)
+                if (Level == 3 && Meteors.Count <= 0)
                     Boss.Draw(g);
             }
 

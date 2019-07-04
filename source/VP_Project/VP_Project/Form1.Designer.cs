@@ -60,6 +60,10 @@
             this.MissionTB = new System.Windows.Forms.TextBox();
             this.EndGameNewGameButton = new System.Windows.Forms.Button();
             this.EndGameQuitGameButton = new System.Windows.Forms.Button();
+            this.BossHealth = new System.Windows.Forms.ProgressBar();
+            this.MovementLabel = new System.Windows.Forms.Label();
+            this.DodgingLabel = new System.Windows.Forms.Label();
+            this.Shootlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +72,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("OCR A Extended", 85.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(0, 298);
             this.label1.Margin = new System.Windows.Forms.Padding(29, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1553, 180);
@@ -214,6 +218,7 @@
             this.NewGame.Text = "New Game";
             this.NewGame.UseVisualStyleBackColor = false;
             this.NewGame.Visible = false;
+            this.NewGame.Click += new System.EventHandler(this.NewGame_Click);
             this.NewGame.MouseEnter += new System.EventHandler(this.NewGame_MouseEnter);
             this.NewGame.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
             // 
@@ -385,7 +390,7 @@
             this.Heropicklabel.Enabled = false;
             this.Heropicklabel.Font = new System.Drawing.Font("OCR A Extended", 50F, System.Drawing.FontStyle.Italic);
             this.Heropicklabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.Heropicklabel.Location = new System.Drawing.Point(0, 298);
+            this.Heropicklabel.Location = new System.Drawing.Point(0, 0);
             this.Heropicklabel.Margin = new System.Windows.Forms.Padding(29, 0, 3, 0);
             this.Heropicklabel.Name = "Heropicklabel";
             this.Heropicklabel.Size = new System.Drawing.Size(1553, 180);
@@ -592,6 +597,63 @@
             this.EndGameQuitGameButton.Visible = false;
             this.EndGameQuitGameButton.Click += new System.EventHandler(this.EndGameQuitGameButton_Click);
             // 
+            // BossHealth
+            // 
+            this.BossHealth.BackColor = System.Drawing.Color.Black;
+            this.BossHealth.Enabled = false;
+            this.BossHealth.Location = new System.Drawing.Point(1355, 60);
+            this.BossHealth.Maximum = 150;
+            this.BossHealth.Name = "BossHealth";
+            this.BossHealth.Size = new System.Drawing.Size(100, 23);
+            this.BossHealth.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.BossHealth.TabIndex = 28;
+            this.BossHealth.Visible = false;
+            // 
+            // MovementLabel
+            // 
+            this.MovementLabel.AutoSize = true;
+            this.MovementLabel.BackColor = System.Drawing.Color.Transparent;
+            this.MovementLabel.Enabled = false;
+            this.MovementLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MovementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.8F);
+            this.MovementLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.MovementLabel.Location = new System.Drawing.Point(13, 265);
+            this.MovementLabel.Name = "MovementLabel";
+            this.MovementLabel.Size = new System.Drawing.Size(1004, 69);
+            this.MovementLabel.TabIndex = 29;
+            this.MovementLabel.Text = "Move Left  with A, Move Right with D";
+            this.MovementLabel.Visible = false;
+            // 
+            // DodgingLabel
+            // 
+            this.DodgingLabel.AutoSize = true;
+            this.DodgingLabel.BackColor = System.Drawing.Color.Transparent;
+            this.DodgingLabel.Enabled = false;
+            this.DodgingLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DodgingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DodgingLabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.DodgingLabel.Location = new System.Drawing.Point(13, 427);
+            this.DodgingLabel.Name = "DodgingLabel";
+            this.DodgingLabel.Size = new System.Drawing.Size(904, 138);
+            this.DodgingLabel.TabIndex = 30;
+            this.DodgingLabel.Text = "Meteors instantly destroy you !! \r\nBullets damage your plane !!";
+            this.DodgingLabel.Visible = false;
+            // 
+            // Shootlabel
+            // 
+            this.Shootlabel.AutoSize = true;
+            this.Shootlabel.BackColor = System.Drawing.Color.Transparent;
+            this.Shootlabel.Enabled = false;
+            this.Shootlabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Shootlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.8F);
+            this.Shootlabel.ForeColor = System.Drawing.Color.SeaGreen;
+            this.Shootlabel.Location = new System.Drawing.Point(22, 349);
+            this.Shootlabel.Name = "Shootlabel";
+            this.Shootlabel.Size = new System.Drawing.Size(684, 69);
+            this.Shootlabel.TabIndex = 31;
+            this.Shootlabel.Text = "You shoot with Left Click\r\n";
+            this.Shootlabel.Visible = false;
+            // 
             // SpaceOdyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -599,34 +661,38 @@
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1553, 750);
+            this.Controls.Add(this.Shootlabel);
+            this.Controls.Add(this.DodgingLabel);
+            this.Controls.Add(this.MovementLabel);
+            this.Controls.Add(this.BossHealth);
             this.Controls.Add(this.EndGameQuitGameButton);
             this.Controls.Add(this.EndGameNewGameButton);
             this.Controls.Add(this.MissionTB);
             this.Controls.Add(this.MissionDebriefTB);
             this.Controls.Add(this.PilotStateTB);
             this.Controls.Add(this.ShipStateTB);
-            this.Controls.Add(this.MissionLabel);
-            this.Controls.Add(this.MissionDebriefLabel);
-            this.Controls.Add(this.PilotStateLabel);
-            this.Controls.Add(this.ShipStateLabel);
             this.Controls.Add(this.GameOverLabel);
             this.Controls.Add(this.HeroHealth);
-            this.Controls.Add(this.PickHero4);
-            this.Controls.Add(this.PickHero3);
             this.Controls.Add(this.BacktoMM);
-            this.Controls.Add(this.Heropicklabel);
-            this.Controls.Add(this.PickHero2);
-            this.Controls.Add(this.PickHero1);
             this.Controls.Add(this.SaveGame);
             this.Controls.Add(this.LoadGame);
             this.Controls.Add(this.QtMainMenu);
             this.Controls.Add(this.NewGame);
             this.Controls.Add(this.ResumeButton);
-            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.QuitGame);
             this.Controls.Add(this.InstructionButton);
-            this.Controls.Add(this.StartNewGame);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.ShipStateLabel);
+            this.Controls.Add(this.PilotStateLabel);
+            this.Controls.Add(this.MissionDebriefLabel);
+            this.Controls.Add(this.MissionLabel);
+            this.Controls.Add(this.PickHero1);
+            this.Controls.Add(this.PickHero2);
+            this.Controls.Add(this.PickHero3);
+            this.Controls.Add(this.PickHero4);
+            this.Controls.Add(this.BackButton);
+            this.Controls.Add(this.StartNewGame);
+            this.Controls.Add(this.Heropicklabel);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SpaceOdyssey";
@@ -676,6 +742,10 @@
         private System.Windows.Forms.TextBox MissionTB;
         private System.Windows.Forms.Button EndGameNewGameButton;
         private System.Windows.Forms.Button EndGameQuitGameButton;
+        private System.Windows.Forms.ProgressBar BossHealth;
+        private System.Windows.Forms.Label MovementLabel;
+        private System.Windows.Forms.Label DodgingLabel;
+        private System.Windows.Forms.Label Shootlabel;
     }
 }
 

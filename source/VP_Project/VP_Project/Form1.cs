@@ -226,10 +226,23 @@ namespace VP_Project
             //FileName property initializing
             FileName = null;
 
-            //positioning hero health
+            //positioning hero and boss health
             HeroHealth.Width = this.Width / 6;
             HeroHealth.Left = this.Width - HeroHealth.Width;
             HeroHealth.Top = this.Height;
+
+
+            BossHealth.Width = this.Width / 6;
+            BossHealth.Left = this.Width - HeroHealth.Width;
+            BossHealth.Top = BossHealth.Height;
+
+            //instruction positioning
+            MovementLabel.Top = BackButton.Height + MovementLabel.Height;
+            MovementLabel.Left = 1;
+            Shootlabel.Top = MovementLabel.Top + BackButton.Height;
+            Shootlabel.Left = 1;
+            DodgingLabel.Top = Shootlabel.Top + BackButton.Height;
+            DodgingLabel.Left = 1;
 
             Game = new Game(this.Width, this.Height);
             SoundPlayer player = new SoundPlayer();
@@ -331,6 +344,11 @@ namespace VP_Project
                 }
             }
 
+            else if (e.KeyCode == Keys.G)
+            {
+                Game.Boss.Health -= 25;
+            }
+
             Game.CheckBulletsImpact();
             Game.CheckMeteorImpact();
             Game.MoveEnemies();
@@ -383,7 +401,17 @@ namespace VP_Project
             buttonclicked();
             sounds.playButtonClick();
             BackButton.Visible = true;
-            BackButton.Enabled = true;         
+            BackButton.Enabled = true;
+
+            Shootlabel.Visible = true;
+            Shootlabel.Enabled = true;
+
+            DodgingLabel.Visible = true;
+            DodgingLabel.Enabled = true;
+            
+            MovementLabel.Visible = true;
+            MovementLabel.Enabled = true;
+
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -394,6 +422,15 @@ namespace VP_Project
 
             BackButton.Enabled = false;
             BackButton.Visible = false;
+
+            Shootlabel.Visible = false;
+            Shootlabel.Enabled = false;
+
+            DodgingLabel.Visible = false;
+            DodgingLabel.Enabled = false;
+
+            MovementLabel.Visible = false;
+            MovementLabel.Enabled = false;
 
         }
 
@@ -584,11 +621,20 @@ namespace VP_Project
             Game.MoveMeteors();
             Game.MoveBoss();
 
-            if (Game.Hero.Health == 0)
+            if(Game.Level == 3)
+            {
+                BossHealth.Visible = true;
+                BossHealth.Enabled = true;
+                BossHealth.Value = Game.Boss.Health;
+            }
+
+            if (Game.Hero.Health == 0 || Game.Boss.Health==0)
             {
                 Game.GameOver();
                 HeroHealth.Visible = false;
                 HeroHealth.Enabled = false;
+                BossHealth.Visible = false;
+                BossHealth.Enabled = false;
                 GameOverTimer.Start();
                 GameOverLabel.Visible = true;
                 GameOverLabel.Enabled = true;
@@ -616,6 +662,7 @@ namespace VP_Project
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
             Game.Hero.ShowHeroShip = true;
             HeroBulletTimer.Start();
+            timer1.Start();
             HeroHealth.Enabled=true;
             HeroHealth.Visible=true;
             PickedHeroFlag = true;
@@ -642,6 +689,8 @@ namespace VP_Project
             HeroHealth.Visible = true;
             PickedHeroFlag = true;
             HeroBulletTimer.Start();
+            timer1.Start();
+            HeroHealth.Value = Game.Hero.Health;
         }
 
         private void PickHero2_MouseEnter(object sender, EventArgs e)
@@ -664,6 +713,8 @@ namespace VP_Project
             HeroHealth.Visible = true;
             PickedHeroFlag = true;
             HeroBulletTimer.Start();
+            timer1.Start();
+            HeroHealth.Value = Game.Hero.Health;
         }
 
         private void PickHero3_MouseEnter(object sender, EventArgs e)
@@ -686,6 +737,8 @@ namespace VP_Project
             HeroHealth.Visible = true;
             PickedHeroFlag = true;
             HeroBulletTimer.Start();
+            timer1.Start();
+            HeroHealth.Value = Game.Hero.Health;
         }
 
         private void PickHero4_MouseEnter(object sender, EventArgs e)
@@ -736,7 +789,15 @@ namespace VP_Project
             string Pilotstate = "KIA";
             string Missiondebrief = "Due to the sheer number of enemies and unforseen space debries, the mission to intercept and deflect the incoming invasion has ended in failure" +
                 "\n Your valiant effort and sacrifice will not be forgotten";
-            string Missionend = "Failed";
+            string Missionend = "FAILED";
+
+            // WON
+            string ShipstateWon = "FUNCTIONAL"; 
+            string PilotStateWon = "ALIVE";
+            string MissionDebriefWon = "We have witnessed history, through your brave and gallant effort, the mission to intercept and deflect the incoming invasion was a success" +
+                "\n Prepare yourself for the media, HERO";
+            string MissionendWon = "SUCCESS";
+
             EndGameNewGameButton.Enabled = true;
             EndGameNewGameButton.Visible = true;
 
@@ -768,34 +829,67 @@ namespace VP_Project
             MissionTB.Visible = true;
             MissionTB.Enabled = true;
 
-            for(int i = 0;i < Shipstate.Length; i++)
+            if (Game.Hero.Health == 0)
             {
-                Invoke(new MethodInvoker(delegate { ShipStateTB.AppendText(Shipstate[i].ToString()); }));
-                System.Threading.Thread.Sleep(150);
-                if(i == Shipstate.Length-1)break;
-            }
+                for (int i = 0; i < Shipstate.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { ShipStateTB.AppendText(Shipstate[i].ToString()); }));
+                    System.Threading.Thread.Sleep(150);
+                    if (i == Shipstate.Length - 1) break;
+                }
 
-            for (int i = 0; i < Pilotstate.Length; i++)
-            {
-                Invoke(new MethodInvoker(delegate { PilotStateTB.AppendText(Pilotstate[i].ToString()); }));
-                System.Threading.Thread.Sleep(150);
-                if (i == Pilotstate.Length - 1) break;
-            }
+                for (int i = 0; i < Pilotstate.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { PilotStateTB.AppendText(Pilotstate[i].ToString()); }));
+                    System.Threading.Thread.Sleep(150);
+                    if (i == Pilotstate.Length - 1) break;
+                }
 
-            for (int i = 0; i < Missiondebrief.Length; i++)
-            {
-                Invoke(new MethodInvoker(delegate { MissionDebriefTB.AppendText(Missiondebrief[i].ToString()); }));
-                System.Threading.Thread.Sleep(10);
-                if (i == Missiondebrief.Length - 1) break;
-            }
+                for (int i = 0; i < Missiondebrief.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { MissionDebriefTB.AppendText(Missiondebrief[i].ToString()); }));
+                    System.Threading.Thread.Sleep(10);
+                    if (i == Missiondebrief.Length - 1) break;
+                }
 
-            for (int i = 0; i < Missionend.Length; i++)
-            {
-                Invoke(new MethodInvoker(delegate { MissionTB.AppendText(Missionend[i].ToString()); }));
-                System.Threading.Thread.Sleep(150);
-                if (i == Missionend.Length - 1) break;
+                for (int i = 0; i < Missionend.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { MissionTB.AppendText(Missionend[i].ToString()); }));
+                    System.Threading.Thread.Sleep(150);
+                    if (i == Missionend.Length - 1) break;
+                }
             }
-            GameOverTimer.Stop();
+            else if (Game.Boss.Health == 0)
+            {
+                for (int i = 0; i < ShipstateWon.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { ShipStateTB.AppendText(ShipstateWon[i].ToString()); }));
+                    System.Threading.Thread.Sleep(150);
+                    if (i == ShipstateWon.Length - 1) break;
+                }
+
+                for (int i = 0; i < PilotStateWon.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { PilotStateTB.AppendText(PilotStateWon[i].ToString()); }));
+                    System.Threading.Thread.Sleep(150);
+                    if (i == PilotStateWon.Length - 1) break;
+                }
+
+                for (int i = 0; i < MissionDebriefWon.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { MissionDebriefTB.AppendText(MissionDebriefWon[i].ToString()); }));
+                    System.Threading.Thread.Sleep(10);
+                    if (i == MissionDebriefWon.Length - 1) break;
+                }
+
+                for (int i = 0; i < MissionendWon.Length; i++)
+                {
+                    Invoke(new MethodInvoker(delegate { MissionTB.AppendText(MissionendWon[i].ToString()); }));
+                    System.Threading.Thread.Sleep(150);
+                    if (i == MissionendWon.Length - 1) break;
+                }
+                GameOverTimer.Stop();
+            }
         }
 
         private void EndGameNewGameButton_Click(object sender, EventArgs e)
@@ -851,6 +945,10 @@ namespace VP_Project
 
             BacktoMM.Visible = true;
             BacktoMM.Enabled = true;
+
+            enemyTimerCounter = 0;
+            Game = new Game(this.Width, this.Height);
+            
         }
 
         private void EndGameQuitGameButton_Click(object sender, EventArgs e)
@@ -889,7 +987,19 @@ namespace VP_Project
             MissionTB.Visible = false;
             MissionTB.Enabled = false;
 
+
+            enemyTimerCounter = 0;
             showMainMenu();
+        }
+
+        private void NewGame_Click(object sender, EventArgs e)
+        {
+            enemyTimerCounter = 0;
+            Game = new Game(this.Width, this.Height);
+            timer1.Start();
+            HeroBulletTimer.Start();
+            Game.Hero.ShowHeroShip = true;
+            HidePauseMenu();
         }
     }
 }
