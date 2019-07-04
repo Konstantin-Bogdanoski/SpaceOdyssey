@@ -58,6 +58,8 @@
             this.PilotStateTB = new System.Windows.Forms.TextBox();
             this.MissionDebriefTB = new System.Windows.Forms.TextBox();
             this.MissionTB = new System.Windows.Forms.TextBox();
+            this.EndGameNewGameButton = new System.Windows.Forms.Button();
+            this.EndGameQuitGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -556,6 +558,40 @@
             this.MissionTB.TabIndex = 25;
             this.MissionTB.Visible = false;
             // 
+            // EndGameNewGameButton
+            // 
+            this.EndGameNewGameButton.AutoSize = true;
+            this.EndGameNewGameButton.BackColor = System.Drawing.Color.Transparent;
+            this.EndGameNewGameButton.Enabled = false;
+            this.EndGameNewGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EndGameNewGameButton.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndGameNewGameButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.EndGameNewGameButton.Location = new System.Drawing.Point(1112, 265);
+            this.EndGameNewGameButton.Name = "EndGameNewGameButton";
+            this.EndGameNewGameButton.Size = new System.Drawing.Size(317, 72);
+            this.EndGameNewGameButton.TabIndex = 26;
+            this.EndGameNewGameButton.Text = "New Game";
+            this.EndGameNewGameButton.UseVisualStyleBackColor = false;
+            this.EndGameNewGameButton.Visible = false;
+            this.EndGameNewGameButton.Click += new System.EventHandler(this.EndGameNewGameButton_Click);
+            // 
+            // EndGameQuitGameButton
+            // 
+            this.EndGameQuitGameButton.AutoSize = true;
+            this.EndGameQuitGameButton.BackColor = System.Drawing.Color.Transparent;
+            this.EndGameQuitGameButton.Enabled = false;
+            this.EndGameQuitGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EndGameQuitGameButton.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndGameQuitGameButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.EndGameQuitGameButton.Location = new System.Drawing.Point(1112, 387);
+            this.EndGameQuitGameButton.Name = "EndGameQuitGameButton";
+            this.EndGameQuitGameButton.Size = new System.Drawing.Size(352, 72);
+            this.EndGameQuitGameButton.TabIndex = 27;
+            this.EndGameQuitGameButton.Text = "Quit Game";
+            this.EndGameQuitGameButton.UseVisualStyleBackColor = false;
+            this.EndGameQuitGameButton.Visible = false;
+            this.EndGameQuitGameButton.Click += new System.EventHandler(this.EndGameQuitGameButton_Click);
+            // 
             // SpaceOdyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -563,6 +599,8 @@
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1553, 750);
+            this.Controls.Add(this.EndGameQuitGameButton);
+            this.Controls.Add(this.EndGameNewGameButton);
             this.Controls.Add(this.MissionTB);
             this.Controls.Add(this.MissionDebriefTB);
             this.Controls.Add(this.PilotStateTB);
@@ -636,6 +674,8 @@
         private System.Windows.Forms.TextBox PilotStateTB;
         private System.Windows.Forms.TextBox MissionDebriefTB;
         private System.Windows.Forms.TextBox MissionTB;
+        private System.Windows.Forms.Button EndGameNewGameButton;
+        private System.Windows.Forms.Button EndGameQuitGameButton;
     }
 }
 

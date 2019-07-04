@@ -217,6 +217,12 @@ namespace VP_Project
             MissionTB.Width = this.Width / 6;
 
 
+            EndGameNewGameButton.Left = this.Width / 2 + EndGameNewGameButton.Width;
+            EndGameNewGameButton.Top = GameOverLabel.Height + EndGameNewGameButton.Height;
+
+            EndGameQuitGameButton.Left = this.Width / 2 + EndGameNewGameButton.Width;
+            EndGameQuitGameButton.Top = EndGameNewGameButton.Top * 2 + EndGameQuitGameButton.Height;
+
             //FileName property initializing
             FileName = null;
 
@@ -542,6 +548,10 @@ namespace VP_Project
             }
             //this.Text = FileName;
             PickedHeroFlag = true;
+            HeroHealth.Enabled = true;
+            HeroHealth.Visible = true;
+            timer1.Start();
+            HeroBulletTimer.Start();
             buttonclicked();
             Game.Hero.ShowHeroShip = true;
         }
@@ -607,6 +617,7 @@ namespace VP_Project
             HeroBulletTimer.Start();
             HeroHealth.Enabled=true;
             HeroHealth.Visible=true;
+            PickedHeroFlag = true;
             HeroHealth.Value = Game.Hero.Health;
         }
 
@@ -626,6 +637,9 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip2;
             Game.Hero.ShowHeroShip = true;
+            HeroHealth.Enabled = true;
+            HeroHealth.Visible = true;
+            PickedHeroFlag = true;
             HeroBulletTimer.Start();
         }
 
@@ -645,6 +659,9 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip3;
             Game.Hero.ShowHeroShip = true;
+            HeroHealth.Enabled = true;
+            HeroHealth.Visible = true;
+            PickedHeroFlag = true;
             HeroBulletTimer.Start();
         }
 
@@ -664,6 +681,9 @@ namespace VP_Project
             HidePickHeroUI();
             Game.Hero.HeroShipImg = VP_Project.Properties.Resources.HeroShip4;
             Game.Hero.ShowHeroShip = true;
+            HeroHealth.Enabled = true;
+            HeroHealth.Visible = true;
+            PickedHeroFlag = true;
             HeroBulletTimer.Start();
         }
 
@@ -710,11 +730,17 @@ namespace VP_Project
         private void GameOverTimer_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
+            PickedHeroFlag = false;
             string Shipstate = "DESTROYED";
             string Pilotstate = "KIA";
             string Missiondebrief = "Due to the sheer number of enemies and unforseen space debries, the mission to intercept and deflect the incoming invasion has ended in failure" +
                 "\n Your valiant effort and sacrifice will not be forgotten";
             string Missionend = "Failed";
+            EndGameNewGameButton.Enabled = true;
+            EndGameNewGameButton.Visible = true;
+
+            EndGameQuitGameButton.Enabled = true;
+            EndGameQuitGameButton.Visible = true;
 
             ShipStateLabel.Visible = true;
             ShipStateLabel.Enabled = true;
@@ -766,9 +792,103 @@ namespace VP_Project
             {
                 Invoke(new MethodInvoker(delegate { MissionTB.AppendText(Missionend[i].ToString()); }));
                 System.Threading.Thread.Sleep(150);
-                if (i == Missionend.Length - 1) GameOverTimer.Stop();
+                if (i == Missionend.Length - 1) break;
             }
             GameOverTimer.Stop();
+        }
+
+        private void EndGameNewGameButton_Click(object sender, EventArgs e)
+        {
+            PickedHeroFlag = false;
+            GameOverLabel.Visible = false;
+            GameOverLabel.Enabled = false;
+
+            MissionLabel.Visible = false;
+            MissionLabel.Enabled = false;
+
+            EndGameQuitGameButton.Visible = false;
+            EndGameQuitGameButton.Enabled = false;
+
+            EndGameNewGameButton.Visible = false;
+            EndGameNewGameButton.Enabled = false;
+
+            ShipStateLabel.Visible = false;
+            ShipStateLabel.Enabled = false;
+
+            PilotStateLabel.Visible = false;
+            PilotStateLabel.Enabled = false;
+
+            MissionDebriefLabel.Visible = false;
+            MissionDebriefLabel.Enabled = false;
+
+            ShipStateTB.Visible = false;
+            ShipStateTB.Enabled = false;
+
+            PilotStateTB.Visible = false;
+            PilotStateTB.Enabled = false;
+
+            MissionDebriefTB.Visible = false;
+            MissionDebriefTB.Enabled = false;
+
+            MissionTB.Visible = false;
+            MissionTB.Enabled = false;
+
+            PickHero1.Visible = true;
+            PickHero1.Enabled = true;
+
+            PickHero2.Visible = true;
+            PickHero2.Enabled = true;
+
+            PickHero3.Visible = true;
+            PickHero3.Enabled = true;
+
+            PickHero4.Visible = true;
+            PickHero4.Enabled = true;
+
+            Heropicklabel.Visible = true;
+            Heropicklabel.Enabled = true;
+
+            BacktoMM.Visible = true;
+            BacktoMM.Enabled = true;
+        }
+
+        private void EndGameQuitGameButton_Click(object sender, EventArgs e)
+        {
+            PickedHeroFlag = false;
+            GameOverLabel.Visible = false;
+            GameOverLabel.Enabled = false;
+
+            MissionLabel.Visible = false;
+            MissionLabel.Enabled = false;
+
+            EndGameQuitGameButton.Visible = false;
+            EndGameQuitGameButton.Enabled = false;
+
+            EndGameNewGameButton.Visible = false;
+            EndGameNewGameButton.Enabled = false;
+
+            ShipStateLabel.Visible = false;
+            ShipStateLabel.Enabled = false;
+
+            PilotStateLabel.Visible = false;
+            PilotStateLabel.Enabled = false;
+
+            MissionDebriefLabel.Visible = false;
+            MissionDebriefLabel.Enabled = false;
+
+            ShipStateTB.Visible = false;
+            ShipStateTB.Enabled = false;
+
+            PilotStateTB.Visible = false;
+            PilotStateTB.Enabled = false;
+
+            MissionDebriefTB.Visible = false;
+            MissionDebriefTB.Enabled = false;
+
+            MissionTB.Visible = false;
+            MissionTB.Enabled = false;
+
+            showMainMenu();
         }
     }
 }
