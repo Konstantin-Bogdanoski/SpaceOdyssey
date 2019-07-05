@@ -4,10 +4,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Hero
     {
         public Point Location { get; set; }
@@ -20,12 +22,13 @@ namespace VP_Project
 
         public Hero(Point Location)
         {
+
             this.Location = Location;
-            this.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
             this.ShowHeroShip = false;
             this.Speed = 10;
             this.bullets = new List<HeroBullet>();
             this.Health = 100;
+            this.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
         }
 
         public void AddHeroBullet(HeroBullet bullet)
@@ -35,7 +38,7 @@ namespace VP_Project
 
         public void CheckHeroBulletCollison()
         {
-            for(int i=0;i< bullets.Count; i++)
+            for (int i = 0; i < bullets.Count; i++)
             {
                 if (bullets[i].Hit)
                 {
@@ -45,12 +48,12 @@ namespace VP_Project
             }
         }
 
-        public void Move(Keys keys,int width)
+        public void Move(Keys keys, int width)
         {
-            if(keys == Keys.Left)
+            if (keys == Keys.Left)
             {
                 Point newLocation = new Point(this.Location.X - Speed, this.Location.Y);
-                if(newLocation.X <= 0 || newLocation.X >= width)
+                if (newLocation.X <= 0 || newLocation.X >= width)
                 {
                     newLocation = new Point(this.Location.X, this.Location.Y);
                 }
@@ -72,11 +75,13 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
-            g.DrawImage(this.HeroShipImg, this.Location);
-            foreach(HeroBullet bullet in bullets)
+
+            foreach (HeroBullet bullet in bullets)
             {
                 bullet.Draw(g);
             }
+            g.DrawImage(this.HeroShipImg, this.Location);
+
         }
     }
 }

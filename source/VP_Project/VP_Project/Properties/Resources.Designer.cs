@@ -82,9 +82,9 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Bullet {
+        public static System.Drawing.Bitmap bullet {
             get {
-                object obj = ResourceManager.GetObject("Bullet", resourceCulture);
+                object obj = ResourceManager.GetObject("bullet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -161,29 +161,9 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap HeroBullet {
-            get {
-                object obj = ResourceManager.GetObject("HeroBullet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap HeroBullet1 {
             get {
                 object obj = ResourceManager.GetObject("HeroBullet1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap HeroShip1 {
-            get {
-                object obj = ResourceManager.GetObject("HeroShip1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -221,29 +201,9 @@ namespace VP_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap HeroShip31 {
-            get {
-                object obj = ResourceManager.GetObject("HeroShip31", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap HeroShip4 {
             get {
                 object obj = ResourceManager.GetObject("HeroShip4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap HeroShip41 {
-            get {
-                object obj = ResourceManager.GetObject("HeroShip41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -285,6 +245,15 @@ namespace VP_Project.Properties {
             get {
                 object obj = ResourceManager.GetObject("Meteor4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream shootingSound {
+            get {
+                return ResourceManager.GetStream("shootingSound", resourceCulture);
             }
         }
     }

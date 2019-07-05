@@ -7,6 +7,7 @@ using System.Timers;
 
 namespace VP_Project
 {
+    [Serializable]
     public class Enemy
     {
         public enum DIRECTION
@@ -20,16 +21,24 @@ namespace VP_Project
         public Point Location { get; set; }
         public List<Bullet> Bullets { get; set; }
         public DIRECTION Direction { get; set; }
-        public int timerCount { get; set; }
-        public Enemy()
+        public int Width { get; set; }
+        public int Height { get; set; }
+        private static System.Timers.Timer aTimer;
+        public Enemy(int width, int height)
         {
-            this.timerCount = 0;
-            this.Direction = DIRECTION.RIGHT;
-            this.Health = 20;
+            aTimer = new System.Timers.Timer(2000); 
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+
+            this.Width = width;
+            this.Height = height;
+            this.Direction = DIRECTION.DOWN;
+            this.Health = 100;
             this.Speed = 25;
             this.Bullets = new List<Bullet>();
             Enemy.Random = new Random();
-            this.Location = new Point(10, Enemy.Random.Next(10, 500)); // TO BE CHANGED
+            this.Location = new Point(Enemy.Random.Next(10, this.Width), -50); // TO BE CHANGED
             int choice = Enemy.Random.Next(1, 4);
             if (choice == 1) // Randomize image selection
                 Image = VP_Project.Properties.Resources.EnemyShip1;
@@ -45,45 +54,54 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
+            //Pen p = new Pen(Color.Red);
+            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y, 37, 35);
+            //g.DrawRectangle(p, h);
             g.DrawImage(this.Image, this.Location);
             foreach (Bullet b in Bullets)
                 b.Draw(g);
         }
 
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            this.Shoot();
+        }
         public void Shoot()
         {
             this.Bullets.Add(new Bullet(this.Location));
         }
 
-        public void Move(int width, int height)
+        public void Move()
         {
+            int width = this.Width;
+            int height = this.Height;
             Point temp = Location;
             if (Direction == DIRECTION.LEFT) {
                 if (temp.X <= 0)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else 
-                    temp.X-=10;
+                    temp.X-=3;
             }
             else if (Direction == DIRECTION.RIGHT)
             {
                 if (temp.X >= width - this.Image.Width)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else 
-                    temp.X+=10;
+                    temp.X+=3;
             }
             else if (Direction == DIRECTION.UP)
             {
                 if (temp.Y <= 0)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
-                    temp.Y-=10;
+                    temp.Y-=3;
             }
             else if (Direction == DIRECTION.DOWN)
             {
                 if (temp.Y >= height/2)
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
-                    temp.Y+=10;
+                    temp.Y+=3;
             }
             else if (Direction == DIRECTION.UP_LEFT)
             {
@@ -91,8 +109,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y -= 5;
-                    temp.X -= 5;
+                    temp.Y -= 2;
+                    temp.X -= 2;
                 }
             }
             else if (Direction == DIRECTION.DOWN_LEFT)
@@ -101,8 +119,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y += 5;
-                    temp.X -= 5;
+                    temp.Y += 2;
+                    temp.X -= 2;
                 }
             }
             else if (Direction == DIRECTION.UP_RIGHT)
@@ -111,8 +129,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y -= 5;
-                    temp.X += 5;
+                    temp.Y -= 2;
+                    temp.X += 2;
                 }
             }
             else if (Direction == DIRECTION.DOWN_RIGHT)
@@ -121,8 +139,8 @@ namespace VP_Project
                     Direction = (DIRECTION)Enemy.Random.Next(0, 7);
                 else
                 {
-                    temp.Y += 5;
-                    temp.X += 5;
+                    temp.Y += 2;
+                    temp.X += 2;
                 }
             }
 

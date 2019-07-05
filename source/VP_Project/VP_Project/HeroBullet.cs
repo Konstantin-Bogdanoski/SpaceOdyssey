@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace VP_Project
 {
+    [Serializable]
     public class HeroBullet
     {
         public Point Location { get; set; }
         public Bitmap BulletImg { get; set; }
-
         public bool Hit { get; set; }
         public int Speed { get; set; }
+        public Sounds sounds { get; set; }
 
         public HeroBullet(Point Location)
         {
+            sounds = new Sounds();
             this.Location = Location;
             this.BulletImg = VP_Project.Properties.Resources.HeroBullet1;
             this.Hit = false;
             this.Speed = 25;
+            sounds.playShootingSound();
         }
 
         public void UpdatePosition()

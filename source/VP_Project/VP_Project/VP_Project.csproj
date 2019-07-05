@@ -104,18 +104,6 @@
     <None Include="Resources\HeroShip41.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HeroShip1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HeroShip2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HeroShip3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HeroShip4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Meteor1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +145,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HeroShip1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\64948153_671691839921920_6641765382476529664_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeroShip4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shootingSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass-tap-02.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
