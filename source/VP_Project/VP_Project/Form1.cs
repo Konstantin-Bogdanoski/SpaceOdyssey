@@ -324,6 +324,9 @@ namespace VP_Project
                 HeroHealth.Visible = false;
                 HeroHealth.Enabled = false;
 
+                BossHealth.Visible = false;
+                BossHealth.Enabled = false;
+
             }
 
             else if (e.KeyCode == Keys.A)
@@ -506,6 +509,9 @@ namespace VP_Project
             HidePauseMenu();
             HeroHealth.Visible = true;
             HeroHealth.Enabled = true;
+            BossHealth.Visible = true;
+            BossHealth.Enabled = true;
+
         }
 
         private void QtMainMenu_Click(object sender, EventArgs e)
@@ -514,6 +520,8 @@ namespace VP_Project
             showMainMenu();
             HeroHealth.Visible = false;
             HeroHealth.Enabled = false;
+            BossHealth.Visible = false;
+            BossHealth.Enabled = false;
             PickedHeroFlag = false;
         }
 
@@ -549,12 +557,7 @@ namespace VP_Project
 
         private void SaveGame_Click(object sender, EventArgs e)
         {
-            PickedHeroFlag = true;
-            HeroHealth.Enabled = true;
-            HeroHealth.Visible = true;
-            timer1.Start();
-            HeroBulletTimer.Start();
-            Game.Hero.ShowHeroShip = true;
+            
             FileName = null;
             if (FileName is null)
             {
@@ -808,8 +811,8 @@ namespace VP_Project
                 "\n Prepare yourself for the media, HERO";
             string MissionendWon = "SUCCESS";
 
-            
 
+            
             EndGameNewGameButton.Enabled = true;
             EndGameNewGameButton.Visible = true;
 
