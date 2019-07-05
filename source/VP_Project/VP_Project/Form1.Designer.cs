@@ -72,10 +72,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("OCR A Extended", 85.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(0, 298);
-            this.label1.Margin = new System.Windows.Forms.Padding(29, 0, 3, 0);
+            this.label1.Location = new System.Drawing.Point(0, 242);
+            this.label1.Margin = new System.Windows.Forms.Padding(22, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1553, 180);
+            this.label1.Size = new System.Drawing.Size(1165, 146);
             this.label1.TabIndex = 0;
             this.label1.Text = "SpaceOdyssey";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,10 +91,10 @@
             this.StartNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartNewGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartNewGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.StartNewGame.Location = new System.Drawing.Point(135, 182);
-            this.StartNewGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.StartNewGame.Location = new System.Drawing.Point(101, 148);
+            this.StartNewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartNewGame.Name = "StartNewGame";
-            this.StartNewGame.Size = new System.Drawing.Size(800, 97);
+            this.StartNewGame.Size = new System.Drawing.Size(600, 79);
             this.StartNewGame.TabIndex = 1;
             this.StartNewGame.Text = "Start New Game";
             this.StartNewGame.UseVisualStyleBackColor = false;
@@ -112,10 +112,10 @@
             this.InstructionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InstructionButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InstructionButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.InstructionButton.Location = new System.Drawing.Point(44, 297);
-            this.InstructionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InstructionButton.Location = new System.Drawing.Point(33, 241);
+            this.InstructionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.InstructionButton.Name = "InstructionButton";
-            this.InstructionButton.Size = new System.Drawing.Size(693, 100);
+            this.InstructionButton.Size = new System.Drawing.Size(520, 81);
             this.InstructionButton.TabIndex = 2;
             this.InstructionButton.Text = "Instructions";
             this.InstructionButton.UseVisualStyleBackColor = false;
@@ -133,10 +133,10 @@
             this.QuitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuitGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuitGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.QuitGame.Location = new System.Drawing.Point(44, 420);
-            this.QuitGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.QuitGame.Location = new System.Drawing.Point(33, 341);
+            this.QuitGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.QuitGame.Name = "QuitGame";
-            this.QuitGame.Size = new System.Drawing.Size(533, 98);
+            this.QuitGame.Size = new System.Drawing.Size(400, 80);
             this.QuitGame.TabIndex = 3;
             this.QuitGame.Text = "Quit Game";
             this.QuitGame.UseVisualStyleBackColor = false;
@@ -156,10 +156,10 @@
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BackButton.Location = new System.Drawing.Point(0, 180);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BackButton.Location = new System.Drawing.Point(0, 146);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(1553, 118);
+            this.BackButton.Size = new System.Drawing.Size(1165, 96);
             this.BackButton.TabIndex = 4;
             this.BackButton.Text = "Back to Main Menu";
             this.BackButton.UseVisualStyleBackColor = false;
@@ -170,7 +170,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -186,10 +185,9 @@
             this.ResumeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResumeButton.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResumeButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.ResumeButton.Location = new System.Drawing.Point(1248, 329);
-            this.ResumeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ResumeButton.Location = new System.Drawing.Point(936, 267);
             this.ResumeButton.Name = "ResumeButton";
-            this.ResumeButton.Size = new System.Drawing.Size(245, 70);
+            this.ResumeButton.Size = new System.Drawing.Size(200, 59);
             this.ResumeButton.TabIndex = 5;
             this.ResumeButton.Text = "Resume";
             this.ResumeButton.UseVisualStyleBackColor = false;
@@ -210,10 +208,9 @@
             this.NewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewGame.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.NewGame.Location = new System.Drawing.Point(1248, 437);
-            this.NewGame.Margin = new System.Windows.Forms.Padding(4);
+            this.NewGame.Location = new System.Drawing.Point(936, 355);
             this.NewGame.Name = "NewGame";
-            this.NewGame.Size = new System.Drawing.Size(315, 70);
+            this.NewGame.Size = new System.Drawing.Size(256, 59);
             this.NewGame.TabIndex = 6;
             this.NewGame.Text = "New Game";
             this.NewGame.UseVisualStyleBackColor = false;
@@ -234,10 +231,9 @@
             this.QtMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QtMainMenu.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtMainMenu.ForeColor = System.Drawing.Color.SeaGreen;
-            this.QtMainMenu.Location = new System.Drawing.Point(1004, 682);
-            this.QtMainMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.QtMainMenu.Location = new System.Drawing.Point(753, 554);
             this.QtMainMenu.Name = "QtMainMenu";
-            this.QtMainMenu.Size = new System.Drawing.Size(630, 70);
+            this.QtMainMenu.Size = new System.Drawing.Size(508, 59);
             this.QtMainMenu.TabIndex = 7;
             this.QtMainMenu.Text = "Quit to Main Menu";
             this.QtMainMenu.UseVisualStyleBackColor = false;
@@ -256,10 +252,9 @@
             this.LoadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadGame.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.LoadGame.Location = new System.Drawing.Point(-121, 517);
-            this.LoadGame.Margin = new System.Windows.Forms.Padding(4);
+            this.LoadGame.Location = new System.Drawing.Point(-91, 420);
             this.LoadGame.Name = "LoadGame";
-            this.LoadGame.Size = new System.Drawing.Size(883, 123);
+            this.LoadGame.Size = new System.Drawing.Size(662, 100);
             this.LoadGame.TabIndex = 8;
             this.LoadGame.Text = "Load Game";
             this.LoadGame.UseVisualStyleBackColor = false;
@@ -279,10 +274,9 @@
             this.SaveGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveGame.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveGame.ForeColor = System.Drawing.Color.SeaGreen;
-            this.SaveGame.Location = new System.Drawing.Point(1248, 570);
-            this.SaveGame.Margin = new System.Windows.Forms.Padding(4);
+            this.SaveGame.Location = new System.Drawing.Point(936, 463);
             this.SaveGame.Name = "SaveGame";
-            this.SaveGame.Size = new System.Drawing.Size(350, 70);
+            this.SaveGame.Size = new System.Drawing.Size(284, 59);
             this.SaveGame.TabIndex = 9;
             this.SaveGame.Text = "Save Game";
             this.SaveGame.UseVisualStyleBackColor = false;
@@ -303,10 +297,10 @@
             this.PickHero1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero1.Location = new System.Drawing.Point(12, 21);
-            this.PickHero1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PickHero1.Location = new System.Drawing.Point(9, 17);
+            this.PickHero1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PickHero1.Name = "PickHero1";
-            this.PickHero1.Size = new System.Drawing.Size(351, 375);
+            this.PickHero1.Size = new System.Drawing.Size(263, 305);
             this.PickHero1.TabIndex = 10;
             this.PickHero1.UseVisualStyleBackColor = false;
             this.PickHero1.Visible = false;
@@ -326,10 +320,10 @@
             this.PickHero2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero2.Location = new System.Drawing.Point(273, 39);
-            this.PickHero2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PickHero2.Location = new System.Drawing.Point(205, 32);
+            this.PickHero2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PickHero2.Name = "PickHero2";
-            this.PickHero2.Size = new System.Drawing.Size(355, 352);
+            this.PickHero2.Size = new System.Drawing.Size(266, 286);
             this.PickHero2.TabIndex = 11;
             this.PickHero2.UseVisualStyleBackColor = false;
             this.PickHero2.Visible = false;
@@ -349,10 +343,10 @@
             this.PickHero3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero3.Location = new System.Drawing.Point(15, 303);
-            this.PickHero3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PickHero3.Location = new System.Drawing.Point(11, 246);
+            this.PickHero3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PickHero3.Name = "PickHero3";
-            this.PickHero3.Size = new System.Drawing.Size(352, 351);
+            this.PickHero3.Size = new System.Drawing.Size(264, 285);
             this.PickHero3.TabIndex = 12;
             this.PickHero3.UseVisualStyleBackColor = false;
             this.PickHero3.Visible = false;
@@ -372,10 +366,10 @@
             this.PickHero4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.PickHero4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.PickHero4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PickHero4.Location = new System.Drawing.Point(283, 303);
-            this.PickHero4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PickHero4.Location = new System.Drawing.Point(212, 246);
+            this.PickHero4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PickHero4.Name = "PickHero4";
-            this.PickHero4.Size = new System.Drawing.Size(352, 351);
+            this.PickHero4.Size = new System.Drawing.Size(264, 285);
             this.PickHero4.TabIndex = 13;
             this.PickHero4.UseVisualStyleBackColor = false;
             this.PickHero4.Visible = false;
@@ -391,9 +385,9 @@
             this.Heropicklabel.Font = new System.Drawing.Font("OCR A Extended", 50F, System.Drawing.FontStyle.Italic);
             this.Heropicklabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.Heropicklabel.Location = new System.Drawing.Point(0, 0);
-            this.Heropicklabel.Margin = new System.Windows.Forms.Padding(29, 0, 3, 0);
+            this.Heropicklabel.Margin = new System.Windows.Forms.Padding(22, 0, 2, 0);
             this.Heropicklabel.Name = "Heropicklabel";
-            this.Heropicklabel.Size = new System.Drawing.Size(1553, 180);
+            this.Heropicklabel.Size = new System.Drawing.Size(1165, 146);
             this.Heropicklabel.TabIndex = 14;
             this.Heropicklabel.Text = "Pick your ship";
             this.Heropicklabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -411,10 +405,10 @@
             this.BacktoMM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BacktoMM.Font = new System.Drawing.Font("OCR A Extended", 49.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BacktoMM.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BacktoMM.Location = new System.Drawing.Point(0, 632);
-            this.BacktoMM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BacktoMM.Location = new System.Drawing.Point(0, 513);
+            this.BacktoMM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BacktoMM.Name = "BacktoMM";
-            this.BacktoMM.Size = new System.Drawing.Size(1553, 118);
+            this.BacktoMM.Size = new System.Drawing.Size(1165, 96);
             this.BacktoMM.TabIndex = 15;
             this.BacktoMM.Text = "Back to Main Menu";
             this.BacktoMM.UseVisualStyleBackColor = false;
@@ -433,9 +427,10 @@
             // 
             this.HeroHealth.BackColor = System.Drawing.Color.Black;
             this.HeroHealth.Enabled = false;
-            this.HeroHealth.Location = new System.Drawing.Point(834, 468);
+            this.HeroHealth.Location = new System.Drawing.Point(626, 380);
+            this.HeroHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HeroHealth.Name = "HeroHealth";
-            this.HeroHealth.Size = new System.Drawing.Size(100, 23);
+            this.HeroHealth.Size = new System.Drawing.Size(75, 19);
             this.HeroHealth.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.HeroHealth.TabIndex = 16;
             this.HeroHealth.Visible = false;
@@ -446,10 +441,10 @@
             this.GameOverLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.GameOverLabel.Font = new System.Drawing.Font("OCR A Extended", 85.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameOverLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.GameOverLabel.Location = new System.Drawing.Point(0, 478);
-            this.GameOverLabel.Margin = new System.Windows.Forms.Padding(29, 0, 3, 0);
+            this.GameOverLabel.Location = new System.Drawing.Point(0, 388);
+            this.GameOverLabel.Margin = new System.Windows.Forms.Padding(22, 0, 2, 0);
             this.GameOverLabel.Name = "GameOverLabel";
-            this.GameOverLabel.Size = new System.Drawing.Size(1553, 180);
+            this.GameOverLabel.Size = new System.Drawing.Size(1165, 146);
             this.GameOverLabel.TabIndex = 17;
             this.GameOverLabel.Text = "Mission Status";
             this.GameOverLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -467,8 +462,9 @@
             this.ShipStateLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShipStateLabel.ForeColor = System.Drawing.Color.SeaGreen;
             this.ShipStateLabel.Location = new System.Drawing.Point(0, 0);
+            this.ShipStateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ShipStateLabel.Name = "ShipStateLabel";
-            this.ShipStateLabel.Size = new System.Drawing.Size(410, 60);
+            this.ShipStateLabel.Size = new System.Drawing.Size(330, 49);
             this.ShipStateLabel.TabIndex = 18;
             this.ShipStateLabel.Text = "Ship State:";
             this.ShipStateLabel.Visible = false;
@@ -480,9 +476,10 @@
             this.PilotStateLabel.Enabled = false;
             this.PilotStateLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PilotStateLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.PilotStateLabel.Location = new System.Drawing.Point(-10, 60);
+            this.PilotStateLabel.Location = new System.Drawing.Point(-8, 49);
+            this.PilotStateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PilotStateLabel.Name = "PilotStateLabel";
-            this.PilotStateLabel.Size = new System.Drawing.Size(445, 60);
+            this.PilotStateLabel.Size = new System.Drawing.Size(358, 49);
             this.PilotStateLabel.TabIndex = 19;
             this.PilotStateLabel.Text = "Pilot State:";
             this.PilotStateLabel.Visible = false;
@@ -494,9 +491,10 @@
             this.MissionDebriefLabel.Enabled = false;
             this.MissionDebriefLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MissionDebriefLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.MissionDebriefLabel.Location = new System.Drawing.Point(0, 120);
+            this.MissionDebriefLabel.Location = new System.Drawing.Point(0, 98);
+            this.MissionDebriefLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MissionDebriefLabel.Name = "MissionDebriefLabel";
-            this.MissionDebriefLabel.Size = new System.Drawing.Size(585, 60);
+            this.MissionDebriefLabel.Size = new System.Drawing.Size(470, 49);
             this.MissionDebriefLabel.TabIndex = 20;
             this.MissionDebriefLabel.Text = "Mission Debrief:";
             this.MissionDebriefLabel.Visible = false;
@@ -508,9 +506,10 @@
             this.MissionLabel.Enabled = false;
             this.MissionLabel.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MissionLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.MissionLabel.Location = new System.Drawing.Point(0, 180);
+            this.MissionLabel.Location = new System.Drawing.Point(0, 146);
+            this.MissionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MissionLabel.Name = "MissionLabel";
-            this.MissionLabel.Size = new System.Drawing.Size(515, 60);
+            this.MissionLabel.Size = new System.Drawing.Size(414, 49);
             this.MissionLabel.TabIndex = 21;
             this.MissionLabel.Text = "Mission State:";
             this.MissionLabel.Visible = false;
@@ -521,9 +520,10 @@
             this.ShipStateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ShipStateTB.Enabled = false;
             this.ShipStateTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
-            this.ShipStateTB.Location = new System.Drawing.Point(403, 12);
+            this.ShipStateTB.Location = new System.Drawing.Point(302, 10);
+            this.ShipStateTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ShipStateTB.Name = "ShipStateTB";
-            this.ShipStateTB.Size = new System.Drawing.Size(100, 54);
+            this.ShipStateTB.Size = new System.Drawing.Size(75, 43);
             this.ShipStateTB.TabIndex = 22;
             this.ShipStateTB.Visible = false;
             // 
@@ -533,9 +533,10 @@
             this.PilotStateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PilotStateTB.Enabled = false;
             this.PilotStateTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
-            this.PilotStateTB.Location = new System.Drawing.Point(519, 12);
+            this.PilotStateTB.Location = new System.Drawing.Point(389, 10);
+            this.PilotStateTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PilotStateTB.Name = "PilotStateTB";
-            this.PilotStateTB.Size = new System.Drawing.Size(100, 54);
+            this.PilotStateTB.Size = new System.Drawing.Size(75, 43);
             this.PilotStateTB.TabIndex = 23;
             this.PilotStateTB.Visible = false;
             // 
@@ -545,9 +546,10 @@
             this.MissionDebriefTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MissionDebriefTB.Enabled = false;
             this.MissionDebriefTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
-            this.MissionDebriefTB.Location = new System.Drawing.Point(637, 12);
+            this.MissionDebriefTB.Location = new System.Drawing.Point(478, 10);
+            this.MissionDebriefTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MissionDebriefTB.Name = "MissionDebriefTB";
-            this.MissionDebriefTB.Size = new System.Drawing.Size(100, 54);
+            this.MissionDebriefTB.Size = new System.Drawing.Size(75, 43);
             this.MissionDebriefTB.TabIndex = 24;
             this.MissionDebriefTB.Visible = false;
             // 
@@ -557,9 +559,10 @@
             this.MissionTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MissionTB.Enabled = false;
             this.MissionTB.Font = new System.Drawing.Font("OCR A Extended", 30.8F, System.Drawing.FontStyle.Bold);
-            this.MissionTB.Location = new System.Drawing.Point(753, 12);
+            this.MissionTB.Location = new System.Drawing.Point(565, 10);
+            this.MissionTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MissionTB.Name = "MissionTB";
-            this.MissionTB.Size = new System.Drawing.Size(100, 54);
+            this.MissionTB.Size = new System.Drawing.Size(75, 43);
             this.MissionTB.TabIndex = 25;
             this.MissionTB.Visible = false;
             // 
@@ -571,9 +574,10 @@
             this.EndGameNewGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EndGameNewGameButton.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndGameNewGameButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.EndGameNewGameButton.Location = new System.Drawing.Point(1112, 265);
+            this.EndGameNewGameButton.Location = new System.Drawing.Point(834, 215);
+            this.EndGameNewGameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EndGameNewGameButton.Name = "EndGameNewGameButton";
-            this.EndGameNewGameButton.Size = new System.Drawing.Size(317, 72);
+            this.EndGameNewGameButton.Size = new System.Drawing.Size(258, 61);
             this.EndGameNewGameButton.TabIndex = 26;
             this.EndGameNewGameButton.Text = "New Game";
             this.EndGameNewGameButton.UseVisualStyleBackColor = false;
@@ -588,9 +592,10 @@
             this.EndGameQuitGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EndGameQuitGameButton.Font = new System.Drawing.Font("OCR A Extended", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndGameQuitGameButton.ForeColor = System.Drawing.Color.SeaGreen;
-            this.EndGameQuitGameButton.Location = new System.Drawing.Point(1112, 387);
+            this.EndGameQuitGameButton.Location = new System.Drawing.Point(834, 314);
+            this.EndGameQuitGameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EndGameQuitGameButton.Name = "EndGameQuitGameButton";
-            this.EndGameQuitGameButton.Size = new System.Drawing.Size(352, 72);
+            this.EndGameQuitGameButton.Size = new System.Drawing.Size(286, 61);
             this.EndGameQuitGameButton.TabIndex = 27;
             this.EndGameQuitGameButton.Text = "Quit Game";
             this.EndGameQuitGameButton.UseVisualStyleBackColor = false;
@@ -601,10 +606,11 @@
             // 
             this.BossHealth.BackColor = System.Drawing.Color.Black;
             this.BossHealth.Enabled = false;
-            this.BossHealth.Location = new System.Drawing.Point(1355, 60);
+            this.BossHealth.Location = new System.Drawing.Point(1016, 49);
+            this.BossHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BossHealth.Maximum = 150;
             this.BossHealth.Name = "BossHealth";
-            this.BossHealth.Size = new System.Drawing.Size(100, 23);
+            this.BossHealth.Size = new System.Drawing.Size(75, 19);
             this.BossHealth.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.BossHealth.TabIndex = 28;
             this.BossHealth.Visible = false;
@@ -617,9 +623,10 @@
             this.MovementLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.8F);
             this.MovementLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.MovementLabel.Location = new System.Drawing.Point(13, 265);
+            this.MovementLabel.Location = new System.Drawing.Point(10, 215);
+            this.MovementLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MovementLabel.Name = "MovementLabel";
-            this.MovementLabel.Size = new System.Drawing.Size(1004, 69);
+            this.MovementLabel.Size = new System.Drawing.Size(806, 55);
             this.MovementLabel.TabIndex = 29;
             this.MovementLabel.Text = "Move Left  with A, Move Right with D";
             this.MovementLabel.Visible = false;
@@ -632,9 +639,10 @@
             this.DodgingLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DodgingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DodgingLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.DodgingLabel.Location = new System.Drawing.Point(13, 427);
+            this.DodgingLabel.Location = new System.Drawing.Point(10, 347);
+            this.DodgingLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DodgingLabel.Name = "DodgingLabel";
-            this.DodgingLabel.Size = new System.Drawing.Size(904, 138);
+            this.DodgingLabel.Size = new System.Drawing.Size(733, 110);
             this.DodgingLabel.TabIndex = 30;
             this.DodgingLabel.Text = "Meteors instantly destroy you !! \r\nBullets damage your plane !!";
             this.DodgingLabel.Visible = false;
@@ -647,20 +655,21 @@
             this.Shootlabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Shootlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.8F);
             this.Shootlabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.Shootlabel.Location = new System.Drawing.Point(22, 349);
+            this.Shootlabel.Location = new System.Drawing.Point(16, 284);
+            this.Shootlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Shootlabel.Name = "Shootlabel";
-            this.Shootlabel.Size = new System.Drawing.Size(684, 69);
+            this.Shootlabel.Size = new System.Drawing.Size(548, 55);
             this.Shootlabel.TabIndex = 31;
             this.Shootlabel.Text = "You shoot with Left Click\r\n";
             this.Shootlabel.Visible = false;
             // 
             // SpaceOdyssey
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::VP_Project.Properties.Resources.BackgroundPic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1553, 750);
+            this.ClientSize = new System.Drawing.Size(1165, 609);
             this.Controls.Add(this.Shootlabel);
             this.Controls.Add(this.DodgingLabel);
             this.Controls.Add(this.MovementLabel);
@@ -694,7 +703,7 @@
             this.Controls.Add(this.StartNewGame);
             this.Controls.Add(this.Heropicklabel);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SpaceOdyssey";
             this.Text = "SpaceOdyssey";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

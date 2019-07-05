@@ -46,8 +46,8 @@ namespace VP_Project
 
         public void Move(int width)
         {
-            foreach (Bullet bullet in Bullets)
-                bullet.Move();
+            for (int index = 0; index < Bullets.Count; index++)
+                Bullets[index].Move();
             Point temp = Location;
             /*if(Direction == DIRECTION.DOWN)
             {
