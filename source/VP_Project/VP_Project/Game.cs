@@ -30,7 +30,10 @@ namespace VP_Project
                 for (int i = 0; i < Enemies.Count; i++)
                 {
                     if (Enemies.ElementAt(i).Health <= 0)
-                        Enemies.RemoveAt(i);
+                        {
+                            Enemies.RemoveAt(i);
+                            i--;
+                        }
                 }
             }
         }
@@ -39,7 +42,7 @@ namespace VP_Project
             this.Hero = new Hero(new Point((int)width / 2 - 50, height - 100));
             this.Height = height;
             this.Width = width;
-            this.Level = 1;
+            this.Level = 3;
             this.TimeCounter = 300;
             this.Enemies = new List<Enemy>();
             this.Meteors = new List<Meteor>();
@@ -87,35 +90,38 @@ namespace VP_Project
             if (Level == 1)
             {
                 //Hero to Enemies
-                foreach (HeroBullet bullet in Hero.bullets)
+                for (int index = 0; index < Hero.bullets.Count; index++)
                 {
                     foreach (Enemy enemy in Enemies)
                     {
-                        Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                        Rectangle b = new Rectangle(Hero.bullets[index].Location.X, Hero.bullets[index].Location.Y, Hero.bullets[index].BulletImg.Width, Hero.bullets[index].BulletImg.Height);
                         Rectangle h = new Rectangle(enemy.Location.X, enemy.Location.Y, 37, 35);
                         if (b.IntersectsWith(h))
                         {
-                            bullet.Hit = true;
+                            Hero.bullets[index].Hit = true;
                             enemy.Health -= 50;
                         }
                     }
                     for (int i = 0; i < Enemies.Count; i++)
                         if (Enemies.ElementAt(i).Health <= 0)
-                            Enemies.RemoveAt(i);
+                            {
+                                Enemies.RemoveAt(i);
+                                i--;    
+                            }
                 }
             
 
                 //Hero to Meteors
-                foreach (HeroBullet bullet in Hero.bullets)
+                for (int index = 0; index < Hero.bullets.Count; index++)
                 {
                     foreach (Meteor meteor in Meteors)
                     {
-                        Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                        Rectangle b = new Rectangle(Hero.bullets[index].Location.X, Hero.bullets[index].Location.Y, Hero.bullets[index].BulletImg.Width, Hero.bullets[index].BulletImg.Height);
                         Rectangle m= new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
                         Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                         if (b.IntersectsWith(m))
                         {
-                            bullet.Hit = true;
+                            Hero.bullets[index].Hit = true;
                             meteor.Health -= 40;
                         }
                         if (h.IntersectsWith(m))
@@ -126,7 +132,10 @@ namespace VP_Project
 
                     for (int i = 0; i < Meteors.Count; i++)
                         if (Meteors.ElementAt(i).Health <= 0)
-                            Meteors.RemoveAt(i);
+                            {
+                                Meteors.RemoveAt(i);
+                                i--;
+                            }
                 }
 
                 //Enemies to Hero
@@ -162,25 +171,31 @@ namespace VP_Project
                 }
                 for (int i = 0; i < Meteors.Count; i++)
                     if (Meteors.ElementAt(i).Health <= 0)
-                        Meteors.RemoveAt(i);
+                        {
+                            Meteors.RemoveAt(i);
+                            i--;
+                        }
 
                 for (int i = 0; i < Enemies.Count; i++)
                     if (Enemies.ElementAt(i).Health <= 0)
-                        Enemies.RemoveAt(i);
+                        {
+                            Enemies.RemoveAt(i);
+                            i--;
+                        }
             }
             else if(Level == 2)
             {
                 //Hero to Meteors
-                foreach (HeroBullet bullet in Hero.bullets)
+                for (int index = 0; index < Hero.bullets.Count; index++)
                 {
                     foreach (Meteor meteor in Meteors)
                     {
-                        Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                        Rectangle b = new Rectangle(Hero.bullets[index].Location.X, Hero.bullets[index].Location.Y, Hero.bullets[index].BulletImg.Width, Hero.bullets[index].BulletImg.Height);
                         Rectangle m = new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
                         Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                         if (b.IntersectsWith(m))
                         {
-                            bullet.Hit = true;
+                            Hero.bullets[index].Hit = true;
                             meteor.Health -= 40;
                         }
                         if (h.IntersectsWith(m))
@@ -191,7 +206,10 @@ namespace VP_Project
 
                     for (int i = 0; i < Meteors.Count; i++)
                         if (Meteors.ElementAt(i).Health <= 0)
-                            Meteors.RemoveAt(i);
+                            {
+                                Meteors.RemoveAt(i);
+                                i--;
+                            }
                 }
                 foreach (Meteor meteor in Meteors)
                 {
@@ -209,13 +227,20 @@ namespace VP_Project
                     if (m.IntersectsWith(h))
                         Hero.Health = 0;
                 }
+
                 for (int i = 0; i < Meteors.Count; i++)
                     if (Meteors.ElementAt(i).Health <= 0)
-                        Meteors.RemoveAt(i);
+                        {
+                            Meteors.RemoveAt(i);
+                            i--;
+                        }
 
                 for (int i = 0; i < Enemies.Count; i++)
                     if (Enemies.ElementAt(i).Health <= 0)
-                        Enemies.RemoveAt(i);
+                        {
+                            Enemies.RemoveAt(i);
+                            i--;
+                        }
             }
             else if(Level == 3)
             {
@@ -235,13 +260,13 @@ namespace VP_Project
                 }
 
                 //Boss to Hero
-                foreach(Bullet bullet in Boss.Bullets)
+                for(int index = 0; index < Boss.Bullets.Count; index++)
                 {
-                    Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.Image.Width, bullet.Image.Height);
+                    Rectangle b = new Rectangle(Boss.Bullets[index].Location.X, Boss.Bullets[index].Location.Y, Boss.Bullets[index].Image.Width, Boss.Bullets[index].Image.Height);
                     if (b.IntersectsWith(h))
                     {
                         Hero.Health -= 35;
-                        bullet.ToBeRemoved = true;
+                        Boss.Bullets[index].ToBeRemoved = true;
                     }
                 }
 
@@ -266,7 +291,10 @@ namespace VP_Project
 
                     for (int i = 0; i < Meteors.Count; i++)
                         if (Meteors.ElementAt(i).Health <= 0)
-                            Meteors.RemoveAt(i);
+                            {
+                                Meteors.RemoveAt(i);
+                                i--;    
+                            }
                     if (Boss.Health <= 0)
                 {
                     //GAME OVER - WIN
@@ -277,14 +305,14 @@ namespace VP_Project
                 if (Hero.bullets.ElementAt(i).Hit)
                     {
                         Hero.bullets.RemoveAt(i);
-                        //i--;
+                        i--;
                     }
 
             for (int i = 0; i < Boss.Bullets.Count; i++)
                 if (Boss.Bullets.ElementAt(i).ToBeRemoved)
                     {
                         Boss.Bullets.RemoveAt(i);
-                       // i--;
+                        i--;
                     }
                     
 
@@ -293,7 +321,7 @@ namespace VP_Project
                     if (enemy.Bullets.ElementAt(i).ToBeRemoved)
                         {
                             enemy.Bullets.RemoveAt(i);
-                           // i--;
+                            i--;
                         }
                          
         }
@@ -315,12 +343,18 @@ namespace VP_Project
 
                 for (int i = 0; i < Enemies.Count; i++)
                     if (Enemies.ElementAt(i).Health == 0)
-                        Enemies.RemoveAt(i);
+                        {
+                            Enemies.RemoveAt(i);
+                            i--;
+                        }
 
                 for(int i=0; i<Meteors.Count; i++)
                 {
                     if (Meteors.ElementAt(i).Location.Y > this.Height)
-                        Meteors.RemoveAt(i);
+                        {   
+                            Meteors.RemoveAt(i);
+                            i--;
+                        }
                 }
             }
         }
