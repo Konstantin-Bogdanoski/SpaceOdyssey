@@ -23,7 +23,7 @@ namespace VP_Project
         
         public void GameOver()
         {
-            if (Hero.Health==0 || Boss.Health==0)
+            if (Hero.Health<=0 || Boss.Health<=0)
             {
                 Hero.ShowHeroShip = false;
                 
@@ -32,7 +32,6 @@ namespace VP_Project
                     if (Enemies.ElementAt(i).Health <= 0)
                         Enemies.RemoveAt(i);
                 }
-         
             }
         }
         public Game(int width, int height)
@@ -59,7 +58,6 @@ namespace VP_Project
                 if (Level == 3 && Meteors.Count <= 0)
                     Boss.Draw(g);
             }
-
         }
         public void MoveEnemies()
         {
@@ -298,6 +296,8 @@ namespace VP_Project
                            // i--;
                         }
 
+            if (Hero.Health <= 0)
+                this.GameOver();
                                     
         }
         public void CheckMeteorImpact()

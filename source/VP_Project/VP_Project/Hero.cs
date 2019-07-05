@@ -85,14 +85,19 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
-            //Pen b = new Pen(Color.Red);
-            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y+30, 80, 50);
-            //g.DrawRectangle(b, h);
-            for(int i=0; i<bullets.Count; i++)
+            if (Health > 0)
             {
-                bullets[i].Draw(g);
+                //Pen b = new Pen(Color.Red);
+                //Rectangle h = new Rectangle(this.Location.X, this.Location.Y+30, 80, 50);
+                //g.DrawRectangle(b, h);
+                for (int i = 0; i < bullets.Count; i++)
+                {
+                    bullets[i].Draw(g);
+                }
+                g.DrawImage(this.HeroShipImg, this.Location);
             }
-            g.DrawImage(this.HeroShipImg, this.Location);
+            else
+                aTimer.Stop();
         }
     }
 }

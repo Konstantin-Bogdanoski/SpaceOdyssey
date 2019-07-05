@@ -628,7 +628,7 @@ namespace VP_Project
                 BossHealth.Value = Game.Boss.Health;
             }
 
-            if (Game.Hero.Health == 0 || Game.Boss.Health==0)
+            if (Game.Hero.Health <= 0 || Game.Boss.Health<=0)
             {
                 Game.GameOver();
                 HeroHealth.Visible = false;
