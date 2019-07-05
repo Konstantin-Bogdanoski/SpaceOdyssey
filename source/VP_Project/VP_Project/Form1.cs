@@ -798,6 +798,8 @@ namespace VP_Project
                 "\n Prepare yourself for the media, HERO";
             string MissionendWon = "SUCCESS";
 
+            
+
             EndGameNewGameButton.Enabled = true;
             EndGameNewGameButton.Visible = true;
 
@@ -856,6 +858,7 @@ namespace VP_Project
                 {
                     Invoke(new MethodInvoker(delegate { MissionTB.AppendText(Missionend[i].ToString()); }));
                     System.Threading.Thread.Sleep(150);
+                    Game.Hero.Health = 100;
                     if (i == Missionend.Length - 1) break;
                 }
             }
@@ -886,10 +889,11 @@ namespace VP_Project
                 {
                     Invoke(new MethodInvoker(delegate { MissionTB.AppendText(MissionendWon[i].ToString()); }));
                     System.Threading.Thread.Sleep(150);
+                    Game.Boss.Health = 150;
                     if (i == MissionendWon.Length - 1) break;
                 }
-                GameOverTimer.Stop();
             }
+            GameOverTimer.Stop();
         }
 
         private void EndGameNewGameButton_Click(object sender, EventArgs e)
@@ -946,6 +950,11 @@ namespace VP_Project
             BacktoMM.Visible = true;
             BacktoMM.Enabled = true;
 
+            ShipStateTB.Text = "";
+            PilotStateTB.Text = "";
+            MissionDebriefTB.Text = "";
+            MissionTB.Text = "";
+
             enemyTimerCounter = 0;
             Game = new Game(this.Width, this.Height);
             
@@ -986,6 +995,11 @@ namespace VP_Project
 
             MissionTB.Visible = false;
             MissionTB.Enabled = false;
+
+            ShipStateTB.Text = "";
+            PilotStateTB.Text = "";
+            MissionDebriefTB.Text = "";
+            MissionTB.Text = "";
 
 
             enemyTimerCounter = 0;

@@ -31,10 +31,6 @@ namespace VP_Project
                 {
                     if (Enemies.ElementAt(i).Health <= 0)
                         Enemies.RemoveAt(i);
-
-                    if (Meteors.ElementAt(i).Health <= 0)
-                        Meteors.RemoveAt(i);
-                    i--;
                 }
          
             }
