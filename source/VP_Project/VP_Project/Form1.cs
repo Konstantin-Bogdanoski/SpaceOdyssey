@@ -558,7 +558,7 @@ namespace VP_Project
         private void SaveGame_Click(object sender, EventArgs e)
         {
             
-            FileName = null;
+            //FileName = null;
             if (FileName is null)
             {
                 SaveFileDialog sv = new SaveFileDialog();
@@ -577,9 +577,8 @@ namespace VP_Project
                 stream.Close();
             }
             this.Text = FileName;
+            this.FileName = null;
             Invalidate(true);
-           
-
         }
 
         private void LoadGame_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace VP_Project
             this.Hero = new Hero(new Point((int)width / 2 - 50, height - 100));
             this.Height = height;
             this.Width = width;
-            this.Level = 3;
+            this.Level = 1;
             this.TimeCounter = 300;
             this.Enemies = new List<Enemy>();
             this.Meteors = new List<Meteor>();
