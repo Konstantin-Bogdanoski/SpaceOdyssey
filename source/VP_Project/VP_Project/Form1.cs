@@ -555,6 +555,7 @@ namespace VP_Project
             timer1.Start();
             HeroBulletTimer.Start();
             Game.Hero.ShowHeroShip = true;
+            FileName = null;
             if (FileName is null)
             {
                 SaveFileDialog sv = new SaveFileDialog();
@@ -590,15 +591,16 @@ namespace VP_Project
                 FileStream stream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.None);
                 Game = (Game)binaryFormatter.Deserialize(stream);
                 stream.Close();
+                PickedHeroFlag = true;
+                HeroHealth.Enabled = true;
+                HeroHealth.Visible = true;
+                timer1.Start();
+                HeroBulletTimer.Start();
+                buttonclicked();
+                Game.Hero.ShowHeroShip = true;
             }
             //this.Text = FileName;
-            PickedHeroFlag = true;
-            HeroHealth.Enabled = true;
-            HeroHealth.Visible = true;
-            timer1.Start();
-            HeroBulletTimer.Start();
-            buttonclicked();
-            Game.Hero.ShowHeroShip = true;
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
