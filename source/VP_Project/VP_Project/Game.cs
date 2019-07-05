@@ -141,12 +141,12 @@ namespace VP_Project
                 //Enemies to Hero
                 foreach (Enemy enemy in Enemies)
                 {
-                    foreach (Bullet bullet in enemy.Bullets) {
-                        Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.Image.Width, bullet.Image.Height);
+                    for (int index = 0; index < enemy.Bullets.Count; index++) {
+                        Rectangle b = new Rectangle(enemy.Bullets[index].Location.X, enemy.Bullets[index].Location.Y, enemy.Bullets[index].Image.Width, enemy.Bullets[index].Image.Height);
                         Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y+30, 70, 80);
                         if (b.IntersectsWith(h))
                         {
-                            bullet.ToBeRemoved = true;
+                            enemy.Bullets[index].ToBeRemoved = true;
                             Hero.Health -= 1;
                         }
                     }
@@ -249,13 +249,13 @@ namespace VP_Project
                 Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
 
                 //Hero to Boss
-                foreach(HeroBullet bullet in Hero.bullets)
+                for(int index = 0; index < Hero.bullets.Count; index++)
                 {
-                    Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                    Rectangle b = new Rectangle(Hero.bullets[index].Location.X, Hero.bullets[index].Location.Y, Hero.bullets[index].BulletImg.Width, Hero.bullets[index].BulletImg.Height);
                     if (b.IntersectsWith(b1) || b.IntersectsWith(b2))
                     {
                         Boss.Health -= 5;
-                        bullet.Hit = true;
+                        Hero.bullets[index].Hit = true;
                     }
                 }
 
@@ -270,16 +270,16 @@ namespace VP_Project
                     }
                 }
 
-                foreach (HeroBullet bullet in Hero.bullets)
+                for (int index = 0; index < Hero.bullets.Count; index++)
                 {
                     foreach (Meteor meteor in Meteors)
                     {
-                        Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
+                        Rectangle b = new Rectangle(Hero.bullets[index].Location.X, Hero.bullets[index].Location.Y, Hero.bullets[index].BulletImg.Width, Hero.bullets[index].BulletImg.Height);
                         Rectangle m = new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
                         Rectangle h1 = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                         if (b.IntersectsWith(m))
                         {
-                            bullet.Hit = true;
+                            Hero.bullets[index].Hit = true;
                             meteor.Health -= 40;
                         }
                         if (h.IntersectsWith(m))

@@ -959,6 +959,7 @@ namespace VP_Project
             Heropicklabel.Visible = true;
             Heropicklabel.Enabled = true;
 
+
             BacktoMM.Visible = true;
             BacktoMM.Enabled = true;
 
@@ -1020,6 +1021,8 @@ namespace VP_Project
 
         private void NewGame_Click(object sender, EventArgs e)
         {
+            HeroHealth.Visible = true;
+            HeroHealth.Enabled = true;
             enemyTimerCounter = 0;
             Game = new Game(this.Width, this.Height);
             timer1.Start();
