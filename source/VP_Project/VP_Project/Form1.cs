@@ -549,6 +549,12 @@ namespace VP_Project
 
         private void SaveGame_Click(object sender, EventArgs e)
         {
+            PickedHeroFlag = true;
+            HeroHealth.Enabled = true;
+            HeroHealth.Visible = true;
+            timer1.Start();
+            HeroBulletTimer.Start();
+            Game.Hero.ShowHeroShip = true;
             if (FileName is null)
             {
                 SaveFileDialog sv = new SaveFileDialog();
@@ -568,6 +574,7 @@ namespace VP_Project
             }
             this.Text = FileName;
             Invalidate(true);
+           
 
         }
 
@@ -621,14 +628,14 @@ namespace VP_Project
             Game.MoveMeteors();
             Game.MoveBoss();
 
-            if(Game.Level == 3 && Game.Boss.Health >= 0)
+            if(Game.Level == 3 && Game.Boss.Health>0)
             {
                 BossHealth.Visible = true;
                 BossHealth.Enabled = true;
                 BossHealth.Value = Game.Boss.Health;
             }
 
-            if (Game.Hero.Health <= 0 || Game.Boss.Health<=0)
+            if (Game.Hero.Health <= 0 || Game.Boss.Health <= 0)
             {
                 Game.GameOver();
                 HeroHealth.Visible = false;
@@ -667,6 +674,7 @@ namespace VP_Project
             HeroHealth.Visible=true;
             PickedHeroFlag = true;
             HeroHealth.Value = Game.Hero.Health;
+            
         }
 
         private void PickHero1_MouseEnter(object sender, EventArgs e)
@@ -772,13 +780,13 @@ namespace VP_Project
 
         private void SpaceOdyssey_MouseClick(object sender, MouseEventArgs e)
         {
-            /*HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
+            HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
             Game.Hero.AddHeroBullet(bullet);
 
             foreach (HeroBullet bullet1 in Game.Hero.bullets)
             {
                 bullet1.UpdatePosition();
-            }*/
+            }
         }
 
         private void GameOverTimer_Tick(object sender, EventArgs e)
@@ -831,7 +839,7 @@ namespace VP_Project
             MissionTB.Visible = true;
             MissionTB.Enabled = true;
 
-            if (Game.Hero.Health == 0)
+            if (Game.Hero.Health <= 0)
             {
                 for (int i = 0; i < Shipstate.Length; i++)
                 {
@@ -862,7 +870,7 @@ namespace VP_Project
                     if (i == Missionend.Length - 1) break;
                 }
             }
-            else if (Game.Boss.Health == 0)
+            else if (Game.Boss.Health <= 0)
             {
                 for (int i = 0; i < ShipstateWon.Length; i++)
                 {

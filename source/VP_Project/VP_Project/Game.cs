@@ -295,10 +295,7 @@ namespace VP_Project
                             enemy.Bullets.RemoveAt(i);
                            // i--;
                         }
-
-            if (Hero.Health <= 0)
-                this.GameOver();
-                                    
+                         
         }
         public void CheckMeteorImpact()
         {

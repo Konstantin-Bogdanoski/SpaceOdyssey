@@ -19,14 +19,9 @@ namespace VP_Project
         public List<HeroBullet> bullets { get; set; }
         public int Health { get; set; }
         public bool isHit { get; set; }
-        private static System.Timers.Timer aTimer;
 
         public Hero(Point Location)
         {
-            aTimer = new System.Timers.Timer(400);
-            aTimer.Elapsed += OnTimedEvent;
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
 
             this.Location = Location;
             this.ShowHeroShip = false;
@@ -36,11 +31,6 @@ namespace VP_Project
             this.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
         }
 
-        private void OnTimedEvent(object sender, ElapsedEventArgs e)
-        {
-            this.AddHeroBullet(new HeroBullet(new Point(Location.X + 257 / 2 - 101, Location.Y)));
-        }
-
         public void AddHeroBullet(HeroBullet bullet)
         {
             this.bullets.Add(bullet);
@@ -48,7 +38,7 @@ namespace VP_Project
 
         public void CheckHeroBulletCollison()
         {
-            for(int i=0;i< bullets.Count; i++)
+            for (int i = 0; i < bullets.Count; i++)
             {
                 if (bullets[i].Hit)
                 {
@@ -58,12 +48,12 @@ namespace VP_Project
             }
         }
 
-        public void Move(Keys keys,int width)
+        public void Move(Keys keys, int width)
         {
-            if(keys == Keys.Left)
+            if (keys == Keys.Left)
             {
                 Point newLocation = new Point(this.Location.X - Speed, this.Location.Y);
-                if(newLocation.X <= 0 || newLocation.X >= width)
+                if (newLocation.X <= 0 || newLocation.X >= width)
                 {
                     newLocation = new Point(this.Location.X, this.Location.Y);
                 }
@@ -85,19 +75,13 @@ namespace VP_Project
 
         public void Draw(Graphics g)
         {
-            if (Health > 0)
+
+            foreach (HeroBullet bullet in bullets)
             {
-                //Pen b = new Pen(Color.Red);
-                //Rectangle h = new Rectangle(this.Location.X, this.Location.Y+30, 80, 50);
-                //g.DrawRectangle(b, h);
-                for (int i = 0; i < bullets.Count; i++)
-                {
-                    bullets[i].Draw(g);
-                }
-                g.DrawImage(this.HeroShipImg, this.Location);
+                bullet.Draw(g);
             }
-            else
-                aTimer.Stop();
+            g.DrawImage(this.HeroShipImg, this.Location);
+
         }
     }
 }
