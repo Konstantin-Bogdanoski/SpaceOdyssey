@@ -28,7 +28,7 @@ namespace VP_Project
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
 
-            this.Location = new Point(width/2-50, -150);
+            this.Location = new Point(width/2-50, -250);
             this.Speed = 35;
             this.Health = 150;
             this.Bullets = new List<Bullet>();

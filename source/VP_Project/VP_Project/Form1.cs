@@ -621,7 +621,7 @@ namespace VP_Project
             Game.MoveMeteors();
             Game.MoveBoss();
 
-            if(Game.Level == 3)
+            if(Game.Level == 3 && Game.Boss.Health >= 0)
             {
                 BossHealth.Visible = true;
                 BossHealth.Enabled = true;
@@ -772,13 +772,13 @@ namespace VP_Project
 
         private void SpaceOdyssey_MouseClick(object sender, MouseEventArgs e)
         {
-            HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
+            /*HeroBullet bullet = new HeroBullet(new Point(Game.Hero.Location.X + Game.Hero.HeroShipImg.Width / 2 - 101, Game.Hero.Location.Y));
             Game.Hero.AddHeroBullet(bullet);
 
             foreach (HeroBullet bullet1 in Game.Hero.bullets)
             {
                 bullet1.UpdatePosition();
-            }
+            }*/
         }
 
         private void GameOverTimer_Tick(object sender, EventArgs e)

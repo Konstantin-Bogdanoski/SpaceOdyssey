@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace VP_Project
@@ -18,15 +19,26 @@ namespace VP_Project
         public List<HeroBullet> bullets { get; set; }
         public int Health { get; set; }
         public bool isHit { get; set; }
+        private static System.Timers.Timer aTimer;
 
         public Hero(Point Location)
         {
+            aTimer = new System.Timers.Timer(400);
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+
             this.Location = Location;
             this.ShowHeroShip = false;
             this.Speed = 10;
             this.bullets = new List<HeroBullet>();
             this.Health = 100;
             this.HeroShipImg = VP_Project.Properties.Resources.HeroShip1_1;
+        }
+
+        private void OnTimedEvent(object sender, ElapsedEventArgs e)
+        {
+            this.AddHeroBullet(new HeroBullet(new Point(Location.X + 257 / 2 - 101, Location.Y)));
         }
 
         public void AddHeroBullet(HeroBullet bullet)
@@ -74,11 +86,11 @@ namespace VP_Project
         public void Draw(Graphics g)
         {
             //Pen b = new Pen(Color.Red);
-            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y+30, 80, 80);
+            //Rectangle h = new Rectangle(this.Location.X, this.Location.Y+30, 80, 50);
             //g.DrawRectangle(b, h);
-            foreach (HeroBullet bullet in bullets)
+            for(int i=0; i<bullets.Count; i++)
             {
-                bullet.Draw(g);
+                bullets[i].Draw(g);
             }
             g.DrawImage(this.HeroShipImg, this.Location);
         }

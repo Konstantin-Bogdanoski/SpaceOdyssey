@@ -114,7 +114,7 @@ namespace VP_Project
                     {
                         Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
                         Rectangle m= new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
-                        Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                        Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                         if (b.IntersectsWith(m))
                         {
                             bullet.Hit = true;
@@ -158,7 +158,7 @@ namespace VP_Project
                             enemy.Health = 0;
                         }
                     }
-                    Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                    Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                     if (m.IntersectsWith(h))
                         Hero.Health = 0;
                 }
@@ -179,7 +179,7 @@ namespace VP_Project
                     {
                         Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
                         Rectangle m = new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
-                        Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                        Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                         if (b.IntersectsWith(m))
                         {
                             bullet.Hit = true;
@@ -207,7 +207,7 @@ namespace VP_Project
                             enemy.Health = 0;
                         }
                     }
-                    Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                    Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                     if (m.IntersectsWith(h))
                         Hero.Health = 0;
                 }
@@ -223,7 +223,7 @@ namespace VP_Project
             {
                 Rectangle b1 = new Rectangle(Boss.Location.X, Boss.Location.Y+20, 150, 50);
                 Rectangle b2 = new Rectangle(Boss.Location.X+55, Boss.Location.Y, 50, 150);
-                Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                Rectangle h = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
 
                 //Hero to Boss
                 foreach(HeroBullet bullet in Hero.bullets)
@@ -253,7 +253,7 @@ namespace VP_Project
                     {
                         Rectangle b = new Rectangle(bullet.Location.X, bullet.Location.Y, bullet.BulletImg.Width, bullet.BulletImg.Height);
                         Rectangle m = new Rectangle(meteor.Location.X, meteor.Location.Y, 40, 40);
-                        Rectangle h1 = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 70, 80);
+                        Rectangle h1 = new Rectangle(Hero.Location.X, Hero.Location.Y + 30, 80, 50);
                         if (b.IntersectsWith(m))
                         {
                             bullet.Hit = true;
