@@ -20,6 +20,7 @@ namespace VP_Project
         public int Level { get; set; }
         public int TimeCounter { get; set; }
         private int NumOfEnemies { get; set; }
+        
         public void GameOver()
         {
             if (Hero.Health==0 || Boss.Health==0)
@@ -33,6 +34,7 @@ namespace VP_Project
 
                     if (Meteors.ElementAt(i).Health <= 0)
                         Meteors.RemoveAt(i);
+                    i--;
                 }
          
             }
@@ -279,17 +281,28 @@ namespace VP_Project
 
             for (int i = 0; i < Hero.bullets.Count; i++)
                 if (Hero.bullets.ElementAt(i).Hit)
-                    Hero.bullets.RemoveAt(i);
+                    {
+                        Hero.bullets.RemoveAt(i);
+                        //i--;
+                    }
 
             for (int i = 0; i < Boss.Bullets.Count; i++)
                 if (Boss.Bullets.ElementAt(i).ToBeRemoved)
-                    Boss.Bullets.RemoveAt(i);
+                    {
+                        Boss.Bullets.RemoveAt(i);
+                       // i--;
+                    }
+                    
 
             foreach (Enemy enemy in Enemies)
                 for (int i = 0; i < enemy.Bullets.Count; i++)
                     if (enemy.Bullets.ElementAt(i).ToBeRemoved)
-                        enemy.Bullets.RemoveAt(i);
-            
+                        {
+                            enemy.Bullets.RemoveAt(i);
+                           // i--;
+                        }
+
+                                    
         }
         public void CheckMeteorImpact()
         {

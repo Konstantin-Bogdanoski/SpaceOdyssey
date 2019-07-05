@@ -19,6 +19,8 @@ namespace VP_Project
         public DIRECTION Direction { get; set; }
         public Bitmap Image { get; set; }
         private static System.Timers.Timer aTimer;
+        private Random random;
+        
         public Boss(int width)
         {
             aTimer = new System.Timers.Timer(1500);
@@ -32,6 +34,8 @@ namespace VP_Project
             this.Bullets = new List<Bullet>();
             this.Direction = DIRECTION.DOWN;
             this.Image = VP_Project.Properties.Resources.EnemyBoss;
+            this.random = new Random();
+
             Image.RotateFlip(RotateFlipType.Rotate180FlipNone);
         }
 
@@ -45,7 +49,7 @@ namespace VP_Project
             foreach (Bullet bullet in Bullets)
                 bullet.Move();
             Point temp = Location;
-            if(Direction == DIRECTION.DOWN)
+            /*if(Direction == DIRECTION.DOWN)
             {
                 if (temp.Y >= 10)
                     Direction = DIRECTION.RIGHT;
@@ -67,7 +71,45 @@ namespace VP_Project
                     temp.X++;
             }
             Location = temp;
+            */
+            if(Direction == DIRECTION.DOWN)
+            {
+                if(temp.Y >= 10)
+                {
+                    int direction = random.Next(0,2);
+                    if(direction == 0)
+                    {
+                        Direction = DIRECTION.LEFT;
+                    }
+                    else
+                    {
+                        Direction = DIRECTION.RIGHT;
+                    }
+                }
+                temp.Y++;
+            }
+            
+            if(Direction == DIRECTION.LEFT)
+            {
+                if(temp.X <= 1 )
+                {
+                    Direction = DIRECTION.RIGHT;
+                }
+                temp.X--;
+            }
+
+            if(Direction == DIRECTION.RIGHT)
+            {
+                if(temp.X >= width - 160)
+                {
+                    Direction = DIRECTION.LEFT;
+                }
+                temp.X++;
+            }
+
+            this.Location = temp;
         }
+
         public void Draw(Graphics g)
         {
             //CHECKING HITBOX
